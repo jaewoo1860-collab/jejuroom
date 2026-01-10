@@ -1,0 +1,39 @@
+name: Daily Reviews
+
+on:
+  schedule:
+    # 매일 한국시간 00:10에 실행하려면 UTC 15:10 (전날)로 설정
+    - cron: "10 15 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate reviews
+        run: node tools/generate-reviews.js
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git add pages/reviews.html
+          git commit -m "chore: add daily reviews"
+          git push
