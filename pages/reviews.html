@@ -1,5 +1,22 @@
+
 <!doctype html>
 <html lang="ko">
+<!-- AUTO_SCHEMA_START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "고객후기 - 제주 유흥가이드",
+  "url": "__SITE_URL__/pages/reviews.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "제주 유흥가이드 고객후기",
+    "itemListElement": []
+  }
+}
+</script>
+<!-- AUTO_SCHEMA_END -->
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,21 +56,23 @@
       <header class="header">
         <a class="logo" href="../index.html" aria-label="홈">LOGO</a>
 
-        <input id="nav-toggle" class="nav-toggle" type="checkbox" />
         <label class="hamburger" for="nav-toggle" aria-label="메뉴 열기">
           <span></span><span></span><span></span>
         </label>
-
-        <nav class="drawer" aria-label="메인 메뉴">
-          <a href="../index.html">메인</a>
-          <a href="./jejusi.html">제주시</a>
-          <a href="./seogwipo.html">서귀포시</a>
-          <a href="./contact.html">입점문의</a>
-          <a href="./reviews.html" aria-current="page">고객후기</a>
-        </nav>
-
-        <label class="overlay" for="nav-toggle" aria-hidden="true"></label>
       </header>
+
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+
+      <nav class="drawer" aria-label="메인 메뉴">
+  <a href="../index.html">메인</a>
+  <a href="./jejusi.html">제주시</a>
+  <a href="./seogwipo.html">서귀포시</a>
+  <a href="./contact.html">입점문의</a>
+  <a href="./reviews.html">고객후기</a>
+</nav>
+
+
+      <label class="overlay" for="nav-toggle" aria-hidden="true"></label>
 
       <main class="content">
 
@@ -187,12 +206,7 @@
 
               <div class="modal__meta" id="modalMeta"></div>
               <div class="modal__body" id="modalBody"></div>
-
-              <div class="modal__actions">
-                <button type="button" class="miniBtn" id="fakeEditBtn">수정하기</button>
-                <button type="button" class="miniBtn" data-close="1">닫기</button>
-              </div>
-            </div>
+</div>
           </div>
         </section>
 
@@ -253,9 +267,36 @@
     prevBtn.addEventListener("click", () => { page--; renderPage(); });
     nextBtn.addEventListener("click", () => { page++; renderPage(); });
 
+    
     body.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-open]");
-      if (!btn) return;
+      // 수정/비밀번호 버튼 클릭은 기존 안내만
+      const editBtn = e.target.closest("[data-edit]");
+      if (editBtn){
+        alert("후기 수정은 작성자 인증 후 가능합니다.
+현재는 수정 기능이 제공되지 않습니다.");
+        return;
+      }
+
+      // 1) 제목 버튼 클릭, 2) 행(tr) 클릭 모두 상세보기로
+      const tr = e.target.closest("tr.board__row");
+      if (!tr) return;
+
+      const titleBtn = tr.querySelector(".linkTitle");
+      const title = ((titleBtn?.textContent) || "").trim();
+
+      const author = (tr.querySelector(".cell-author")?.textContent || "").trim();
+      const time = (tr.querySelector(".cell-time")?.textContent || "").trim();
+      const rate = (tr.querySelector(".cell-rate")?.textContent || "").trim();
+      const content = tr.getAttribute("data-content") || "상세 내용이 준비 중입니다.";
+
+      modalTitle.textContent = title || "후기 상세";
+      modalMeta.textContent = `${author} · ${time} · ${rate}`.trim();
+      modalBody.textContent = content;
+
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    });
+if (!btn) return;
 
       const id = btn.getAttribute("data-open");
       const tr = body.querySelector(`tr.board__row[data-id="${id}"]`);
@@ -276,6 +317,7 @@
     });
 
     modal.addEventListener("click", (e) => {
+
       if (!e.target.closest("[data-close]")) return;
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
@@ -290,14 +332,23 @@
       if (!edit) return;
       alert("후기 수정은 작성자 인증 후 가능합니다.\\n현재는 수정 기능이 제공되지 않습니다.");
     });
-
-    fakeEditBtn.addEventListener("click", () => {
-      alert("후기 수정은 작성자 인증 후 가능합니다.\\n현재는 수정 기능이 제공되지 않습니다.");
-    });
+    if (fakeEditBtn){
+      fakeEditBtn.addEventListener("click", () => {
+        alert("후기 수정은 작성자 인증 후 가능합니다.\n현재는 수정 기능이 제공되지 않습니다.");
+      });
+    }
+});
 
     renderPage();
   })();
-  </script>
+  
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+    });
+</script>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
 
 /* 링크 포커스(키보드 접근성) */
 a:focus-visible{
-  outline: 2px solid rgba(255,255,255,.55);
+  outline: 2px solid rgba(255,255,255,0.55);
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -17,17 +17,17 @@ a:focus-visible{
    Tokens
 ========================= */
 :root{
-  --ink: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.70);
-  --dim: rgba(255,255,255,.55);
+  --ink: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.7);
+  --dim: rgba(255,255,255,0.55);
 
-  --line: rgba(255,255,255,.12);
+  --line: rgba(255,255,255,0.12);
 
   --r-lg: 18px;
   --r-md: 14px;
 
-  --shadow: 0 18px 50px rgba(0,0,0,.60);
-  --shadow2: 0 12px 32px rgba(0,0,0,.58);
+  --shadow: 0 18px 50px rgba(0,0,0,0.6);
+  --shadow2: 0 12px 32px rgba(0,0,0,0.58);
 
   --accent-a: #8aa7ff;
   --accent-b: #2f5bff;
@@ -59,7 +59,7 @@ a:focus-visible{
   margin: 0;
   font-size: 16px;
   letter-spacing: .2px;
-  color: rgba(255,255,255,.90);
+  color: rgba(255,255,255,0.9);
 }
 
 .page-home .sec__head .sub{
@@ -75,7 +75,7 @@ a:focus-visible{
 .page-home .hero2{
   padding: 22px 16px;
   border-radius: var(--r-lg);
-  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
   border: 1px solid var(--line);
   box-shadow: var(--shadow2);
 }
@@ -84,7 +84,7 @@ a:focus-visible{
   margin: 0 0 10px;
   font-weight: 800;
   letter-spacing: .4px;
-  color: rgba(255,255,255,.80);
+  color: rgba(255,255,255,0.8);
 }
 
 .page-home .hero2__title{
@@ -105,7 +105,7 @@ a:focus-visible{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
   animation: shine 4.5s infinite;
   pointer-events: none;
 }
@@ -124,7 +124,6 @@ a:focus-visible{
 
 /* =========================
    2) 협력업체 (partner-row / partner-btn)
-   - "어두운 블루 이미지" 더미가 무조건 보이게
 ========================= */
 .page-home .partner-row{
   display: flex;
@@ -133,19 +132,18 @@ a:focus-visible{
 }
 
 .page-home .partner-btn{
-  display: flex;                 /* ✅ a 태그 박스화 */
+  display: flex;
   align-items: center;
   justify-content: center;
 
   height: 110px;
   border-radius: var(--r-lg);
 
-  /* ✅ 더미 이미지 느낌(어두운 블루) */
   background: linear-gradient(135deg, #081a3a, #020814);
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 14px 40px rgba(0,0,0,.62);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.62);
 
-  color: rgba(255,255,255,.88);
+  color: rgba(255,255,255,0.88);
   font-weight: 900;
   font-size: 15px;
   letter-spacing: .4px;
@@ -155,17 +153,16 @@ a:focus-visible{
   overflow: hidden;
 }
 
-/* 약한 하이라이트(고급 느낌) */
 .page-home .partner-btn::after{
   content:"";
   position:absolute;
   inset:-40% -30%;
-  background: radial-gradient(circle at 30% 30%, rgba(140,170,255,.22), transparent 55%);
+  background: radial-gradient(circle at 30% 30%, rgba(140,170,255,0.22), transparent 55%);
   pointer-events:none;
 }
 
 /* =========================
-   3) 이용가이드 (STEP1 > STEP2 > STEP3 > STEP4)
+   3) 이용가이드
 ========================= */
 .page-home .guide-steps{
   display: flex;
@@ -175,8 +172,8 @@ a:focus-visible{
 
   padding: 14px 12px;
   border-radius: var(--r-lg);
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.1);
   box-shadow: var(--shadow2);
 }
 
@@ -185,8 +182,8 @@ a:focus-visible{
   flex: 1;
   padding: 10px 6px;
   border-radius: var(--r-md);
-  background: linear-gradient(180deg, rgba(10,35,90,.35), rgba(5,10,26,.28));
-  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(10,35,90,0.35), rgba(5,10,26,0.28));
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .page-home .step-icon{
@@ -197,17 +194,16 @@ a:focus-visible{
 .page-home .step-text{
   font-size: 12px;
   font-weight: 800;
-  color: rgba(255,255,255,.92);
+  color: rgba(255,255,255,0.92);
 }
 
-/* step 사이에 ">" 넣기 (마지막 제외) */
 .page-home .step:not(:last-child)::after{
   content: ">";
   position: absolute;
   right: -10px;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,0.55);
   font-weight: 900;
   font-size: 14px;
   pointer-events: none;
@@ -215,7 +211,6 @@ a:focus-visible{
 
 /* =========================
    4) 업체 안내 (place-grid / place-card)
-   - 썸네일 더미(작게) 무조건 보이게
 ========================= */
 .page-home .place-grid{
   display: grid;
@@ -224,41 +219,35 @@ a:focus-visible{
 }
 
 .page-home .place-card{
-  display: block;                /* ✅ ::before가 안 뜨는 문제 방지 */
+  display: block;
   border-radius: var(--r-lg);
   padding: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
   box-shadow: var(--shadow2);
 
   text-align: left;
   text-decoration: none;
-  color: rgba(255,255,255,.92);
+  color: rgba(255,255,255,0.92);
 
   position: relative;
   overflow: hidden;
-}
-
-/* 카드 상단 썸네일(더미 이미지) */
-.page-home .place-card::before{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 72px;                  /* ✅ 작은 크기 */
-  margin-bottom: 10px;
-  border-radius: 12px;
-
-  background: linear-gradient(135deg, #0a1f4d, #030814);
-  border: 1px solid rgba(255,255,255,.10);
-}
-
-/* 글자 톤 조금 정리 */
-.page-home .place-card{
   font-weight: 900;
   letter-spacing: .2px;
 }
 
-/* 더 알아보기 버튼(있으면 고급 버튼 톤) */
+.page-home .place-card::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 72px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #0a1f4d, #030814);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
 .page-home .place-more{
   display: inline-block;
   width: 100%;
@@ -270,7 +259,7 @@ a:focus-visible{
   font-weight: 900;
   color: #fff;
   background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
-  box-shadow: 0 6px 18px rgba(40,80,255,.45);
+  box-shadow: 0 6px 18px rgba(40,80,255,0.45);
   text-decoration: none;
 }
 
@@ -281,10 +270,10 @@ a:focus-visible{
   margin-top: 14px;
   padding: 16px;
   border-radius: var(--r-lg);
-  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-  border: 1px solid rgba(255,255,255,.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.14);
   box-shadow: var(--shadow2);
-  color: rgba(255,255,255,.80);
+  color: rgba(255,255,255,0.8);
   font-size: 12px;
   line-height: 1.65;
   text-align: left;
@@ -292,86 +281,77 @@ a:focus-visible{
 
 /* =========================================================
    LAYOUT SPACING – WIDE VERSION
-   - 좌/우 여백 대폭 확장 (기존 대비 약 3배 체감)
-   - 섹션 간 간격 유지
 ========================================================= */
-
-/* 🔥 핵심: 폰 내부 좌/우 여백 크게 */
-.page-home .content{
-  padding-left: 48px;   /* ⬅ 기존 16px → 48px */
+.phone .content{
+  padding-left: 48px;
   padding-right: 48px;
 }
 
-/* 섹션 간 충분한 간격 */
+
 .page-home .sec{
   margin-top: 28px;
   margin-bottom: 40px;
 }
 
-/* 섹션 제목과 콘텐츠 간 여백 */
+/* ✅ HERO(섹션1)는 헤더 바로 아래 붙이기(위 띠 제거) */
+.page-home .sec.hero2{ margin-top: 0 !important; }
+
+
 .page-home .sec__head{
   margin-bottom: 20px;
 }
 
-/* 섹션 내부 블록 상단 여백 */
 .page-home .partner-row,
 .page-home .guide-steps,
 .page-home .place-grid{
   margin-top: 18px;
 }
 
-/* 이용가이드는 더 숨통 트이게 */
 .page-home .guide-steps{
   margin-top: 22px;
   margin-bottom: 22px;
 }
 
-/* 면책/고지는 가장 안정감 있게 */
 .page-home .disclaimer{
   margin-top: 36px;
   margin-bottom: 32px;
 }
 
-
 /* =========================================================
-   HOME ONLY COLOR TUNING (1안: 퍼플/핑크 라운지 톤)
-   - 메인페이지에서만 배경/글래스 톤을 유흥 느낌으로 강화
-   - 다른 페이지 영향 없음
+   HOME ONLY COLOR TUNING
 ========================================================= */
-
-/* 1) 메인페이지 배경(.bg)에만 퍼플/핑크 라이트 오버레이 추가 */
 .page-home .bg{
   background:
-    radial-gradient(1100px 520px at 18% 8%, rgba(255,110,199,.26), transparent 62%),
-    radial-gradient(900px 520px at 80% 22%, rgba(182,108,255,.22), transparent 58%),
-    radial-gradient(1200px 700px at 50% -10%, rgba(95,168,255,.12), transparent 65%),
+    radial-gradient(1100px 520px at 18% 8%, rgba(255,110,199,0.26), transparent 62%),
+    radial-gradient(900px 520px at 80% 22%, rgba(182,108,255,0.22), transparent 58%),
+    radial-gradient(1200px 700px at 50% -10%, rgba(95,168,255,0.12), transparent 65%),
     linear-gradient(180deg, #0a2a55 0%, #05070d 70%, #02030a 100%);
 }
 
-/* 2) 메인페이지 글로우 블랍 색만 살짝 유흥톤으로 */
 .page-home .glow{
   background: radial-gradient(circle at 30% 30%,
-    rgba(255,255,255,.07),
-    rgba(255,110,199,.10),
-    rgba(182,108,255,.08),
+    rgba(255,255,255,0.07),
+    rgba(255,110,199,0.1),
+    rgba(182,108,255,0.08),
     transparent 70%
   );
   opacity: .38;
 }
 
-/* 3) 메인페이지 섹션 카드(글래스) 톤만 아주 살짝 퍼플로 */
-.page-home .hero2,
-.page-home .guide-steps,
-.page-home .place-card{
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,.08),
-    rgba(255,255,255,.03)
-  );
-  border: 1px solid rgba(255,255,255,.13);
+
+/* ✅ HERO2는 '유리 카드' 배경으로 덮지 말고, 히어로 그라데이션 유지 */
+.page-home .hero2{
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-btm)) !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-/* 4) 히어로 박스에만 “라운지 라이트” 은은하게 한 겹 */
+.page-home .guide-steps,
+.page-home .place-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.13);
+}
+
 .page-home .hero2{
   position: relative;
   overflow: hidden;
@@ -383,13 +363,12 @@ a:focus-visible{
   inset:-2px;
   pointer-events:none;
   background:
-    radial-gradient(70% 60% at 18% 18%, rgba(255,110,199,.18), transparent 60%),
-    radial-gradient(70% 60% at 82% 25%, rgba(182,108,255,.16), transparent 58%),
-    radial-gradient(80% 70% at 50% 0%, rgba(95,168,255,.10), transparent 65%);
+    radial-gradient(70% 60% at 18% 18%, rgba(255,110,199,0.18), transparent 60%),
+    radial-gradient(70% 60% at 82% 25%, rgba(182,108,255,0.16), transparent 58%),
+    radial-gradient(80% 70% at 50% 0%, rgba(95,168,255,0.1), transparent 65%);
   opacity: .9;
 }
 
-/* 5) 히어로 텍스트는 네가 원하면 여기서만 1안 그라데이션으로 바꿀 수 있음 */
 .page-home .hero2__title{
   background: linear-gradient(90deg, #ff6ec7 0%, #b66cff 45%, #5fa8ff 100%);
   -webkit-background-clip: text;
@@ -397,25 +376,17 @@ a:focus-visible{
 }
 
 /* =========================================================
-   HOME ONLY (메인페이지 전용 튜닝)
-   - 휴대폰(프레임) 안쪽 배경 그라데이션 추가
-   - 섹션1 테두리 제거
-   - 타이틀 다이아 반짝임 반복
-   - 킥커/서브 문구 화이트톤 부드럽게
+   HOME ONLY (프레임 안쪽 배경 + 타이틀 다이아 반짝)
 ========================================================= */
-
-/* 1) 휴대폰 안쪽 배경(= .phone 자체)을 메인페이지만 라운지 톤으로 */
 .page-home .phone{
-  /* 기존 글래스 느낌은 유지하면서 “안쪽 배경”만 색감 추가 */
   background:
     radial-gradient(120% 85% at 50% 0%,
-      rgba(58, 28, 90, .78) 0%,
-      rgba(11, 31, 58, .80) 45%,
-      rgba(5, 8, 15, .92) 100%
+      rgba(58,28,90,0.78) 0%,
+      rgba(11,31,58,0.8) 45%,
+      rgba(5,8,15,0.92) 100%
     );
 }
 
-/* 휴대폰 안쪽에 은은한 핑크/퍼플 라이트 한 겹 (내용 뒤에 깔리게) */
 .page-home .phone::before{
   content:"";
   position:absolute;
@@ -423,152 +394,46 @@ a:focus-visible{
   z-index:0;
   pointer-events:none;
   background:
-    radial-gradient(60% 40% at 18% 18%, rgba(255,110,199,.22), transparent 62%),
-    radial-gradient(55% 40% at 82% 30%, rgba(182,108,255,.20), transparent 60%),
-    radial-gradient(80% 60% at 50% 0%,  rgba(95,168,255,.10), transparent 65%);
+    radial-gradient(60% 40% at 18% 18%, rgba(255,110,199,0.22), transparent 62%),
+    radial-gradient(55% 40% at 82% 30%, rgba(182,108,255,0.2), transparent 60%),
+    radial-gradient(80% 60% at 50% 0%,  rgba(95,168,255,0.1), transparent 65%);
   opacity:.95;
 }
 
-/* phone 내부 실제 컨텐츠는 위로 */
 .page-home .phone > *{
   position: relative;
   z-index: 1;
 }
 
-/* 2) 섹션1(히어로) 글래스 테두리 제거 */
-.page-home .hero2{
-  border: none !important;
-  /* 테두리 없애면 밋밋할 수 있어서 “유리 느낌”은 배경+그림자로 유지 */
-  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-  box-shadow: 0 18px 46px rgba(0,0,0,.45);
-}
-
-/* 3) ‘제주 유흥가이드’(kicker) / ‘24시간 상담 가능’ 화이트톤 부드럽게 */
-.page-home .kicker{
-  color: rgba(255,255,255,.78) !important; /* 쨍한 흰색 방지 */
-  text-shadow: 0 10px 28px rgba(0,0,0,.55);
-}
-
-.page-home .hero2__sub{
-  color: rgba(255,255,255,.74) !important; /* 부드러운 화이트 */
-}
-
-/* 4) 메인 타이틀(제주도 최대 노래 유흥 가이드) 그라데이션 */
-.page-home .hero2__title{
-  position: relative;
-  isolation: isolate;
-
-  /* 너가 원했던 1안 텍스트 그라데이션 */
-  background: linear-gradient(90deg, #ff6ec7 0%, #b66cff 45%, #5fa8ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* 5) 다이아몬드 반짝임(글씨 “따라서” 반짝) */
-.page-home .hero2__title::before{
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-
-  /* 글자만 보이게 */
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-
-  /* 스파클 패턴(점+결정 느낌) */
-  background:
-    radial-gradient(circle at 15% 30%, rgba(255,255,255,.90) 0 1px, transparent 2px),
-    radial-gradient(circle at 35% 55%, rgba(255,255,255,.80) 0 1px, transparent 2px),
-    radial-gradient(circle at 58% 35%, rgba(255,255,255,.95) 0 1px, transparent 2px),
-    radial-gradient(circle at 78% 60%, rgba(255,255,255,.85) 0 1px, transparent 2px),
-    linear-gradient(120deg, transparent 35%, rgba(255,255,255,.55) 50%, transparent 65%);
-
-  background-size: 140px 60px, 160px 70px, 150px 60px, 170px 70px, 220px 100%;
-  background-repeat: repeat, repeat, repeat, repeat, no-repeat;
-  background-position: 0 0, 40px 10px, 80px 0, 120px 12px, -220px 0;
-
-  /* 글자 위에서만 빛나게 */
-  mix-blend-mode: screen;
-  opacity: .0;
-
-  animation: diamondSpark 3.8s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(255,110,199,.18))
-          drop-shadow(0 0 14px rgba(182,108,255,.16));
-}
-
-@keyframes diamondSpark{
-  0%   { opacity: 0;   transform: translateX(-6px); background-position: 0 0, 40px 10px, 80px 0, 120px 12px, -220px 0; }
-  18%  { opacity: .55; }
-  38%  { opacity: .10; }
-  55%  { opacity: .65; transform: translateX(6px);  background-position: 30px 0, 70px 10px, 110px 0, 150px 12px, 40px 0; }
-  72%  { opacity: .12; }
-  100% { opacity: 0;   transform: translateX(-6px); background-position: 0 0, 40px 10px, 80px 0, 120px 12px, -220px 0; }
-}
-
-
-/* =========================================================
-   HERO SECTION FINAL FIX
-   - 노란 경고 제거용 (변수 미사용)
-   - 섹션1 글 테두리 제거
-   - 메인 타이틀 3줄 + 사이즈 업
-   - 화이트톤 부드럽게 조정
-========================================================= */
-
-/* 1) 섹션1 글래스 테두리 / 인위적 테두리 전부 제거 */
 .page-home .hero2{
   border: none !important;
   outline: none !important;
-  box-shadow: 0 18px 46px rgba(0,0,0,.45);
+  box-shadow: 0 18px 46px rgba(0,0,0,0.45);
 }
 
-/* 2) 상단 문구 (제주 유흥가이드) – 부드러운 화이트 */
 .page-home .kicker{
-  color: rgba(255,255,255,.78) !important;
+  color: rgba(255,255,255,0.78) !important;
   text-shadow: none !important;
 }
 
-/* 3) 하단 문구 (24시간 상담 가능) – 부드러운 화이트 */
 .page-home .hero2__sub{
-  color: rgba(255,255,255,.72) !important;
+  color: rgba(255,255,255,0.72) !important;
   text-shadow: none !important;
 }
 
-/* 4) 메인 타이틀 – 3줄 강제 + 크기 업 */
 .page-home .hero2__title{
-  font-size: 32px;           /* 글씨 크게 */
+  font-size: 32px;
   line-height: 1.15;
   font-weight: 950;
   text-align: center;
-
-  /* 강한 테두리 느낌 제거 */
   text-shadow: none !important;
-
-  /* 핑크 → 퍼플 → 블루 그라데이션 */
-  background: linear-gradient(
-    90deg,
-    #ff6ec7 0%,
-    #b66cff 45%,
-    #5fa8ff 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* 5) 3줄로 보이게 강제 줄바꿈 */
-.page-home .hero2__title::after{
-  content: "";
-  white-space: pre-line;
-}
-
-/* 6) 텍스트 내용 자체를 3줄처럼 보이게 처리 */
-.page-home .hero2__title{
   max-width: 280px;
   margin: 0 auto 12px;
+  position: relative;
+  isolation: isolate;
 }
 
-/* 7) 다이아몬드 반짝임 효과 (글자 안에서만) */
+/* 다이아몬드 반짝임(글자 안에서만) */
 .page-home .hero2__title::before{
   content: attr(data-text);
   position: absolute;
@@ -580,10 +445,10 @@ a:focus-visible{
   -webkit-background-clip: text;
 
   background:
-    radial-gradient(circle at 20% 35%, rgba(255,255,255,.9) 0 1px, transparent 2px),
-    radial-gradient(circle at 45% 60%, rgba(255,255,255,.8) 0 1px, transparent 2px),
-    radial-gradient(circle at 70% 40%, rgba(255,255,255,.95) 0 1px, transparent 2px),
-    linear-gradient(120deg, transparent 40%, rgba(255,255,255,.6) 50%, transparent 60%);
+    radial-gradient(circle at 20% 35%, rgba(255,255,255,0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 45% 60%, rgba(255,255,255,0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 40%, rgba(255,255,255,0.95) 0 1px, transparent 2px),
+    linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.6) 50%, transparent 60%);
 
   background-size: 160px 70px, 180px 80px, 170px 70px, 240px 100%;
   background-repeat: repeat, repeat, repeat, no-repeat;
@@ -603,686 +468,142 @@ a:focus-visible{
   100% { opacity: 0; background-position: 240px 0; }
 }
 
-
 /* =========================================================
-   FIX: 햄버거 메뉴(드로어) 클릭 불가 해결
-   - overlay / pseudo overlay / particles가 클릭을 가로채는 문제 방지
-   - drawer는 overlay보다 항상 위(z-index)로
+   FIX: 햄버거 메뉴 클릭 불가 해결
 ========================================================= */
-
-/* 배경/파티클은 절대 클릭을 가로채지 않게 */
 .page-home .bg,
 .page-home .particles,
 .page-home .particles *{
   pointer-events: none !important;
 }
 
-/* 헤더/메뉴 레이어를 확실히 위로 올림 */
-.page-home .header{
-  position: sticky;       /* base.css에 이미 있더라도 덮어쓰기 OK */
-  top: 0;
-  z-index: 1000;          /* 폰 내부에서 최상단 */
-  isolation: isolate;     /* header 내부 z-index 충돌 방지 */
-}
+/* (cleaned) home header/nav rules removed - handled in base.css */
 
-/* 햄버거 버튼은 항상 클릭 가능 */
-.page-home .hamburger{
-  position: relative;
-  z-index: 1010;
-  pointer-events: auto;
-}
-
-/* 드로어 메뉴가 overlay보다 위에 있도록 */
-.page-home .drawer{
-  position: absolute;     /* base.css가 fixed여도 문제 없음 */
-  z-index: 1020;          /* ✅ overlay보다 위 */
-  pointer-events: auto;   /* ✅ 링크 클릭 가능 */
-}
-
-/* 드로어 안 링크도 확실히 클릭 가능 */
-.page-home .drawer a{
-  position: relative;
-  z-index: 1;
-  pointer-events: auto;
-}
-
-/* overlay(바깥 클릭하면 닫히는 용도)는 drawer 아래로 */
-.page-home .overlay{
-  position: fixed;        /* base.css가 absolute여도 안전 */
-  inset: 0;
-  z-index: 1015;          /* ✅ drawer(1020)보다 아래 */
-  pointer-events: auto;   /* 바깥 클릭 닫기는 유지 */
-}
-
-/* phone::before 같은 내부 오버레이가 있을 때도 클릭 안 먹는 상황 방지 */
-.page-home .phone::before{
-  pointer-events: none !important;
-  z-index: 0;             /* 내용보다 아래 */
-}
-
-/* 혹시 content 레이어가 header 위로 올라오는 경우 방지 */
-.page-home .content{
-  position: relative;
-  z-index: 1;
+.phone .content{
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 
-
-
-
-/* =========================
-   Reviews Board (게시판 UI)
-   ========================= */
-.page-reviews .board{
-  margin: 16px 0 28px;
-  padding: 14px;
-  border-radius: 18px;
-  background: rgba(10, 14, 22, .55);
-  border: 1px solid rgba(255,255,255,.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.page-reviews .board__head{
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.page-reviews .board__title{
-  margin: 0;
-  font-size: 18px;
-  letter-spacing: .2px;
-}
-
-.page-reviews .board__sub{
-  margin: 6px 0 0;
-  font-size: 12px;
-  color: rgba(255,255,255,.70);
-}
-
-.page-reviews .board__write{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.88);
-  padding: 10px 12px;
-  border-radius: 14px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: transform .12s ease, background .12s ease;
-}
-.page-reviews .board__write:active{ transform: scale(.98); }
-.page-reviews .board__write:hover{ background: rgba(255,255,255,.09); }
-
-.page-reviews .board__tableWrap{
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(5, 8, 14, .45);
-}
-
-.page-reviews .board__table{
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-.page-reviews .board__table thead th{
-  font-size: 12px;
-  font-weight: 600;
-  padding: 10px 8px;
-  color: rgba(255,255,255,.78);
-  background: rgba(255,255,255,.04);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.page-reviews .board__table tbody td{
-  padding: 12px 8px;
-  font-size: 12.5px;
-  color: rgba(255,255,255,.86);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  vertical-align: middle;
-}
-
-.page-reviews .board__row:last-child td{ border-bottom: 0; }
-
-.page-reviews .col-title{ width: 44%; }
-.page-reviews .col-author{ width: 16%; text-align:center; }
-.page-reviews .col-time{ width: 22%; text-align:center; }
-.page-reviews .col-rate{ width: 10%; text-align:center; }
-.page-reviews .col-pass{ width: 8%; text-align:center; }
-
-.page-reviews .cell-title{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.page-reviews .linkTitle{
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  color: rgba(255,255,255,.92);
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: none;
-}
-.page-reviews .linkTitle:hover{
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.page-reviews .stars{
-  letter-spacing: .5px;
-  color: rgba(255,215,120,.95);
-  font-size: 12px;
-}
-
-.page-reviews .miniBtn{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.85);
-  padding: 7px 9px;
-  border-radius: 12px;
-  font-size: 12px;
-  cursor: pointer;
-}
-.page-reviews .miniBtn:hover{ background: rgba(255,255,255,.09); }
-
-/* Pager */
-.page-reviews .board__pager{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.page-reviews .pagerBtn{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-  color: rgba(255,255,255,.82);
-  padding: 8px 12px;
-  border-radius: 12px;
-  font-size: 12px;
-  cursor: pointer;
-}
-.page-reviews .pagerInfo{
-  font-size: 12px;
-  color: rgba(255,255,255,.75);
-}
-
-/* Modal */
-.page-reviews .modal{
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 3000;
-}
-.page-reviews .modal.is-open{ display: block; }
-
-.page-reviews .modal__backdrop{
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.55);
-}
-
-.page-reviews .modal__panel{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: min(420px, calc(100% - 22px));
-  border-radius: 18px;
-  background: rgba(10, 14, 22, .92);
-  border: 1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 18px 60px rgba(0,0,0,.55);
-  padding: 14px;
-}
-
-.page-reviews .modal__top{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.page-reviews .modal__title{
-  font-size: 15px;
-  font-weight: 800;
-  color: rgba(255,255,255,.92);
-}
-.page-reviews .modal__close{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.90);
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.page-reviews .modal__meta{
-  font-size: 12px;
-  color: rgba(255,255,255,.70);
-  margin-bottom: 10px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.page-reviews .modal__body{
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(255,255,255,.86);
-  padding: 10px 10px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
-  min-height: 120px;
-}
-
-.page-reviews .modal__actions{
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-  margin-top: 12px;
-}
-
-/* 모바일에서 표 너무 작으면: 일부 컬럼 숨김 */
-@media (max-width: 380px){
-  .page-reviews .col-time{ display:none; }
-  .page-reviews .col-pass{ display:none; }
-  .page-reviews .col-title{ width: 58%; }
-  .page-reviews .col-author{ width: 20%; }
-  .page-reviews .col-rate{ width: 22%; }
-}
-
-
-/* =========================
-   Reviews Board (게시판 UI)
-   ========================= */
-.page-reviews .board{
-  margin: 16px 0 28px;
-  padding: 14px;
-  border-radius: 18px;
-  background: rgba(10, 14, 22, .55);
-  border: 1px solid rgba(255,255,255,.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.page-reviews .board__head{
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.page-reviews .board__title{
-  margin: 0;
-  font-size: 18px;
-  letter-spacing: .2px;
-}
-
-.page-reviews .board__sub{
-  margin: 6px 0 0;
-  font-size: 12px;
-  color: rgba(255,255,255,.70);
-}
-
-.page-reviews .board__write{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.88);
-  padding: 10px 12px;
-  border-radius: 14px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: transform .12s ease, background .12s ease;
-}
-.page-reviews .board__write:active{ transform: scale(.98); }
-.page-reviews .board__write:hover{ background: rgba(255,255,255,.09); }
-
-.page-reviews .board__tableWrap{
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(5, 8, 14, .45);
-}
-
-.page-reviews .board__table{
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-.page-reviews .board__table thead th{
-  font-size: 12px;
-  font-weight: 600;
-  padding: 10px 8px;
-  color: rgba(255,255,255,.78);
-  background: rgba(255,255,255,.04);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.page-reviews .board__table tbody td{
-  padding: 12px 8px;
-  font-size: 12.5px;
-  color: rgba(255,255,255,.86);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  vertical-align: middle;
-}
-.page-reviews .board__row:last-child td{ border-bottom: 0; }
-
-.page-reviews .col-title{ width: 44%; }
-.page-reviews .col-author{ width: 16%; text-align:center; }
-.page-reviews .col-time{ width: 22%; text-align:center; }
-.page-reviews .col-rate{ width: 10%; text-align:center; }
-.page-reviews .col-pass{ width: 8%; text-align:center; }
-
-.page-reviews .cell-title{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.page-reviews .linkTitle{
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  color: rgba(255,255,255,.92);
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
-  font-weight: 600;
-}
-.page-reviews .linkTitle:hover{
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.page-reviews .stars{
-  letter-spacing: .5px;
-  color: rgba(255,215,120,.95);
-  font-size: 12px;
-}
-
-.page-reviews .miniBtn{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.85);
-  padding: 7px 9px;
-  border-radius: 12px;
-  font-size: 12px;
-  cursor: pointer;
-}
-.page-reviews .miniBtn:hover{ background: rgba(255,255,255,.09); }
-
-/* Pager */
-.page-reviews .board__pager{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.page-reviews .pagerBtn{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-  color: rgba(255,255,255,.82);
-  padding: 8px 12px;
-  border-radius: 12px;
-  font-size: 12px;
-  cursor: pointer;
-}
-.page-reviews .pagerInfo{
-  font-size: 12px;
-  color: rgba(255,255,255,.75);
-}
-
-/* Modal */
-.page-reviews .modal{
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 3000;
-}
-.page-reviews .modal.is-open{ display: block; }
-
-.page-reviews .modal__backdrop{
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.55);
-}
-
-.page-reviews .modal__panel{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: min(420px, calc(100% - 22px));
-  border-radius: 18px;
-  background: rgba(10, 14, 22, .92);
-  border: 1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 18px 60px rgba(0,0,0,.55);
-  padding: 14px;
-}
-
-.page-reviews .modal__top{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.page-reviews .modal__title{
-  font-size: 15px;
-  font-weight: 800;
-  color: rgba(255,255,255,.92);
-}
-.page-reviews .modal__close{
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.90);
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.page-reviews .modal__meta{
-  font-size: 12px;
-  color: rgba(255,255,255,.70);
-  margin-bottom: 10px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.page-reviews .modal__body{
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(255,255,255,.86);
-  padding: 10px 10px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
-  min-height: 120px;
-}
-
-.page-reviews .modal__actions{
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-  margin-top: 12px;
-}
-
-@media (max-width: 380px){
-  .page-reviews .col-time{ display:none; }
-  .page-reviews .col-pass{ display:none; }
-  .page-reviews .col-title{ width: 58%; }
-  .page-reviews .col-author{ width: 20%; }
-  .page-reviews .col-rate{ width: 22%; }
-}
 
 /* =========================================================
-   Reviews Board UI Upgrade
-   - 제목(내용) : 제목 + 내용 미리보기(작은 글씨, ... 처리)
-   - 상단 고객후기(page-title) 숨김(이미 HTML에서 삭제 권장)
-   - 섹션 타이틀 아이콘
-   - 고정버튼스타일1 (글래스 + 핑크~보라 그라데이션 + 잔진동 + 반짝)
+   REVIEWS PAGE (게시판 UI)
+   - 중복 블록 제거 후 “최종본”만 유지
 ========================================================= */
-
-/* (혹시 page-title을 HTML에서 안 지웠다면) 숨김 처리 */
 .page-reviews .page-title { display: none !important; }
 
-/* 섹션 타이틀 아이콘 */
+.page-reviews .board{
+  margin: 16px 0 28px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(10,14,22,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.page-reviews .board__head{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .page-reviews .board__title{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: .2px;
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
 .page-reviews .board__icon{
   display: inline-grid;
   place-items: center;
   width: 26px;
   height: 26px;
   border-radius: 10px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* 제목(내용) 셀: 제목 + 미리보기 2줄 */
-.page-reviews .cell-title{
-  white-space: normal !important;
-}
-.page-reviews .cell-title .linkTitle{
-  display: block;
-  line-height: 1.25;
-  font-weight: 800;
-}
-.page-reviews .cell-title .preview{
-  margin-top: 6px;
+.page-reviews .board__sub{
+  margin: 6px 0 0;
   font-size: 12px;
-  line-height: 1.35;
-  color: rgba(255,255,255,.70);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;        /* 2줄까지만 보이게 */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  color: rgba(255,255,255,0.7);
 }
 
-/* ===== 고정버튼스타일1 (글작성하기) ===== */
+/* 고정버튼스타일1 (글작성하기) */
 .page-reviews .board__write{
-  /* 글래스 느낌 */
+  appearance: none;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.18);
-  background: linear-gradient(135deg,
-    rgba(200, 90, 255, .55),
-    rgba(255, 80, 200, .35)
-  );
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.18);
+  background: linear-gradient(135deg, rgba(200,90,255,0.55), rgba(255,80,200,0.35));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* 흰 글씨 + 아이콘 자리 */
-  color: rgba(255,255,255,.95);
+  color: rgba(255,255,255,0.95);
   font-weight: 900;
   letter-spacing: .2px;
 
-  /* 약간 더 고급스럽게 */
-  box-shadow:
-    0 14px 40px rgba(0,0,0,.45),
-    0 0 0 1px rgba(255,255,255,.10) inset;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 13px;
 
-  /* “잔진동” 느낌 (너무 과하지 않게) */
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.1) inset;
+
   animation: btnJitter 3.6s ease-in-out infinite;
   transform-origin: center;
 }
 
-/* 버튼 안 반짝이는 빛 띠 */
 .page-reviews .board__write::before{
   content:"";
   position:absolute;
   inset:-40%;
-  background: linear-gradient(120deg,
-    rgba(255,255,255,0) 35%,
-    rgba(255,255,255,.25) 50%,
-    rgba(255,255,255,0) 65%
-  );
+  background: linear-gradient(120deg, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.0) 65%);
   transform: translateX(-40%) rotate(8deg);
   animation: btnShine 2.8s ease-in-out infinite;
   pointer-events:none;
 }
 
-/* 버튼 바깥쪽 은은한 글로우 */
 .page-reviews .board__write::after{
   content:"";
   position:absolute;
   inset:-2px;
   border-radius: inherit;
-  background: radial-gradient(circle at 30% 30%,
-    rgba(255, 120, 240, .35),
-    rgba(120, 80, 255, 0) 60%
-  );
+  background: radial-gradient(circle at 30% 30%, rgba(255,120,240,0.35), rgba(120,80,255,0.0) 60%);
   filter: blur(10px);
   opacity: .65;
   pointer-events:none;
 }
 
-/* 눌렀을 때 반응 */
-.page-reviews .board__write:active{
-  transform: scale(.985);
-}
+.page-reviews .board__write:active{ transform: scale(.985); }
 
-/* 버튼 텍스트 + 아이콘 스타일(나중에 "고정버튼스타일1"로 재사용 가능) */
 .page-reviews .board__write .btnIcon{
   display:inline-block;
   margin-right: 8px;
   transform: translateY(1px);
 }
 
-/* 잔진동 애니메이션 */
 @keyframes btnJitter{
   0%, 100% { transform: translate3d(0,0,0) rotate(0deg); }
-  8% { transform: translate3d(0.3px,-0.2px,0) rotate(-0.12deg); }
-  16% { transform: translate3d(-0.2px,0.3px,0) rotate(0.10deg); }
-  24% { transform: translate3d(0.25px,0.15px,0) rotate(-0.08deg); }
-  32% { transform: translate3d(-0.15px,-0.2px,0) rotate(0.06deg); }
-  40% { transform: translate3d(0.15px,0.1px,0) rotate(-0.05deg); }
-  48% { transform: translate3d(-0.1px,0.15px,0) rotate(0.04deg); }
-  56% { transform: translate3d(0.08px,-0.1px,0) rotate(-0.03deg); }
-  64% { transform: translate3d(-0.06px,0.08px,0) rotate(0.02deg); }
-  72% { transform: translate3d(0.05px,0.04px,0) rotate(-0.02deg); }
-  80% { transform: translate3d(-0.04px,-0.05px,0) rotate(0.02deg); }
-  88% { transform: translate3d(0.03px,0.04px,0) rotate(-0.01deg); }
+  12% { transform: translate3d(0.3px,-0.2px,0) rotate(-0.12deg); }
+  24% { transform: translate3d(-0.2px,0.3px,0) rotate(0.10deg); }
+  36% { transform: translate3d(0.25px,0.15px,0) rotate(-0.08deg); }
+  48% { transform: translate3d(-0.15px,-0.2px,0) rotate(0.06deg); }
+  60% { transform: translate3d(0.15px,0.1px,0) rotate(-0.05deg); }
+  72% { transform: translate3d(-0.1px,0.15px,0) rotate(0.04deg); }
+  84% { transform: translate3d(0.08px,-0.1px,0) rotate(-0.03deg); }
 }
 
-/* 빛띠 스윽~ 지나가는 애니메이션 */
 @keyframes btnShine{
   0%   { transform: translateX(-60%) rotate(8deg); opacity: .0; }
   18%  { opacity: .55; }
@@ -1291,72 +612,4948 @@ a:focus-visible{
   100% { transform: translateX(60%) rotate(8deg); opacity: .0; }
 }
 
+.page-reviews .board__tableWrap{
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(5,8,14,0.45);
 
-/* ===== 후기 게시판: 더 많이 보이게(글씨 작게 + 여백 줄임 + preview 3줄) ===== */
+  /* 내부 스크롤 (세로+가로) */
+  max-height: 520px;
+  overflow-y: auto;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 좁은 화면에서 표가 찌그러지지 않게 최소 너비를 줘서 '가로 스크롤'로 해결 */
+.page-reviews .board__table{
+  min-width: 560px;
+}
+
+/* 별점이 줄바꿈/깨짐 없이 한 덩어리로 유지 */
+.page-reviews .stars{
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+
+.page-reviews .board__table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
 .page-reviews .board__table thead th{
   font-size: 11px;
+  font-weight: 600;
   padding: 8px 6px;
-}
+  color: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 
-.page-reviews .board__table tbody td{
-  font-size: 11.5px;
-  padding: 9px 6px;
-}
-
-/* 제목(내용) 셀: 제목은 한 줄, 미리보기는 3줄 */
-.page-reviews .cell-title{
-  white-space: normal !important;
-}
-
-.page-reviews .cell-title .linkTitle{
-  display:block;
-  font-size: 12px;          /* 제목도 조금 작게 */
-  font-weight: 800;
-  line-height: 1.2;
-  margin: 0;
-}
-
-/* ✅ 미리보기 3줄 노출 + ... 처리 */
-.page-reviews .cell-title .preview{
-  margin-top: 4px;
-  font-size: 10.8px;
-  line-height: 1.35;
-  color: rgba(255,255,255,.70);
-
-  display: -webkit-box;
-  -webkit-line-clamp: 3;      /* ★ 3줄 */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-
-/* ===== 게시판 10개 정도 보이고 내부 스크롤 ===== */
-/* 테이블 감싸는 박스 자체를 스크롤 컨테이너로 */
-.page-reviews .board__tableWrap{
-  max-height: 520px;          /* 여기 숫자만 조절하면 10개 느낌 맞출 수 있음 */
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-/* 스크롤 안에서 헤더 고정 */
-.page-reviews .board__table thead th{
   position: sticky;
   top: 0;
   z-index: 2;
 }
 
-/* 스크롤바 톤(선택) */
+.page-reviews .board__table tbody td{
+  padding: 9px 6px;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.86);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  vertical-align: middle;
+}
+
+.page-reviews .board__row:last-child td{ border-bottom: 0; }
+
+.page-reviews .col-title{ width: 44%; }
+.page-reviews .col-author{ width: 16%; text-align:center; }
+.page-reviews .col-time{ width: 22%; text-align:center; }
+.page-reviews .col-rate{ width: 10%; text-align:center; }
+.page-reviews .col-pass{ width: 8%; text-align:center; }
+
+/* 제목+미리보기 */
+.page-reviews .cell-title{ white-space: normal !important; }
+.page-reviews .cell-title .linkTitle{
+  display: block;
+  line-height: 1.2;
+  font-weight: 800;
+  color: rgba(255,255,255,0.92);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.page-reviews .cell-title .linkTitle:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-reviews .cell-title .preview{
+  margin-top: 4px;
+  font-size: 10.8px;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.7);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 별점 */
+.page-reviews .stars{
+  letter-spacing: .5px;
+  color: rgba(255,215,120,0.95);
+  font-size: 12px;
+}
+
+/* 수정 버튼 */
+.page-reviews .miniBtn{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.85);
+  padding: 7px 9px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.page-reviews .miniBtn:hover{ background: rgba(255,255,255,0.09); }
+
+/* 스크롤바 */
 .page-reviews .board__tableWrap::-webkit-scrollbar{ width: 10px; }
 .page-reviews .board__tableWrap::-webkit-scrollbar-thumb{
-  background: rgba(255,255,255,.14);
+  background: rgba(255,255,255,0.14);
   border-radius: 10px;
-  border: 2px solid rgba(0,0,0,0);
+  border: 2px solid rgba(0,0,0,0.0);
   background-clip: padding-box;
 }
 .page-reviews .board__tableWrap::-webkit-scrollbar-track{
-  background: rgba(255,255,255,.04);
+  background: rgba(255,255,255,0.04);
+}
+
+/* 모바일에서 너무 좁으면 컬럼 숨김 */
+@media (max-width: 380px){
+  .page-reviews .col-time{ display:none; }
+  .page-reviews .col-pass{ display:none; }
+  .page-reviews .col-title{ width: 58%; }
+  .page-reviews .col-author{ width: 20%; }
+  .page-reviews .col-rate{ width: 22%; }
+}
+
+/* =========================================================
+   LATEST REVIEWS (홈에서만 적용되게 스코프)
+========================================================= */
+.page-home .latestReviews{
+  margin: 18px 0 8px;
+  padding: 14px 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.page-home .latestHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.page-home .latestTitle{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.page-home .latestMore{
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  background: linear-gradient(90deg, rgba(255,0,170,0.55), rgba(140,0,255,0.55));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.page-home .latestGrid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 560px){
+  .page-home .latestGrid{ grid-template-columns: 1fr 1fr; }
+}
+
+.page-home .latestCard{
+  border-radius: 16px;
+  padding: 12px 12px 10px;
+  background: rgba(10,12,20,0.55);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-home .latestCard::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,0,170,0.18), transparent 55%),
+    radial-gradient(circle at 85% 70%, rgba(140,0,255,0.18), transparent 60%);
+  filter: blur(2px);
+  pointer-events:none;
+}
+
+.page-home .latestCardInner{
+  position: relative;
+  z-index: 1;
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+}
+
+.page-home .latestTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+}
+
+.page-home .latestStars{
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: .95;
+  white-space: nowrap;
+}
+
+.page-home .latestDate{
+  font-size: 11px;
+  opacity: .75;
+  white-space: nowrap;
+}
+
+.page-home .latestText{
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .92;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.page-home .latestMeta{
+  display:flex;
+  justify-content:space-between;
+  gap: 10px;
+  font-size: 11px;
+  opacity: .78;
+}
+
+.page-home .latestBtn{
+  margin-top: 2px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: rgba(255,255,255,0.98);
+  text-decoration:none;
+  background: linear-gradient(90deg, rgba(255,0,170,0.55), rgba(140,0,255,0.55));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+}
+
+.page-home .latestBtn:active{ transform: translateY(1px); }
+
+.page-home .latestSkeleton{
+  height: 140px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow:hidden;
+  position: relative;
+}
+.page-home .latestSkeleton::after{
+  content:"";
+  position:absolute; inset:0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: latestShimmer 1.2s infinite;
+}
+@keyframes latestShimmer{
+  100%{ transform: translateX(100%); }
+}
+
+
+/* =========================
+   HOME: Latest Reviews UI polish (home-only)
+   ========================= */
+.page-home .latestReviews__head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin: 10px 0 12px;
+}
+
+.page-home .latestReviews__title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.page-home .latestReviews__icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+  color: rgba(255,255,255,0.92);
+}
+
+/* 별점: 노란 별로 */
+.page-home .latestReviews .stars,
+.page-home .latestReviews .latestReviews__stars{
+  color: #ffd86b;                /* 노란 별 */
+  text-shadow: 0 0 8px rgba(255,216,107,0.35);
+  letter-spacing: 1px;
+}
+
+/* "자동후기" 문구 숨김 */
+.page-home .latestReviews__auto{
+  display:none !important;
+}
+
+/* 버튼이 전부 보라색이라 답답한 느낌 → 조금 더 차분한 톤 + 잔진동 */
+.page-home .latestReviews a,
+.page-home .latestReviews button{
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.page-home .latestReviews a:hover,
+.page-home .latestReviews button:hover{
+  filter: brightness(1.05);
+}
+
+/* 버튼 잔진동(아주 약하게) */
+@keyframes microWiggle {
+  0%   { transform: translate3d(0,0,0) rotate(0deg); }
+  20%  { transform: translate3d(0.2px,-0.2px,0) rotate(-0.08deg); }
+  40%  { transform: translate3d(-0.2px,0.2px,0) rotate(0.08deg); }
+  60%  { transform: translate3d(0.2px,0.2px,0) rotate(-0.06deg); }
+  80%  { transform: translate3d(-0.2px,-0.2px,0) rotate(0.06deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+
+/* "전체보기" 버튼/링크에만 적용하고 싶으면 이 클래스들로 제한 */
+.page-home .latestReviews__more,
+.page-home .latestReviews .btn,
+.page-home .latestReviews .btn-primary{
+  animation: microWiggle 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* 너무 튀면 마우스 올릴 때 멈추게 */
+.page-home .latestReviews__more:hover,
+.page-home .latestReviews .btn:hover,
+.page-home .latestReviews .btn-primary:hover{
+  animation-play-state: paused;
+}
+
+
+.page-home .latestReviews__more{
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   HOME: Latest Reviews polish (home-only)
+   ========================= */
+.page-home .latestHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin: 10px 0 12px;
+}
+
+.page-home .latestTitle{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0;
+}
+
+.page-home .latestIcon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+  color: rgba(255,255,255,0.92);
+}
+
+/* 별점: 노란 별 */
+.page-home .latestStars{
+  color: #ffd86b;
+  text-shadow: 0 0 8px rgba(255,216,107,0.35);
+  letter-spacing: 1px;
+}
+
+
+
+/* "자동후기" 문구 숨김 */
+.page-home .latestAuto{
+  display:none !important;
+}
+
+/* 버튼/링크 잔진동 */
+@keyframes microWiggle {
+  0%   { transform: translate3d(0,0,0) rotate(0deg); }
+  20%  { transform: translate3d(0.2px,-0.2px,0) rotate(-0.08deg); }
+  40%  { transform: translate3d(-0.2px,0.2px,0) rotate(0.08deg); }
+  60%  { transform: translate3d(0.2px,0.2px,0) rotate(-0.06deg); }
+  80%  { transform: translate3d(-0.2px,-0.2px,0) rotate(0.06deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+
+.page-home .latestWiggle{
+  animation: microWiggle 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.page-home .latestWiggle:hover{
+  animation-play-state: paused;
+}
+
+
+/* =========================
+   REGION PAGE (제주시 / 서귀포시)
+========================= */
+
+.region-hero{
+  padding: 18px 16px 6px;
+}
+
+.region-hero h1{
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.region-hero .sub{
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+}
+
+/* 이미지 갤러리 */
+.region-gallery{
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.region-gallery .img{
+  height: 110px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0a1f4d, #030814);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+}
+
+/* 면책 */
+.region-disclaimer{
+  margin: 14px 16px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.85);
+}
+
+/* SEO 텍스트 */
+.region-seo{
+  margin: 14px 16px 24px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.8);
+}
+
+
+/* =========================
+   REGION PAGES (Jejusi / Seogwipo)
+   - 모바일에서 좌우 여백 확보
+   - 메인 "협력업체 배너 버튼"과 동일 크기(110px) 5개 노출
+========================= */
+
+.page-region .content{
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-bottom: 18px;
+  padding-top: 0;
+}
+
+
+/* 상단 타이틀(페이지 이름) */
+.page-region .regionTitle{
+  margin: 16px 0 10px;
+  padding: 18px 14px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow2);
+}
+
+.page-region .regionTitle h1{
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.page-region .regionTitle p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+}
+
+/* 메인(협력업체)과 동일한 배너 버튼 영역 */
+.page-region .partner-row{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 12px 0 16px;
+}
+
+.page-region .partner-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, #081a3a, #020814);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.62);
+  color: rgba(255,255,255,0.88);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: .4px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-region .partner-btn::after{
+  content:"";
+  position:absolute;
+  inset:-40% -30%;
+  background: radial-gradient(circle at 30% 30%, rgba(140,170,255,0.22), transparent 55%);
+  pointer-events:none;
+}
+
+/* 면책(법적 리스크 줄이는 문구 박스) */
+.page-region .regionNotice{
+  margin: 14px 0 14px;
+  padding: 14px 14px;
+  border-radius: var(--r-lg);
+  background: rgba(0,0,0,0.32);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+}
+
+.page-region .regionNotice strong{
+  color: rgba(255,255,255,0.95);
+}
+
+/* SEO 문단 */
+.page-region .regionSeo{
+  margin: 0 0 14px;
+  padding: 16px 14px;
+  border-radius: var(--r-lg);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.8);
+  word-break: keep-all;
+}
+
+
+/* =========================
+   REVIEWS: 프레임 폭 기준(카드형)
+========================= */
+@container (max-width: 520px){
+  .page-reviews .board__table{
+    min-width: 0 !important;
+    table-layout: auto;
+  }
+
+  .page-reviews .board__table thead{
+    display:none;
+  }
+
+  .page-reviews .board__table tbody tr{
+    display:block;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .page-reviews .board__table tbody td{
+    display:block;
+    width: 100% !important;
+    padding: 0;
+    border: 0;
+  }
+
+  .page-reviews .cell-title{ margin-bottom: 8px; }
+
+  .page-reviews .cell-author,
+  .page-reviews .cell-time,
+  .page-reviews .cell-rate{
+    display:inline-block;
+    font-size: 11px;
+    opacity: .8;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  .page-reviews .cell-rate .stars{
+    font-size: 12px;
+    opacity: 1;
+    white-space: nowrap;
+  }
+
+  .page-reviews .cell-pass{
+    margin-top: 10px;
+  }
+}
+
+
+.phone{ container-type: inline-size; }
+
+
+
+/* =========================
+   REVIEWS MODAL (상세보기 팝업)
+========================= */
+.reviewModal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.reviewModal.is-open{ display: flex; }
+
+.reviewModal .modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+}
+
+.reviewModal .modal__panel{
+  position: relative;
+  width: min(520px, 100%);
+  max-height: 80vh;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10,14,22,0.78);
+  box-shadow: 0 20px 70px rgba(0,0,0,0.55);
+}
+
+.reviewModal .modal__top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.reviewModal .modal__title{
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -.2px;
+}
+
+.reviewModal .modal__close{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+
+.reviewModal .modal__meta{
+  padding: 10px 14px 0;
+  font-size: 12px;
+  opacity: .82;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewModal .modal__body{
+  padding: 12px 14px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  max-height: calc(80vh - 120px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre-wrap;
+}
+
+.reviewModal .modal__actions{
+  padding: 12px 14px 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* “수정하기”는 UX상 필요 없으면 숨김(기능도 없으니까) */
+.reviewModal #fakeEditBtn{ display: none; }
+
+/* 표의 ‘수정(비밀번호)’ 컬럼도 필요없으면 숨김(생성로직 건드리지 않고 UI만 숨김) */
+.page-reviews .col-pass,
+.page-reviews .cell-pass{
+  display: none;
+}
+
+
+/* =========================
+   HOME: 최신후기 "센터 포커스" 캐러셀
+========================= */
+.page-home .latestCarousel{
+  position: relative;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 6px 0 4px;
+}
+
+.page-home .latestTrack{
+  display: flex;
+  gap: 14px;
+  padding: 8px 38px;                 /* 좌우 여백을 줘서 좌/우 카드가 ‘살짝’ 보이게 */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.page-home .latestTrack::-webkit-scrollbar{ display:none; }
+
+.page-home .latestSlide{
+  scroll-snap-align: center;
+  flex: 0 0 78%;
+  transform: scale(.92);
+  opacity: .55;
+  filter: blur(.2px);
+  transition: transform .28s ease, opacity .28s ease, filter .28s ease;
+  will-change: transform;
+}
+
+.page-home .latestSlide.is-active{
+  transform: scale(1);
+  opacity: 1;
+  filter: none;
+}
+
+.page-home .latestSlide.is-side{
+  transform: scale(.90);
+  opacity: .45;
+  filter: blur(.6px);
+}
+
+/* 카드 안쪽 버튼(기존에 있던 고객후기 전체보기 버튼) 숨김 */
+.page-home .latestCard .btn,
+.page-home .latestCard .btnAll,
+.page-home .latestCard .btnLatestAll{
+  display: none !important;
+}
+
+/* 섹션 아래 단일 버튼 */
+.page-home .btnLatestAll{
+  display: block;
+  margin: 10px 0 2px;
+  text-align: center;
+  padding: 14px 14px;
+  border-radius: 16px;
+  font-weight: 800;
+  letter-spacing: -.2px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: linear-gradient(135deg, rgba(167,30,255,0.75), rgba(70,90,255,0.7));
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+}
+
+/* Skeleton(로딩 카드)도 슬라이드처럼 보이게 */
+.page-home .latestSkeleton{
+  flex: 0 0 78%;
+  height: 170px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.06);
+}
+
+
+/* =========================
+   HOME ONLY: "잔상 + 심장박동 + 빛 스윕" (COLOR KEEP)
+   - Keeps your original button background colors (does NOT override background)
+   - Adds trailing glow/afterimage and pulse like the GIF
+   Targets ONLY:
+   - "더 알아보기" (a.place-more)
+   - "고객후기 전체보기" (a.btnLatestAll)
+========================= */
+
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain){
+  position: relative;
+  isolation: isolate;          /* let glow stay behind */
+  overflow: hidden;
+  border-radius: 999px;
+  -webkit-tap-highlight-color: transparent;
+
+  /* Keep original color/background from your existing styles */
+  /* We only enhance motion + glow */
+  transition: transform .22s ease, filter .22s ease, box-shadow .22s ease;
+  animation: homeBtnPulse2 1.25s ease-in-out infinite;
+}
+
+/* Shine sweep (no color change, just light) */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain)::before{
+  content:"";
+  position:absolute;
+  inset:-140% -55%;
+  background: linear-gradient(120deg,
+    transparent 42%,
+    rgba(255,255,255,0.55) 50%,
+    transparent 58%
+  );
+  transform: translateX(-70%);
+  animation: homeBtnShine2 3.1s ease-in-out infinite;
+  pointer-events:none;
+  mix-blend-mode: screen;
+  opacity: .9;
+}
+
+/* Afterimage / trailing glow behind the button */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain)::after{
+  content:"";
+  position:absolute;
+  inset:-18px -22px;
+  border-radius: 999px;
+  z-index: -1;
+  pointer-events:none;
+
+  /* Glow colors tuned to your GIF (pink → purple).
+     This is only the halo; it won't change the button's own gradient. */
+  background:
+    radial-gradient(80% 70% at 20% 40%, rgba(255,95,140,0.55), transparent 62%),
+    radial-gradient(90% 80% at 80% 45%, rgba(170,90,255,0.48), transparent 66%),
+    radial-gradient(90% 90% at 55% 85%, rgba(120,160,255,0.22), transparent 70%);
+  filter: blur(12px);
+  opacity: .45;
+
+  animation: homeBtnAfter2 1.25s ease-in-out infinite;
+}
+
+/* Extra trailing via drop-shadows (gives "잔상" feel) */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain){
+  filter:
+    drop-shadow(0 10px 22px rgba(0,0,0,0.4))
+    drop-shadow(0 0 18px rgba(255,95,140,0.18))
+    drop-shadow(0 0 22px rgba(170,90,255,0.14));
+}
+
+/* Hover: slightly stronger but still classy */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain):hover{
+  transform: translateY(-1px) scale(1.03);
+  filter:
+    drop-shadow(0 14px 28px rgba(0,0,0,0.5))
+    drop-shadow(0 0 22px rgba(255,95,140,0.22))
+    drop-shadow(0 0 28px rgba(170,90,255,0.18));
+}
+
+/* Active: tiny press */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain):active{
+  transform: translateY(0) scale(.99);
+}
+
+/* Animations */
+@keyframes homeBtnPulse2{
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.03); }
+}
+
+@keyframes homeBtnShine2{
+  0%   { transform: translateX(-70%); opacity: 0; }
+  18%  { opacity: .75; }
+  50%  { transform: translateX(70%); opacity: .45; }
+  100% { transform: translateX(70%); opacity: 0; }
+}
+
+/* Glow "breathing" + slight drift = afterimage vibe */
+@keyframes homeBtnAfter2{
+  0%,100% { opacity: .38; filter: blur(12px); transform: translateY(0); }
+  50%     { opacity: .72; filter: blur(16px); transform: translateY(1px); }
+}
+
+/* Hide "자동후기" label on home */
+.page-home .latestAuto{ display:none !important; }
+
+/* NOTE: .drawer/.overlay/.hamburger are managed in base.css */
+
+/* =========================
+   HERO 1 – 구조 전용
+   ========================= */
+
+.hero2--layout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px; /* 지금 비율 유지 */
+  padding: 24px 18px;
+}
+
+.hero2__inner{
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+
+  /* 🔒 나중에 배경/유리효과 여기서 */
+}
+
+.hero2__title{
+  margin: 14px 0 10px;
+  line-height: 1.1;
+}
+
+.hero2__cta{
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   HERO 1 전용 배경 그라데이션
+   ========================= */
+
+.hero2{
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    #05272E 0%,
+    #0B1F24 45%,
+    #040709 100%
+  );
+}
+
+/* =========================
+   HERO 1 배경 강제 적용
+   ========================= */
+
+/* 섹션 1 전체 배경 */
+.sec.hero2{
+  background: linear-gradient(
+    to bottom,
+    #05272E 0%,
+    #040709 100%
+  ) !important;
+}
+
+/* 글래스 모피즘 완전 제거 */
+.sec.hero2::before,
+.sec.hero2::after,
+.hero2__inner{
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* =========================
+   HERO 1 배경을 폰 전체 폭으로 (content 패딩 뚫기)
+   ========================= */
+
+/* content가 좌우 패딩을 가지고 있어서 섹션 배경이 안쪽에만 보임
+   → hero2만 풀블리드(풀폭)로 만들기 */
+.page-home .content{
+  --content-pad: 18px; /* 너네 content padding 값에 맞춰. 보통 16~20 */
+}
+
+.page-home .sec.hero2{
+  /* 좌우 패딩만큼 바깥으로 확장 */
+  margin-left: calc(var(--content-pad) * -1);
+  margin-right: calc(var(--content-pad) * -1);
+
+  /* 배경은 풀폭으로 */
+  border-radius: 0;
+  background: linear-gradient(to bottom, #05272E 0%, #040709 100%) !important;
+}
+
+/* 풀폭으로 만든 대신, 섹션 내부 콘텐츠는 다시 패딩을 줘서 정렬 유지 */
+.page-home .sec.hero2 .hero2__inner{
+  padding-left: var(--content-pad);
+  padding-right: var(--content-pad);
+
+  /* 혹시 남아있는 유리/박스 효과 제거 */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* =========================
+   HOME 섹션1(hero2)만 풀폭 배경 (content padding 14px 뚫기)
+   ========================= */
+
+.page-home .sec.hero2{
+  /* content 좌우 패딩(14px)만큼 밖으로 확장 */
+  margin-left: -14px;
+  margin-right: -14px;
+
+  /* 안쪽 내용은 다시 14px로 맞춰서 정렬 유지 */
+  padding-left: 14px;
+  padding-right: 14px;
+
+  /* 섹션 전체에 배경 그라데이션 */
+  background: linear-gradient(to bottom, #05272E 0%, #040709 100%) !important;
+
+  /* 유리/박스 느낌 제거 */
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 혹시 테마에서 hero2에 덮어놓은 가상요소가 있으면 제거 */
+.page-home .sec.hero2::before,
+.page-home .sec.hero2::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* =========================
+   HOME HERO (섹션1) 풀-배경 + 유리(카드) 제거
+   ========================= */
+.page-home .sec.hero2{
+  position: relative !important;
+
+  /* content 좌우패딩(14px) 무시하고 폰 폭 끝까지 배경이 차도록 */
+  width: calc(100% + 28px) !important;
+  margin-left: -14px !important;
+  margin-right: -14px !important;
+
+  /* 섹션 높이/여백(원하는대로 나중에 조절) */
+  padding: 96px 14px 84px !important;
+
+  /* ✅ 너가 말한 위→아래 그라데이션(지금은 예시값, 색은 나중에 바꿔도 됨) */
+  background: linear-gradient(180deg, rgb(5, 39, 46) 0%, rgb(4, 7, 9) 100%) !important;
+
+  /* 섹션 자체는 둥글게 하지 않음(배경이 프레임 끝까지 자연스럽게) */
+  border-radius: 0 !important;
+
+  /* 혹시 기본 sec 스타일로 border/shadow가 있으면 제거 */
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* hero2에 깔려있는 "유리 카드"가 보통 ::before/::after로 들어가서 네모가 생김 → 제거 */
+.page-home .sec.hero2::before,
+.page-home .sec.hero2::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* 타이틀/문구/버튼류에 유리 배경이 남아있으면 전부 제거 */
+.page-home .sec.hero2 .hero2__title,
+.page-home .sec.hero2 .kicker,
+.page-home .sec.hero2 .pill{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+
+/* =========================================================
+   HOME HERO + PADDING FIX (v2)
+   - 섹션1 배경을 화면 끝까지(좌우) 꽉 채움
+   - 헤더 아래 보이던 '띠(여백)' 제거
+   - 섹션1 세로 길이(높이) +50% 정도 늘림
+   - 우→좌로 천천히 흐르는 이미지 슬라이더(마퀴)
+========================================================= */
+
+:root{
+  --page-pad: 14px;
+  /* 섹션1 그라데이션(위→아래) : 사용자가 추후 색 바꾸기 쉬움 */
+  --hero-top: rgb(5,39,46);
+  --hero-btm: rgb(4,7,9);
+}
+
+/* ✅ page.css 안에서 .content 패딩을 건드린 흔적(48px) 전부 무력화 */
+.phone .content{
+  padding-left: var(--page-pad) !important;
+  padding-right: var(--page-pad) !important;
+}
+
+/* PC에서 헤더 아래 띠 생기던 원인(패딩탑/마진) 방어 */
+@media (hover:hover) and (pointer:fine){
+  .page-home .content{ padding-top: 0 !important; }
+}
+
+/* =========================
+   HERO(A1 스타일)
+========================= */
+.page-home .hero2{
+  /* ✅ 좌우 풀블리드(폰 내부 끝까지) */
+  margin-left: calc(var(--page-pad) * -1);
+  margin-right: calc(var(--page-pad) * -1);
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+
+  /* ✅ 높이 늘리기(현재보다 반절 정도 더) */
+  min-height: 560px;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  text-align:center;
+  border-radius: 0; /* 유리 박스 느낌 제거 */
+  border: 0;
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-btm));
+}
+
+/* 기존 sec 공통 스타일이 hero2를 '카드'처럼 만들면 제거 */
+.page-home .hero2.sec{
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-btm));
+  box-shadow: none !important;
+}
+
+/* 상단 빨간 태그 */
+.page-home .hero2__tag{
+  margin:0;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: -.2px;
+  color: rgba(255,90,110,0.95);
+  text-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+/* 큰 타이틀(3줄) */
+.page-home .hero2__title--stack{
+  margin: 0;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  font-weight: 950;
+  font-size: clamp(44px, 9vw, 62px);
+}
+.page-home .hero2__title--stack .t1,
+.page-home .hero2__title--stack .t2,
+.page-home .hero2__title--stack .t3{
+  display:block;
+  text-shadow: 0 16px 32px rgba(0,0,0,0.45);
+}
+.page-home .hero2__title--stack .t1{
+  color: rgba(255,255,255,0.92);
+}
+.page-home .hero2__title--stack .t2{
+  color: rgba(255,255,255,0.88);
+}
+.page-home .hero2__title--stack .t3{
+  /* 아래쪽은 살짝 푸른 톤(스크린샷 느낌) */
+  color: rgba(173,224,235,0.92);
+}
+
+/* CTA pill: 기존 pill 스타일이 있으면 그대로 쓰고 없으면 최소 스타일 */
+.page-home .hero2 .pill--call{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.92);
+  text-decoration:none;
+  font-weight: 900;
+}
+
+/* =========================
+   마퀴 슬라이더(우→좌)
+========================= */
+.page-home .marquee{
+  width: 100%;
+  margin-top: 14px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.page-home .marquee__track{
+  display:flex;
+  gap: 14px;
+  width: max-content;
+  animation: marqueeLeft 26s linear infinite;
+}
+
+@keyframes marqueeLeft{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.page-home .mcard{
+  position: relative;
+  flex: 0 0 auto;
+  width: 148px;
+  height: 92px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.38);
+  text-decoration: none;
+}
+
+.page-home .mcard__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.page-home .mcard__label{
+  position:absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 10px 22px rgba(0,0,0,0.55);
+}
+
+/* 사용자가 터치/호버하면 멈춤 */
+.page-home .marquee:hover .marquee__track{ animation-play-state: paused; }
+.page-home .marquee:focus-within .marquee__track{ animation-play-state: paused; }
+
+/* 접근성: 움직임 최소화 설정 */
+@media (prefers-reduced-motion: reduce){
+  .page-home .marquee__track{ animation: none; transform: none; }
+}
+
+
+/* =========================================================
+   OVERRIDES (v3)
+   - 섹션1(히어로): 높이 + 배경 상단 띠 제거(색상 연결)
+   - 아래 섹션 좌우 여백 유지
+   - 다이아(샤인) 효과: 글자 내부만
+   - 헤더 여백/톤 정리
+========================================================= */
+
+/* 1) 섹션1 높이 늘리기 (약 1.5배 느낌) */
+.page-home .sec.hero2{
+  /* 기존 padding이 있다면 더 여유 있게 */
+  padding-top: 140px !important;
+  padding-bottom: 120px !important;
+  min-height: 520px !important;
+}
+
+/* 2) 헤더 아래 남는 띠(PC content padding-top) 색상 맞추기:
+      content 상단에만 동일 그라데이션을 한 겹 깔고, 아래는 기존 유지 */
+.page-home .content{
+  background-image: linear-gradient(180deg, rgb(5,39,46) 0%, rgb(4,7,9) 100%);
+  background-size: 100% 520px;
+  background-repeat: no-repeat;
+}
+
+/* 3) 섹션1만 풀폭(풀블리드) 유지, 아래 섹션은 원래대로 */
+.page-home .sec.hero2{
+  margin-left: -14px !important;
+  margin-right: -14px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+.page-home .sec:not(.hero2){
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 4) 헤더: 색상 연결 + 로고/햄버거 여백 */
+.page-home .header{
+  background: linear-gradient(180deg, rgba(11,14,33,0.95) 0%, rgba(11,14,33,0.65) 60%, rgba(11,14,33,0.0) 100%);
+  padding: 16px 18px !important;
+}
+.page-home .header .logo{
+  padding: 6px 6px !important;
+}
+.page-home .header .menu-btn,
+.page-home .header .hamburger,
+.page-home .header button{
+  padding: 10px 10px !important;
+  border-radius: 14px !important;
+}
+
+/* 5) HERO 텍스트(문구/크기) */
+.page-home .kicker{
+  margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: rgba(255,255,255,0.82);
+  text-align: center;
+}
+
+.page-home .hero-title{
+  margin: 0;
+  text-align: center;
+  line-height: 1.1;
+  font-size: clamp(32px, 6.3vw, 44px);
+  font-weight: 950;
+  letter-spacing: -0.6px;
+}
+
+/* 다이아 그라데이션 + 내부 샤인(글자 안쪽만) */
+.page-home .hero-diamond{
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #ff6ec7 0%, #b66cff 45%, #5fa8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-home .hero-diamond::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.8) 50%,
+    transparent 70%
+  );
+  background-size: 220% 220%;
+  animation: heroShine 4.8s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: .85;
+}
+
+@keyframes heroShine{
+  0%{ background-position: -160% 0; }
+  100%{ background-position: 160% 0; }
+}
+
+
+/* =========================================================
+   HERO v4 (경쟁업체 스타일 참고)
+   - 레드 키커
+   - 타이틀 2줄(제주도 / 유흥가이드) + 그라데이션 + 내부 샤인
+   - 24시간 상담 배지(경쟁업체 느낌의 라운드/테두리/은은한 글로우)
+   - 하단 이미지 우→좌 천천히 흐름 + 캡션
+========================================================= */
+
+.page-home .sec.hero2{
+  /* 기존 배경/풀폭 유지 가정 */
+  padding-top: 140px !important;
+  padding-bottom: 110px !important;
+}
+
+.page-home .hero2__inner{
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-home .hero-kicker{
+  margin: 0 0 14px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #ff4b4b; /* 경쟁업체 느낌의 레드 */
+  font-size: 14px;
+}
+
+.page-home .hero-title{
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.9px;
+  font-weight: 950;
+}
+
+.page-home .hero-title__top{
+  display: block;
+  font-size: clamp(40px, 8.2vw, 54px);
+}
+
+.page-home .hero-title__bottom{
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(34px, 7.4vw, 48px);
+}
+
+.page-home .hero-diamond{
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #ffffff 0%, #cfe7ff 38%, #6fe0ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 텍스트 내부 샤인(글자 안쪽만) */
+.page-home .hero-diamond::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 32%, rgba(255,255,255,0.9) 50%, transparent 68%);
+  background-size: 220% 220%;
+  animation: heroShine 5.2s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: .85;
+}
+
+@keyframes heroShine{
+  0%{ background-position: -160% 0; }
+  100%{ background-position: 160% 0; }
+}
+
+/* 24시간 상담 배지(경쟁업체 느낌) */
+.page-home .hero2__cta{
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-home .hero-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 10px 28px rgba(0,0,0,0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.92);
+  font-weight: 850;
+  letter-spacing: -0.2px;
+  font-size: 14px;
+}
+
+.page-home .hero-badge__icon{
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));
+}
+
+/* 이미지 마퀴(우→좌) */
+.page-home .hero-marquee{
+  margin-top: 34px;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+
+.page-home .hero-marquee__track{
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: heroMarquee 36s linear infinite;
+  will-change: transform;
+}
+
+/* 마우스 올리면 멈춤(PC) */
+@media (hover:hover){
+  .page-home .hero-marquee:hover .hero-marquee__track{
+    animation-play-state: paused;
+  }
+}
+
+@keyframes heroMarquee{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.page-home .hero-slide{
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 128px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.35);
+  flex: 0 0 auto;
+}
+
+.page-home .hero-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(0);
+}
+
+.page-home .hero-slide__cap{
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: rgba(255,255,255,0.92);
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   page.css
+   - 섹션/디자인/UI 전용
+   - 모바일 퍼스트
+   - 다크 블루 / 블랙
+   - 글래스모피즘
+========================================================= */
+
+/* 링크 포커스(키보드 접근성) */
+a:focus-visible{
+  outline: 2px solid rgba(255,255,255,0.55);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* =========================
+   Tokens
+========================= */
+:root{
+  --ink: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.7);
+  --dim: rgba(255,255,255,0.55);
+
+  --line: rgba(255,255,255,0.12);
+
+  --r-lg: 18px;
+  --r-md: 14px;
+
+  --shadow: 0 18px 50px rgba(0,0,0,0.6);
+  --shadow2: 0 12px 32px rgba(0,0,0,0.58);
+
+  --accent-a: #8aa7ff;
+  --accent-b: #2f5bff;
+}
+
+/* =========================
+   Logo border 제거
+========================= */
+.page-home .logo{
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0;
+}
+
+/* =========================
+   섹션 공통
+========================= */
+.page-home .sec{
+  margin: 14px 0 18px;
+  text-align: center;
+}
+
+.page-home .sec__head{
+  margin-bottom: 12px;
+}
+
+.page-home .sec__head h2{
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,0.9);
+}
+
+.page-home .sec__head .sub{
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--dim);
+}
+
+/* =========================
+   1) 히어로(현재 HTML 클래스에 맞춤: hero2)
+========================= */
+.page-home .hero2{
+  padding: 22px 16px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow2);
+}
+
+.page-home .kicker{
+  margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  color: rgba(255,255,255,0.8);
+}
+
+.page-home .hero2__title{
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.25;
+
+  /* 회색 → 다크블루 그라데이션 텍스트 */
+  background: linear-gradient(90deg, #bfc7d5, #6e88ff, #1b3f8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+/* 은은한 반짝임 */
+.page-home .hero2__title::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+  animation: shine 4.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes shine{
+  0%{ transform: translateX(-120%); }
+  100%{ transform: translateX(120%); }
+}
+
+.page-home .hero2__sub{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* =========================
+   2) 협력업체 (partner-row / partner-btn)
+========================= */
+.page-home .partner-row{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.page-home .partner-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 110px;
+  border-radius: var(--r-lg);
+
+  background: linear-gradient(135deg, #081a3a, #020814);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.62);
+
+  color: rgba(255,255,255,0.88);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: .4px;
+  text-decoration: none;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.page-home .partner-btn::after{
+  content:"";
+  position:absolute;
+  inset:-40% -30%;
+  background: radial-gradient(circle at 30% 30%, rgba(140,170,255,0.22), transparent 55%);
+  pointer-events:none;
+}
+
+/* =========================
+   3) 이용가이드
+========================= */
+.page-home .guide-steps{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 14px 12px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow2);
+}
+
+.page-home .step{
+  position: relative;
+  flex: 1;
+  padding: 10px 6px;
+  border-radius: var(--r-md);
+  background: linear-gradient(180deg, rgba(10,35,90,0.35), rgba(5,10,26,0.28));
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.page-home .step-icon{
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.page-home .step-text{
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.92);
+}
+
+.page-home .step:not(:last-child)::after{
+  content: ">";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.55);
+  font-weight: 900;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* =========================
+   4) 업체 안내 (place-grid / place-card)
+========================= */
+.page-home .place-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.page-home .place-card{
+  display: block;
+  border-radius: var(--r-lg);
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow2);
+
+  text-align: left;
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+
+  position: relative;
+  overflow: hidden;
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+.page-home .place-card::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 72px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #0a1f4d, #030814);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.page-home .place-more{
+  display: inline-block;
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+  padding: 11px 0;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  box-shadow: 0 6px 18px rgba(40,80,255,0.45);
+  text-decoration: none;
+}
+
+/* =========================
+   6) 면책/고지 박스
+========================= */
+.page-home .disclaimer{
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: var(--shadow2);
+  color: rgba(255,255,255,0.8);
+  font-size: 12px;
+  line-height: 1.65;
+  text-align: left;
+}
+
+/* =========================================================
+   LAYOUT SPACING – WIDE VERSION
+========================================================= */
+.phone .content{
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+
+.page-home .sec{
+  margin-top: 28px;
+  margin-bottom: 40px;
+}
+
+.page-home .sec__head{
+  margin-bottom: 20px;
+}
+
+.page-home .partner-row,
+.page-home .guide-steps,
+.page-home .place-grid{
+  margin-top: 18px;
+}
+
+.page-home .guide-steps{
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.page-home .disclaimer{
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+/* =========================================================
+   HOME ONLY COLOR TUNING
+========================================================= */
+.page-home .bg{
+  background:
+    radial-gradient(1100px 520px at 18% 8%, rgba(255,110,199,0.26), transparent 62%),
+    radial-gradient(900px 520px at 80% 22%, rgba(182,108,255,0.22), transparent 58%),
+    radial-gradient(1200px 700px at 50% -10%, rgba(95,168,255,0.12), transparent 65%),
+    linear-gradient(180deg, #0a2a55 0%, #05070d 70%, #02030a 100%);
+}
+
+.page-home .glow{
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,0.07),
+    rgba(255,110,199,0.1),
+    rgba(182,108,255,0.08),
+    transparent 70%
+  );
+  opacity: .38;
+}
+
+.page-home .hero2,
+.page-home .guide-steps,
+.page-home .place-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.13);
+}
+
+.page-home .hero2{
+  position: relative;
+  overflow: hidden;
+}
+
+.page-home .hero2::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  pointer-events:none;
+  background:
+    radial-gradient(70% 60% at 18% 18%, rgba(255,110,199,0.18), transparent 60%),
+    radial-gradient(70% 60% at 82% 25%, rgba(182,108,255,0.16), transparent 58%),
+    radial-gradient(80% 70% at 50% 0%, rgba(95,168,255,0.1), transparent 65%);
+  opacity: .9;
+}
+
+.page-home .hero2__title{
+  background: linear-gradient(90deg, #ff6ec7 0%, #b66cff 45%, #5fa8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================================
+   HOME ONLY (프레임 안쪽 배경 + 타이틀 다이아 반짝)
+========================================================= */
+.page-home .phone{
+  background:
+    radial-gradient(120% 85% at 50% 0%,
+      rgba(58,28,90,0.78) 0%,
+      rgba(11,31,58,0.8) 45%,
+      rgba(5,8,15,0.92) 100%
+    );
+}
+
+.page-home .phone::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(60% 40% at 18% 18%, rgba(255,110,199,0.22), transparent 62%),
+    radial-gradient(55% 40% at 82% 30%, rgba(182,108,255,0.2), transparent 60%),
+    radial-gradient(80% 60% at 50% 0%,  rgba(95,168,255,0.1), transparent 65%);
+  opacity:.95;
+}
+
+.page-home .phone > *{
+  position: relative;
+  z-index: 1;
+}
+
+.page-home .hero2{
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 18px 46px rgba(0,0,0,0.45);
+}
+
+.page-home .kicker{
+  color: rgba(255,255,255,0.78) !important;
+  text-shadow: none !important;
+}
+
+.page-home .hero2__sub{
+  color: rgba(255,255,255,0.72) !important;
+  text-shadow: none !important;
+}
+
+.page-home .hero2__title{
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 950;
+  text-align: center;
+  text-shadow: none !important;
+  max-width: 280px;
+  margin: 0 auto 12px;
+  position: relative;
+  isolation: isolate;
+}
+
+/* 다이아몬드 반짝임(글자 안에서만) */
+.page-home .hero2__title::before{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  background:
+    radial-gradient(circle at 20% 35%, rgba(255,255,255,0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 45% 60%, rgba(255,255,255,0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 40%, rgba(255,255,255,0.95) 0 1px, transparent 2px),
+    linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.6) 50%, transparent 60%);
+
+  background-size: 160px 70px, 180px 80px, 170px 70px, 240px 100%;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+  background-position: -200px 0;
+
+  mix-blend-mode: screen;
+  opacity: 0;
+
+  animation: diamondSpark 4s ease-in-out infinite;
+}
+
+@keyframes diamondSpark{
+  0%   { opacity: 0; background-position: -240px 0; }
+  20%  { opacity: .6; }
+  45%  { opacity: .15; }
+  65%  { opacity: .7; background-position: 40px 0; }
+  100% { opacity: 0; background-position: 240px 0; }
+}
+
+/* =========================================================
+   FIX: 햄버거 메뉴 클릭 불가 해결
+========================================================= */
+.page-home .bg,
+.page-home .particles,
+.page-home .particles *{
+  pointer-events: none !important;
+}
+
+/* (cleaned) home header/nav rules removed - handled in base.css */
+
+.phone .content{
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+
+
+/* =========================================================
+   REVIEWS PAGE (게시판 UI)
+   - 중복 블록 제거 후 “최종본”만 유지
+========================================================= */
+.page-reviews .page-title { display: none !important; }
+
+.page-reviews .board{
+  margin: 16px 0 28px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(10,14,22,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.page-reviews .board__head{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.page-reviews .board__title{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: .2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-reviews .board__icon{
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.page-reviews .board__sub{
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* 고정버튼스타일1 (글작성하기) */
+.page-reviews .board__write{
+  appearance: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.18);
+  background: linear-gradient(135deg, rgba(200,90,255,0.55), rgba(255,80,200,0.35));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: rgba(255,255,255,0.95);
+  font-weight: 900;
+  letter-spacing: .2px;
+
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.1) inset;
+
+  animation: btnJitter 3.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.page-reviews .board__write::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.0) 65%);
+  transform: translateX(-40%) rotate(8deg);
+  animation: btnShine 2.8s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.page-reviews .board__write::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 30%, rgba(255,120,240,0.35), rgba(120,80,255,0.0) 60%);
+  filter: blur(10px);
+  opacity: .65;
+  pointer-events:none;
+}
+
+.page-reviews .board__write:active{ transform: scale(.985); }
+
+.page-reviews .board__write .btnIcon{
+  display:inline-block;
+  margin-right: 8px;
+  transform: translateY(1px);
+}
+
+@keyframes btnJitter{
+  0%, 100% { transform: translate3d(0,0,0) rotate(0deg); }
+  12% { transform: translate3d(0.3px,-0.2px,0) rotate(-0.12deg); }
+  24% { transform: translate3d(-0.2px,0.3px,0) rotate(0.10deg); }
+  36% { transform: translate3d(0.25px,0.15px,0) rotate(-0.08deg); }
+  48% { transform: translate3d(-0.15px,-0.2px,0) rotate(0.06deg); }
+  60% { transform: translate3d(0.15px,0.1px,0) rotate(-0.05deg); }
+  72% { transform: translate3d(-0.1px,0.15px,0) rotate(0.04deg); }
+  84% { transform: translate3d(0.08px,-0.1px,0) rotate(-0.03deg); }
+}
+
+@keyframes btnShine{
+  0%   { transform: translateX(-60%) rotate(8deg); opacity: .0; }
+  18%  { opacity: .55; }
+  50%  { transform: translateX(40%) rotate(8deg); opacity: .45; }
+  68%  { opacity: .15; }
+  100% { transform: translateX(60%) rotate(8deg); opacity: .0; }
+}
+
+.page-reviews .board__tableWrap{
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(5,8,14,0.45);
+
+  /* 내부 스크롤 (세로+가로) */
+  max-height: 520px;
+  overflow-y: auto;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 좁은 화면에서 표가 찌그러지지 않게 최소 너비를 줘서 '가로 스크롤'로 해결 */
+.page-reviews .board__table{
+  min-width: 560px;
+}
+
+/* 별점이 줄바꿈/깨짐 없이 한 덩어리로 유지 */
+.page-reviews .stars{
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+
+.page-reviews .board__table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.page-reviews .board__table thead th{
+  font-size: 11px;
+  font-weight: 600;
+  padding: 8px 6px;
+  color: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.page-reviews .board__table tbody td{
+  padding: 9px 6px;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.86);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  vertical-align: middle;
+}
+
+.page-reviews .board__row:last-child td{ border-bottom: 0; }
+
+.page-reviews .col-title{ width: 44%; }
+.page-reviews .col-author{ width: 16%; text-align:center; }
+.page-reviews .col-time{ width: 22%; text-align:center; }
+.page-reviews .col-rate{ width: 10%; text-align:center; }
+.page-reviews .col-pass{ width: 8%; text-align:center; }
+
+/* 제목+미리보기 */
+.page-reviews .cell-title{ white-space: normal !important; }
+.page-reviews .cell-title .linkTitle{
+  display: block;
+  line-height: 1.2;
+  font-weight: 800;
+  color: rgba(255,255,255,0.92);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.page-reviews .cell-title .linkTitle:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-reviews .cell-title .preview{
+  margin-top: 4px;
+  font-size: 10.8px;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.7);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 별점 */
+.page-reviews .stars{
+  letter-spacing: .5px;
+  color: rgba(255,215,120,0.95);
+  font-size: 12px;
+}
+
+/* 수정 버튼 */
+.page-reviews .miniBtn{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.85);
+  padding: 7px 9px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.page-reviews .miniBtn:hover{ background: rgba(255,255,255,0.09); }
+
+/* 스크롤바 */
+.page-reviews .board__tableWrap::-webkit-scrollbar{ width: 10px; }
+.page-reviews .board__tableWrap::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.14);
+  border-radius: 10px;
+  border: 2px solid rgba(0,0,0,0.0);
+  background-clip: padding-box;
+}
+.page-reviews .board__tableWrap::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.04);
+}
+
+/* 모바일에서 너무 좁으면 컬럼 숨김 */
+@media (max-width: 380px){
+  .page-reviews .col-time{ display:none; }
+  .page-reviews .col-pass{ display:none; }
+  .page-reviews .col-title{ width: 58%; }
+  .page-reviews .col-author{ width: 20%; }
+  .page-reviews .col-rate{ width: 22%; }
+}
+
+/* =========================================================
+   LATEST REVIEWS (홈에서만 적용되게 스코프)
+========================================================= */
+.page-home .latestReviews{
+  margin: 18px 0 8px;
+  padding: 14px 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.page-home .latestHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.page-home .latestTitle{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.page-home .latestMore{
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  background: linear-gradient(90deg, rgba(255,0,170,0.55), rgba(140,0,255,0.55));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.page-home .latestGrid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 560px){
+  .page-home .latestGrid{ grid-template-columns: 1fr 1fr; }
+}
+
+.page-home .latestCard{
+  border-radius: 16px;
+  padding: 12px 12px 10px;
+  background: rgba(10,12,20,0.55);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-home .latestCard::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,0,170,0.18), transparent 55%),
+    radial-gradient(circle at 85% 70%, rgba(140,0,255,0.18), transparent 60%);
+  filter: blur(2px);
+  pointer-events:none;
+}
+
+.page-home .latestCardInner{
+  position: relative;
+  z-index: 1;
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+}
+
+.page-home .latestTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+}
+
+.page-home .latestStars{
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: .95;
+  white-space: nowrap;
+}
+
+.page-home .latestDate{
+  font-size: 11px;
+  opacity: .75;
+  white-space: nowrap;
+}
+
+.page-home .latestText{
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .92;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.page-home .latestMeta{
+  display:flex;
+  justify-content:space-between;
+  gap: 10px;
+  font-size: 11px;
+  opacity: .78;
+}
+
+.page-home .latestBtn{
+  margin-top: 2px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: rgba(255,255,255,0.98);
+  text-decoration:none;
+  background: linear-gradient(90deg, rgba(255,0,170,0.55), rgba(140,0,255,0.55));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+}
+
+.page-home .latestBtn:active{ transform: translateY(1px); }
+
+.page-home .latestSkeleton{
+  height: 140px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow:hidden;
+  position: relative;
+}
+.page-home .latestSkeleton::after{
+  content:"";
+  position:absolute; inset:0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: latestShimmer 1.2s infinite;
+}
+@keyframes latestShimmer{
+  100%{ transform: translateX(100%); }
+}
+
+
+/* =========================
+   HOME: Latest Reviews UI polish (home-only)
+   ========================= */
+.page-home .latestReviews__head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin: 10px 0 12px;
+}
+
+.page-home .latestReviews__title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.page-home .latestReviews__icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+  color: rgba(255,255,255,0.92);
+}
+
+/* 별점: 노란 별로 */
+.page-home .latestReviews .stars,
+.page-home .latestReviews .latestReviews__stars{
+  color: #ffd86b;                /* 노란 별 */
+  text-shadow: 0 0 8px rgba(255,216,107,0.35);
+  letter-spacing: 1px;
+}
+
+/* "자동후기" 문구 숨김 */
+.page-home .latestReviews__auto{
+  display:none !important;
+}
+
+/* 버튼이 전부 보라색이라 답답한 느낌 → 조금 더 차분한 톤 + 잔진동 */
+.page-home .latestReviews a,
+.page-home .latestReviews button{
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.page-home .latestReviews a:hover,
+.page-home .latestReviews button:hover{
+  filter: brightness(1.05);
+}
+
+/* 버튼 잔진동(아주 약하게) */
+@keyframes microWiggle {
+  0%   { transform: translate3d(0,0,0) rotate(0deg); }
+  20%  { transform: translate3d(0.2px,-0.2px,0) rotate(-0.08deg); }
+  40%  { transform: translate3d(-0.2px,0.2px,0) rotate(0.08deg); }
+  60%  { transform: translate3d(0.2px,0.2px,0) rotate(-0.06deg); }
+  80%  { transform: translate3d(-0.2px,-0.2px,0) rotate(0.06deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+
+/* "전체보기" 버튼/링크에만 적용하고 싶으면 이 클래스들로 제한 */
+.page-home .latestReviews__more,
+.page-home .latestReviews .btn,
+.page-home .latestReviews .btn-primary{
+  animation: microWiggle 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* 너무 튀면 마우스 올릴 때 멈추게 */
+.page-home .latestReviews__more:hover,
+.page-home .latestReviews .btn:hover,
+.page-home .latestReviews .btn-primary:hover{
+  animation-play-state: paused;
+}
+
+
+.page-home .latestReviews__more{
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   HOME: Latest Reviews polish (home-only)
+   ========================= */
+.page-home .latestHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin: 10px 0 12px;
+}
+
+.page-home .latestTitle{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0;
+}
+
+.page-home .latestIcon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+  color: rgba(255,255,255,0.92);
+}
+
+/* 별점: 노란 별 */
+.page-home .latestStars{
+  color: #ffd86b;
+  text-shadow: 0 0 8px rgba(255,216,107,0.35);
+  letter-spacing: 1px;
+}
+
+
+
+/* "자동후기" 문구 숨김 */
+.page-home .latestAuto{
+  display:none !important;
+}
+
+/* 버튼/링크 잔진동 */
+@keyframes microWiggle {
+  0%   { transform: translate3d(0,0,0) rotate(0deg); }
+  20%  { transform: translate3d(0.2px,-0.2px,0) rotate(-0.08deg); }
+  40%  { transform: translate3d(-0.2px,0.2px,0) rotate(0.08deg); }
+  60%  { transform: translate3d(0.2px,0.2px,0) rotate(-0.06deg); }
+  80%  { transform: translate3d(-0.2px,-0.2px,0) rotate(0.06deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+
+.page-home .latestWiggle{
+  animation: microWiggle 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.page-home .latestWiggle:hover{
+  animation-play-state: paused;
+}
+
+
+/* =========================
+   REGION PAGE (제주시 / 서귀포시)
+========================= */
+
+.region-hero{
+  padding: 18px 16px 6px;
+}
+
+.region-hero h1{
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.region-hero .sub{
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+}
+
+/* 이미지 갤러리 */
+.region-gallery{
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.region-gallery .img{
+  height: 110px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0a1f4d, #030814);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+}
+
+/* 면책 */
+.region-disclaimer{
+  margin: 14px 16px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.85);
+}
+
+/* SEO 텍스트 */
+.region-seo{
+  margin: 14px 16px 24px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.8);
+}
+
+
+/* =========================
+   REGION PAGES (Jejusi / Seogwipo)
+   - 모바일에서 좌우 여백 확보
+   - 메인 "협력업체 배너 버튼"과 동일 크기(110px) 5개 노출
+========================= */
+
+.page-region .content{
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-bottom: 18px;
+  padding-top: 0;
+}
+
+
+/* 상단 타이틀(페이지 이름) */
+.page-region .regionTitle{
+  margin: 16px 0 10px;
+  padding: 18px 14px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow2);
+}
+
+.page-region .regionTitle h1{
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.page-region .regionTitle p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+}
+
+/* 메인(협력업체)과 동일한 배너 버튼 영역 */
+.page-region .partner-row{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 12px 0 16px;
+}
+
+.page-region .partner-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, #081a3a, #020814);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.62);
+  color: rgba(255,255,255,0.88);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: .4px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-region .partner-btn::after{
+  content:"";
+  position:absolute;
+  inset:-40% -30%;
+  background: radial-gradient(circle at 30% 30%, rgba(140,170,255,0.22), transparent 55%);
+  pointer-events:none;
+}
+
+/* 면책(법적 리스크 줄이는 문구 박스) */
+.page-region .regionNotice{
+  margin: 14px 0 14px;
+  padding: 14px 14px;
+  border-radius: var(--r-lg);
+  background: rgba(0,0,0,0.32);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+}
+
+.page-region .regionNotice strong{
+  color: rgba(255,255,255,0.95);
+}
+
+/* SEO 문단 */
+.page-region .regionSeo{
+  margin: 0 0 14px;
+  padding: 16px 14px;
+  border-radius: var(--r-lg);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.8);
+  word-break: keep-all;
+}
+
+
+/* =========================
+   REVIEWS: 프레임 폭 기준(카드형)
+========================= */
+@container (max-width: 520px){
+  .page-reviews .board__table{
+    min-width: 0 !important;
+    table-layout: auto;
+  }
+
+  .page-reviews .board__table thead{
+    display:none;
+  }
+
+  .page-reviews .board__table tbody tr{
+    display:block;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .page-reviews .board__table tbody td{
+    display:block;
+    width: 100% !important;
+    padding: 0;
+    border: 0;
+  }
+
+  .page-reviews .cell-title{ margin-bottom: 8px; }
+
+  .page-reviews .cell-author,
+  .page-reviews .cell-time,
+  .page-reviews .cell-rate{
+    display:inline-block;
+    font-size: 11px;
+    opacity: .8;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  .page-reviews .cell-rate .stars{
+    font-size: 12px;
+    opacity: 1;
+    white-space: nowrap;
+  }
+
+  .page-reviews .cell-pass{
+    margin-top: 10px;
+  }
+}
+
+
+.phone{ container-type: inline-size; }
+
+
+
+/* =========================
+   REVIEWS MODAL (상세보기 팝업)
+========================= */
+.reviewModal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.reviewModal.is-open{ display: flex; }
+
+.reviewModal .modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+}
+
+.reviewModal .modal__panel{
+  position: relative;
+  width: min(520px, 100%);
+  max-height: 80vh;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10,14,22,0.78);
+  box-shadow: 0 20px 70px rgba(0,0,0,0.55);
+}
+
+.reviewModal .modal__top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.reviewModal .modal__title{
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -.2px;
+}
+
+.reviewModal .modal__close{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+
+.reviewModal .modal__meta{
+  padding: 10px 14px 0;
+  font-size: 12px;
+  opacity: .82;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewModal .modal__body{
+  padding: 12px 14px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  max-height: calc(80vh - 120px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre-wrap;
+}
+
+.reviewModal .modal__actions{
+  padding: 12px 14px 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* “수정하기”는 UX상 필요 없으면 숨김(기능도 없으니까) */
+.reviewModal #fakeEditBtn{ display: none; }
+
+/* 표의 ‘수정(비밀번호)’ 컬럼도 필요없으면 숨김(생성로직 건드리지 않고 UI만 숨김) */
+.page-reviews .col-pass,
+.page-reviews .cell-pass{
+  display: none;
+}
+
+
+/* =========================
+   HOME: 최신후기 "센터 포커스" 캐러셀
+========================= */
+.page-home .latestCarousel{
+  position: relative;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 6px 0 4px;
+}
+
+.page-home .latestTrack{
+  display: flex;
+  gap: 14px;
+  padding: 8px 38px;                 /* 좌우 여백을 줘서 좌/우 카드가 ‘살짝’ 보이게 */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.page-home .latestTrack::-webkit-scrollbar{ display:none; }
+
+.page-home .latestSlide{
+  scroll-snap-align: center;
+  flex: 0 0 78%;
+  transform: scale(.92);
+  opacity: .55;
+  filter: blur(.2px);
+  transition: transform .28s ease, opacity .28s ease, filter .28s ease;
+  will-change: transform;
+}
+
+.page-home .latestSlide.is-active{
+  transform: scale(1);
+  opacity: 1;
+  filter: none;
+}
+
+.page-home .latestSlide.is-side{
+  transform: scale(.90);
+  opacity: .45;
+  filter: blur(.6px);
+}
+
+/* 카드 안쪽 버튼(기존에 있던 고객후기 전체보기 버튼) 숨김 */
+.page-home .latestCard .btn,
+.page-home .latestCard .btnAll,
+.page-home .latestCard .btnLatestAll{
+  display: none !important;
+}
+
+/* 섹션 아래 단일 버튼 */
+.page-home .btnLatestAll{
+  display: block;
+  margin: 10px 0 2px;
+  text-align: center;
+  padding: 14px 14px;
+  border-radius: 16px;
+  font-weight: 800;
+  letter-spacing: -.2px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: linear-gradient(135deg, rgba(167,30,255,0.75), rgba(70,90,255,0.7));
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+}
+
+/* Skeleton(로딩 카드)도 슬라이드처럼 보이게 */
+.page-home .latestSkeleton{
+  flex: 0 0 78%;
+  height: 170px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.06);
+}
+
+
+/* =========================
+   HOME ONLY: "잔상 + 심장박동 + 빛 스윕" (COLOR KEEP)
+   - Keeps your original button background colors (does NOT override background)
+   - Adds trailing glow/afterimage and pulse like the GIF
+   Targets ONLY:
+   - "더 알아보기" (a.place-more)
+   - "고객후기 전체보기" (a.btnLatestAll)
+========================= */
+
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain){
+  position: relative;
+  isolation: isolate;          /* let glow stay behind */
+  overflow: hidden;
+  border-radius: 999px;
+  -webkit-tap-highlight-color: transparent;
+
+  /* Keep original color/background from your existing styles */
+  /* We only enhance motion + glow */
+  transition: transform .22s ease, filter .22s ease, box-shadow .22s ease;
+  animation: homeBtnPulse2 1.25s ease-in-out infinite;
+}
+
+/* Shine sweep (no color change, just light) */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain)::before{
+  content:"";
+  position:absolute;
+  inset:-140% -55%;
+  background: linear-gradient(120deg,
+    transparent 42%,
+    rgba(255,255,255,0.55) 50%,
+    transparent 58%
+  );
+  transform: translateX(-70%);
+  animation: homeBtnShine2 3.1s ease-in-out infinite;
+  pointer-events:none;
+  mix-blend-mode: screen;
+  opacity: .9;
+}
+
+/* Afterimage / trailing glow behind the button */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain)::after{
+  content:"";
+  position:absolute;
+  inset:-18px -22px;
+  border-radius: 999px;
+  z-index: -1;
+  pointer-events:none;
+
+  /* Glow colors tuned to your GIF (pink → purple).
+     This is only the halo; it won't change the button's own gradient. */
+  background:
+    radial-gradient(80% 70% at 20% 40%, rgba(255,95,140,0.55), transparent 62%),
+    radial-gradient(90% 80% at 80% 45%, rgba(170,90,255,0.48), transparent 66%),
+    radial-gradient(90% 90% at 55% 85%, rgba(120,160,255,0.22), transparent 70%);
+  filter: blur(12px);
+  opacity: .45;
+
+  animation: homeBtnAfter2 1.25s ease-in-out infinite;
+}
+
+/* Extra trailing via drop-shadows (gives "잔상" feel) */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain){
+  filter:
+    drop-shadow(0 10px 22px rgba(0,0,0,0.4))
+    drop-shadow(0 0 18px rgba(255,95,140,0.18))
+    drop-shadow(0 0 22px rgba(170,90,255,0.14));
+}
+
+/* Hover: slightly stronger but still classy */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain):hover{
+  transform: translateY(-1px) scale(1.03);
+  filter:
+    drop-shadow(0 14px 28px rgba(0,0,0,0.5))
+    drop-shadow(0 0 22px rgba(255,95,140,0.22))
+    drop-shadow(0 0 28px rgba(170,90,255,0.18));
+}
+
+/* Active: tiny press */
+.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain):active{
+  transform: translateY(0) scale(.99);
+}
+
+/* Animations */
+@keyframes homeBtnPulse2{
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.03); }
+}
+
+@keyframes homeBtnShine2{
+  0%   { transform: translateX(-70%); opacity: 0; }
+  18%  { opacity: .75; }
+  50%  { transform: translateX(70%); opacity: .45; }
+  100% { transform: translateX(70%); opacity: 0; }
+}
+
+/* Glow "breathing" + slight drift = afterimage vibe */
+@keyframes homeBtnAfter2{
+  0%,100% { opacity: .38; filter: blur(12px); transform: translateY(0); }
+  50%     { opacity: .72; filter: blur(16px); transform: translateY(1px); }
+}
+
+/* Hide "자동후기" label on home */
+.page-home .latestAuto{ display:none !important; }
+
+/* NOTE: .drawer/.overlay/.hamburger are managed in base.css */
+
+/* =========================
+   HERO 1 – 구조 전용
+   ========================= */
+
+.hero2--layout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px; /* 지금 비율 유지 */
+  padding: 24px 18px;
+}
+
+.hero2__inner{
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+
+  /* 🔒 나중에 배경/유리효과 여기서 */
+}
+
+.hero2__title{
+  margin: 14px 0 10px;
+  line-height: 1.1;
+}
+
+.hero2__cta{
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   HERO 1 전용 배경 그라데이션
+   ========================= */
+
+.hero2{
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    #05272E 0%,
+    #0B1F24 45%,
+    #040709 100%
+  );
+}
+
+/* =========================
+   HERO 1 배경 강제 적용
+   ========================= */
+
+/* 섹션 1 전체 배경 */
+.sec.hero2{
+  background: linear-gradient(
+    to bottom,
+    #05272E 0%,
+    #040709 100%
+  ) !important;
+}
+
+/* 글래스 모피즘 완전 제거 */
+.sec.hero2::before,
+.sec.hero2::after,
+.hero2__inner{
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* =========================
+   HERO 1 배경을 폰 전체 폭으로 (content 패딩 뚫기)
+   ========================= */
+
+/* content가 좌우 패딩을 가지고 있어서 섹션 배경이 안쪽에만 보임
+   → hero2만 풀블리드(풀폭)로 만들기 */
+.page-home .content{
+  --content-pad: 18px; /* 너네 content padding 값에 맞춰. 보통 16~20 */
+}
+
+.page-home .sec.hero2{
+  /* 좌우 패딩만큼 바깥으로 확장 */
+  margin-left: calc(var(--content-pad) * -1);
+  margin-right: calc(var(--content-pad) * -1);
+
+  /* 배경은 풀폭으로 */
+  border-radius: 0;
+  background: linear-gradient(to bottom, #05272E 0%, #040709 100%) !important;
+}
+
+/* 풀폭으로 만든 대신, 섹션 내부 콘텐츠는 다시 패딩을 줘서 정렬 유지 */
+.page-home .sec.hero2 .hero2__inner{
+  padding-left: var(--content-pad);
+  padding-right: var(--content-pad);
+
+  /* 혹시 남아있는 유리/박스 효과 제거 */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* =========================
+   HOME 섹션1(hero2)만 풀폭 배경 (content padding 14px 뚫기)
+   ========================= */
+
+.page-home .sec.hero2{
+  /* content 좌우 패딩(14px)만큼 밖으로 확장 */
+  margin-left: -14px;
+  margin-right: -14px;
+
+  /* 안쪽 내용은 다시 14px로 맞춰서 정렬 유지 */
+  padding-left: 14px;
+  padding-right: 14px;
+
+  /* 섹션 전체에 배경 그라데이션 */
+  background: linear-gradient(to bottom, #05272E 0%, #040709 100%) !important;
+
+  /* 유리/박스 느낌 제거 */
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 혹시 테마에서 hero2에 덮어놓은 가상요소가 있으면 제거 */
+.page-home .sec.hero2::before,
+.page-home .sec.hero2::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* =========================
+   HOME HERO (섹션1) 풀-배경 + 유리(카드) 제거
+   ========================= */
+.page-home .sec.hero2{
+  position: relative !important;
+
+  /* content 좌우패딩(14px) 무시하고 폰 폭 끝까지 배경이 차도록 */
+  width: calc(100% + 28px) !important;
+  margin-left: -14px !important;
+  margin-right: -14px !important;
+
+  /* 섹션 높이/여백(원하는대로 나중에 조절) */
+  padding: 96px 14px 84px !important;
+
+  /* ✅ 너가 말한 위→아래 그라데이션(지금은 예시값, 색은 나중에 바꿔도 됨) */
+  background: linear-gradient(180deg, rgb(5, 39, 46) 0%, rgb(4, 7, 9) 100%) !important;
+
+  /* 섹션 자체는 둥글게 하지 않음(배경이 프레임 끝까지 자연스럽게) */
+  border-radius: 0 !important;
+
+  /* 혹시 기본 sec 스타일로 border/shadow가 있으면 제거 */
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* hero2에 깔려있는 "유리 카드"가 보통 ::before/::after로 들어가서 네모가 생김 → 제거 */
+.page-home .sec.hero2::before,
+.page-home .sec.hero2::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* 타이틀/문구/버튼류에 유리 배경이 남아있으면 전부 제거 */
+.page-home .sec.hero2 .hero2__title,
+.page-home .sec.hero2 .kicker,
+.page-home .sec.hero2 .pill{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+
+/* =========================================================
+   HOME HERO + PADDING FIX (v2)
+   - 섹션1 배경을 화면 끝까지(좌우) 꽉 채움
+   - 헤더 아래 보이던 '띠(여백)' 제거
+   - 섹션1 세로 길이(높이) +50% 정도 늘림
+   - 우→좌로 천천히 흐르는 이미지 슬라이더(마퀴)
+========================================================= */
+
+:root{
+  --page-pad: 14px;
+  /* 섹션1 그라데이션(위→아래) : 사용자가 추후 색 바꾸기 쉬움 */
+  --hero-top: rgb(5,39,46);
+  --hero-btm: rgb(4,7,9);
+}
+
+/* ✅ page.css 안에서 .content 패딩을 건드린 흔적(48px) 전부 무력화 */
+.phone .content{
+  padding-left: var(--page-pad) !important;
+  padding-right: var(--page-pad) !important;
+}
+
+/* PC에서 헤더 아래 띠 생기던 원인(패딩탑/마진) 방어 */
+@media (hover:hover) and (pointer:fine){
+  .page-home .content{ padding-top: 0 !important; }
+}
+
+/* =========================
+   HERO(A1 스타일)
+========================= */
+.page-home .hero2{
+  /* ✅ 좌우 풀블리드(폰 내부 끝까지) */
+  margin-left: calc(var(--page-pad) * -1);
+  margin-right: calc(var(--page-pad) * -1);
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+
+  /* ✅ 높이 늘리기(현재보다 반절 정도 더) */
+  min-height: 560px;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  text-align:center;
+  border-radius: 0; /* 유리 박스 느낌 제거 */
+  border: 0;
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-btm));
+}
+
+/* 기존 sec 공통 스타일이 hero2를 '카드'처럼 만들면 제거 */
+.page-home .hero2.sec{
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-btm));
+  box-shadow: none !important;
+}
+
+/* 상단 빨간 태그 */
+.page-home .hero2__tag{
+  margin:0;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: -.2px;
+  color: rgba(255,90,110,0.95);
+  text-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+/* 큰 타이틀(3줄) */
+.page-home .hero2__title--stack{
+  margin: 0;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  font-weight: 950;
+  font-size: clamp(44px, 9vw, 62px);
+}
+.page-home .hero2__title--stack .t1,
+.page-home .hero2__title--stack .t2,
+.page-home .hero2__title--stack .t3{
+  display:block;
+  text-shadow: 0 16px 32px rgba(0,0,0,0.45);
+}
+.page-home .hero2__title--stack .t1{
+  color: rgba(255,255,255,0.92);
+}
+.page-home .hero2__title--stack .t2{
+  color: rgba(255,255,255,0.88);
+}
+.page-home .hero2__title--stack .t3{
+  /* 아래쪽은 살짝 푸른 톤(스크린샷 느낌) */
+  color: rgba(173,224,235,0.92);
+}
+
+/* CTA pill: 기존 pill 스타일이 있으면 그대로 쓰고 없으면 최소 스타일 */
+.page-home .hero2 .pill--call{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.92);
+  text-decoration:none;
+  font-weight: 900;
+}
+
+/* =========================
+   마퀴 슬라이더(우→좌)
+========================= */
+.page-home .marquee{
+  width: 100%;
+  margin-top: 14px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.page-home .marquee__track{
+  display:flex;
+  gap: 14px;
+  width: max-content;
+  animation: marqueeLeft 26s linear infinite;
+}
+
+@keyframes marqueeLeft{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.page-home .mcard{
+  position: relative;
+  flex: 0 0 auto;
+  width: 148px;
+  height: 92px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.38);
+  text-decoration: none;
+}
+
+.page-home .mcard__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.page-home .mcard__label{
+  position:absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 10px 22px rgba(0,0,0,0.55);
+}
+
+/* 사용자가 터치/호버하면 멈춤 */
+.page-home .marquee:hover .marquee__track{ animation-play-state: paused; }
+.page-home .marquee:focus-within .marquee__track{ animation-play-state: paused; }
+
+/* 접근성: 움직임 최소화 설정 */
+@media (prefers-reduced-motion: reduce){
+  .page-home .marquee__track{ animation: none; transform: none; }
+}
+
+
+/* =========================================================
+   OVERRIDES (v3)
+   - 섹션1(히어로): 높이 + 배경 상단 띠 제거(색상 연결)
+   - 아래 섹션 좌우 여백 유지
+   - 다이아(샤인) 효과: 글자 내부만
+   - 헤더 여백/톤 정리
+========================================================= */
+
+/* 1) 섹션1 높이 늘리기 (약 1.5배 느낌) */
+.page-home .sec.hero2{
+  /* 기존 padding이 있다면 더 여유 있게 */
+  padding-top: 140px !important;
+  padding-bottom: 120px !important;
+  min-height: 520px !important;
+}
+
+/* 2) 헤더 아래 남는 띠(PC content padding-top) 색상 맞추기:
+      content 상단에만 동일 그라데이션을 한 겹 깔고, 아래는 기존 유지 */
+.page-home .content{
+  background-image: linear-gradient(180deg, rgb(5,39,46) 0%, rgb(4,7,9) 100%);
+  background-size: 100% 520px;
+  background-repeat: no-repeat;
+}
+
+/* 3) 섹션1만 풀폭(풀블리드) 유지, 아래 섹션은 원래대로 */
+.page-home .sec.hero2{
+  margin-left: -14px !important;
+  margin-right: -14px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+.page-home .sec:not(.hero2){
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 4) 헤더: 색상 연결 + 로고/햄버거 여백 */
+.page-home .header{
+  background: linear-gradient(180deg, rgba(11,14,33,0.95) 0%, rgba(11,14,33,0.65) 60%, rgba(11,14,33,0.0) 100%);
+  padding: 16px 18px !important;
+}
+.page-home .header .logo{
+  padding: 6px 6px !important;
+}
+.page-home .header .menu-btn,
+.page-home .header .hamburger,
+.page-home .header button{
+  padding: 10px 10px !important;
+  border-radius: 14px !important;
+}
+
+/* 5) HERO 텍스트(문구/크기) */
+.page-home .kicker{
+  margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: rgba(255,255,255,0.82);
+  text-align: center;
+}
+
+.page-home .hero-title{
+  margin: 0;
+  text-align: center;
+  line-height: 1.1;
+  font-size: clamp(32px, 6.3vw, 44px);
+  font-weight: 950;
+  letter-spacing: -0.6px;
+}
+
+/* 다이아 그라데이션 + 내부 샤인(글자 안쪽만) */
+.page-home .hero-diamond{
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #ff6ec7 0%, #b66cff 45%, #5fa8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-home .hero-diamond::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.8) 50%,
+    transparent 70%
+  );
+  background-size: 220% 220%;
+  animation: heroShine 4.8s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: .85;
+}
+
+@keyframes heroShine{
+  0%{ background-position: -160% 0; }
+  100%{ background-position: 160% 0; }
+}
+
+
+/* =========================================================
+   HERO v4 (경쟁업체 스타일 참고)
+   - 레드 키커
+   - 타이틀 2줄(제주도 / 유흥가이드) + 그라데이션 + 내부 샤인
+   - 24시간 상담 배지(경쟁업체 느낌의 라운드/테두리/은은한 글로우)
+   - 하단 이미지 우→좌 천천히 흐름 + 캡션
+========================================================= */
+
+.page-home .sec.hero2{
+  /* 기존 배경/풀폭 유지 가정 */
+  padding-top: 140px !important;
+  padding-bottom: 110px !important;
+}
+
+.page-home .hero2__inner{
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-home .hero-kicker{
+  margin: 0 0 14px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #ff4b4b; /* 경쟁업체 느낌의 레드 */
+  font-size: 14px;
+}
+
+.page-home .hero-title{
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.9px;
+  font-weight: 950;
+}
+
+.page-home .hero-title__top{
+  display: block;
+  font-size: clamp(40px, 8.2vw, 54px);
+}
+
+.page-home .hero-title__bottom{
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(34px, 7.4vw, 48px);
+}
+
+.page-home .hero-diamond{
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #ffffff 0%, #cfe7ff 38%, #6fe0ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 텍스트 내부 샤인(글자 안쪽만) */
+.page-home .hero-diamond::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 32%, rgba(255,255,255,0.9) 50%, transparent 68%);
+  background-size: 220% 220%;
+  animation: heroShine 5.2s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: .85;
+}
+
+@keyframes heroShine{
+  0%{ background-position: -160% 0; }
+  100%{ background-position: 160% 0; }
+}
+
+/* 24시간 상담 배지(경쟁업체 느낌) */
+.page-home .hero2__cta{
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-home .hero-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 10px 28px rgba(0,0,0,0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.92);
+  font-weight: 850;
+  letter-spacing: -0.2px;
+  font-size: 14px;
+}
+
+.page-home .hero-badge__icon{
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));
+}
+
+/* 이미지 마퀴(우→좌) */
+.page-home .hero-marquee{
+  margin-top: 34px;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+
+.page-home .hero-marquee__track{
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: heroMarquee 36s linear infinite;
+  will-change: transform;
+}
+
+/* 마우스 올리면 멈춤(PC) */
+@media (hover:hover){
+  .page-home .hero-marquee:hover .hero-marquee__track{
+    animation-play-state: paused;
+  }
+}
+
+@keyframes heroMarquee{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.page-home .hero-slide{
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 128px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.35);
+  flex: 0 0 auto;
+}
+
+.page-home .hero-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(0);
+}
+
+.page-home .hero-slide__cap{
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: rgba(255,255,255,0.92);
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   HERO CONFETTI (Birthday / Party style)
+   - Only inside HERO section
+   - Pure CSS
+========================================================= */
+
+.page-home .hero2{
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-confetti{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-confetti span{
+  position: absolute;
+  top: -10%;
+  width: 8px;
+  height: 14px;
+  opacity: 0.85;
+  border-radius: 2px;
+  animation: confettiFall linear infinite;
+}
+
+.hero-confetti span:nth-child(5n+1){ background:#ff4d6d; }
+.hero-confetti span:nth-child(5n+2){ background:#ffd166; }
+.hero-confetti span:nth-child(5n+3){ background:#4dabf7; }
+.hero-confetti span:nth-child(5n+4){ background:#b66cff; }
+.hero-confetti span:nth-child(5n){   background:#63e6be; }
+
+.hero-confetti span:nth-child(1){ left:5%;  animation-duration:7s; }
+.hero-confetti span:nth-child(2){ left:12%; animation-duration:6s; }
+.hero-confetti span:nth-child(3){ left:18%; animation-duration:8s; }
+.hero-confetti span:nth-child(4){ left:26%; animation-duration:6.5s; }
+.hero-confetti span:nth-child(5){ left:34%; animation-duration:7.5s; }
+.hero-confetti span:nth-child(6){ left:42%; animation-duration:6.2s; }
+.hero-confetti span:nth-child(7){ left:50%; animation-duration:8.5s; }
+.hero-confetti span:nth-child(8){ left:58%; animation-duration:7.2s; }
+.hero-confetti span:nth-child(9){ left:66%; animation-duration:6.8s; }
+.hero-confetti span:nth-child(10){left:74%; animation-duration:7.9s; }
+.hero-confetti span:nth-child(11){left:82%; animation-duration:6.4s; }
+.hero-confetti span:nth-child(12){left:90%; animation-duration:8.1s; }
+
+@keyframes confettiFall{
+  0%{
+    transform: translateY(0) rotate(0deg);
+  }
+  100%{
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   HERO FIREFLIES (반딧불 글로우)
+   - Only inside HERO section
+========================================================= */
+
+.hero-fireflies{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;     /* 컨페티랑 같은 레이어 */
+  overflow: hidden;
+}
+
+.hero-fireflies span{
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  box-shadow:
+    0 0 10px rgba(140,255,230,0.9),
+    0 0 22px rgba(140,255,230,0.55),
+    0 0 45px rgba(140,255,230,0.25);
+  opacity: 0.0;
+  animation: fireflyTwinkle 3.8s ease-in-out infinite,
+             fireflyDrift 10s ease-in-out infinite;
+}
+
+/* 위치/속도 랜덤 느낌 (8개 기준) */
+.hero-fireflies span:nth-child(1){ left:12%; top:28%; animation-delay: .2s, 0s; }
+.hero-fireflies span:nth-child(2){ left:22%; top:52%; animation-delay: 1.3s, 0s; }
+.hero-fireflies span:nth-child(3){ left:34%; top:18%; animation-delay: .8s, 0s; }
+.hero-fireflies span:nth-child(4){ left:48%; top:40%; animation-delay: 2.1s, 0s; }
+.hero-fireflies span:nth-child(5){ left:60%; top:26%; animation-delay: 1.7s, 0s; }
+.hero-fireflies span:nth-child(6){ left:72%; top:58%; animation-delay: .5s, 0s; }
+.hero-fireflies span:nth-child(7){ left:82%; top:34%; animation-delay: 2.6s, 0s; }
+.hero-fireflies span:nth-child(8){ left:90%; top:22%; animation-delay: 1.0s, 0s; }
+
+/* 반짝(점등/소등) */
+@keyframes fireflyTwinkle{
+  0%   { transform: scale(.7); opacity: 0; }
+  20%  { opacity: .85; }
+  50%  { transform: scale(1.35); opacity: 1; }
+  80%  { opacity: .55; }
+  100% { transform: scale(.7); opacity: 0; }
+}
+
+/* 살짝 떠다니는 이동 */
+@keyframes fireflyDrift{
+  0%   { translate: 0 0; filter: blur(0px); }
+  50%  { translate: -12px -10px; filter: blur(.2px); }
+  100% { translate: 0 0; filter: blur(0px); }
+}
+
+/* =========================================================
+   HERO FIREFLIES – BOOST (더 살아있는 반딧불 느낌)
+========================================================= */
+
+.hero-fireflies span{
+  width: 7px !important;
+  height: 7px !important;
+
+  /* 코어(중심) */
+  background: radial-gradient(circle,
+    rgba(255,255,255,1.0) 0%,
+    rgba(210,255,240,0.95) 35%,
+    rgba(140,255,230,0.25) 70%,
+    rgba(140,255,230,0.0) 100%
+  ) !important;
+
+  /* 글로우(빛 번짐) */
+  box-shadow:
+    0 0 14px rgba(140,255,230,1.0),
+    0 0 34px rgba(140,255,230,0.85),
+    0 0 70px rgba(140,255,230,0.55),
+    0 0 110px rgba(140,255,230,0.22) !important;
+
+  opacity: 0.0 !important;
+
+  /* “살아있는” 느낌: 밝기 펄스 + 떠다님 + 미세 흔들림 */
+  animation:
+    fireflyPulse 2.2s ease-in-out infinite,
+    fireflyFloat 7.5s ease-in-out infinite,
+    fireflyWiggle 1.8s ease-in-out infinite !important;
+
+  /* 빛이 화면에서 더 또렷하게 보이게 */
+  filter: saturate(1.25) brightness(1.18) !important;
+}
+
+/* 밝기/크기 펄스(반딧불 핵심) */
+@keyframes fireflyPulse{
+  0%   { transform: scale(.55); opacity: .08; }
+  15%  { opacity: .35; }
+  40%  { transform: scale(1.35); opacity: 1; }
+  60%  { transform: scale(.95); opacity: .55; }
+  100% { transform: scale(.55); opacity: .10; }
+}
+
+/* 큰 이동(둥실둥실) */
+@keyframes fireflyFloat{
+  0%   { translate: 0 0; }
+  35%  { translate: -14px -10px; }
+  70%  { translate: 12px -6px; }
+  100% { translate: 0 0; }
+}
+
+/* 미세 흔들림(살아있는 느낌 강화) */
+@keyframes fireflyWiggle{
+  0%   { rotate: -6deg; }
+  50%  { rotate: 6deg; }
+  100% { rotate: -6deg; }
+}
+
+.hero-fireflies span:nth-child(odd){
+  animation-duration: 2.0s, 8.4s, 1.6s !important;
+}
+.hero-fireflies span:nth-child(even){
+  animation-duration: 2.6s, 6.8s, 2.1s !important;
+}
+
+.hero-fireflies{ z-index: 1; opacity: 1; }
+.page-home .sec.hero2 > *:not(.hero-confetti):not(.hero-fireflies){
+  z-index: 2;
+}
+
+
+/* =========================
+   HERO2 LAYER FIX (confetti + fireflies)
+   ========================= */
+
+/* hero2가 레이어 기준이 되도록 */
+.page-home .sec.hero2{
+  position: relative;
+  overflow: hidden;
+}
+
+/* 두 이펙트는 절대 위치 + 클릭 방해 금지 */
+.page-home .sec.hero2 .hero-confetti,
+.page-home .sec.hero2 .hero-fireflies{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* 컨페티는 배경 위, 텍스트 아래 */
+.page-home .sec.hero2 .hero-confetti{
+  z-index: 2 !important;
+}
+
+/* 반딧불은 컨페티 위, 텍스트 아래(또는 필요 시 위로) */
+.page-home .sec.hero2 .hero-fireflies{
+  z-index: 3 !important;
+  opacity: 1 !important;
+}
+
+/* 히어로 내부 실제 콘텐츠(글/배지/슬라이더)는 가장 위로 */
+.page-home .sec.hero2 > *:not(.hero-confetti):not(.hero-fireflies){
+  position: relative;
+  z-index: 5 !important;
+
+}
+
+/* =========================
+   FIRELIES LOOK (strong glow + pulse)
+   ========================= */
+
+.page-home .sec.hero2 .hero-fireflies span{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+
+
+}
+
+/* =========================================================
+   HERO FIREFLIES – FINAL OVERRIDE (무조건 밝게/살아있게)
+   - 이 블록은 파일 맨 아래에 있어야 함
+========================================================= */
+
+.page-home .sec.hero2{ position: relative; overflow: hidden; }
+.page-home .sec.hero2 .hero-confetti,
+.page-home .sec.hero2 .hero-fireflies{ position:absolute; inset:0; pointer-events:none; }
+
+.page-home .sec.hero2 .hero-confetti{ z-index: 2 !important; }
+.page-home .sec.hero2 .hero-fireflies{ z-index: 3 !important; opacity: 1 !important; }
+
+.page-home .sec.hero2 > *:not(.hero-confetti):not(.hero-fireflies){
+  position: relative;
+  z-index: 5 !important;
+}
+
+/* 핵심: "코어 + 강한 글로우 + 펄스" */
+.page-home .sec.hero2 .hero-fireflies span{
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 999px !important;
+
+  background: radial-gradient(circle,
+    rgba(255,255,255,1) 0%,
+    rgba(210,255,240,.95) 30%,
+    rgba(140,255,230,.55) 62%,
+    rgba(140,255,230,0) 100%
+  ) !important;
+
+  box-shadow:
+    0 0 10px rgba(255,255,255,.95),
+    0 0 22px rgba(140,255,230,1),
+    0 0 48px rgba(140,255,230,.85),
+    0 0 90px rgba(140,255,230,.45),
+    0 0 140px rgba(182,108,255,.22) !important;
+
+  mix-blend-mode: screen;
+  filter: saturate(1.35) brightness(1.25) !important;
+
+  animation:
+    fireflyPulse 2.1s ease-in-out infinite,
+    fireflyFloat 7.8s ease-in-out infinite,
+    fireflyWiggle 1.9s ease-in-out infinite !important;
+}
+
+/* 밝기/크기 펄스(반딧불 핵심) */
+@keyframes fireflyPulse{
+  0%   { transform: scale(.45); opacity: .10; }
+  18%  { opacity: .55; }
+  45%  { transform: scale(1.55); opacity: 1; }
+  65%  { transform: scale(.95); opacity: .60; }
+  100% { transform: scale(.45); opacity: .12; }
+}
+
+/* 큰 이동(둥실둥실) */
+@keyframes fireflyFloat{
+  0%   { translate: 0 0; }
+  35%  { translate: -16px -12px; }
+  70%  { translate: 14px -8px; }
+  100% { translate: 0 0; }
+}
+
+/* 미세 흔들림(살아있는 느낌 강화) */
+@keyframes fireflyWiggle{
+  0%   { rotate: -6deg; }
+  50%  { rotate: 6deg; }
+  100% { rotate: -6deg; }
+}
+
+
+/* =========================
+   A1 이용 가이드 (system-grid) - CTA 버튼 컬러 연동 버전
+   붙여넣기 위치: css/page.css 맨 아래
+   ========================= */
+
+/* 1) CTA 그라데이션을 변수로 통일 (너의 '더 알아보기' 버튼과 같은 느낌으로 맞추기) */
+:root{
+  --cta-grad: linear-gradient(135deg, var(--secondary), var(--accent));
+  --cta-glow: 0 10px 26px rgba(244, 63, 94, .20), 0 12px 34px rgba(139, 92, 246, .18);
+  --guide-border: rgba(255,255,255,.10);
+}
+
+/* 2) 그리드/간격/정렬: 경쟁업체처럼 깔끔하게 */
+.system-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;                 /* 경쟁업체 느낌: 너무 넓지 않게 */
+}
+
+.system-item{
+  text-align: center;
+}
+
+/* 3) 아이콘 박스: CTA 버튼처럼 "내부색"이 그라데이션 + 유리감 */
+.sys-icon-box{
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 10px;
+  border-radius: 18px;
+
+  /* 핵심: 내부 배경을 CTA 그라데이션으로 */
+  background: var(--cta-grad);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: var(--cta-glow), inset 0 0 0 1px rgba(0,0,0,.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 빛나는 하이라이트(유리 느낌) */
+.sys-icon-box::before{
+  content:"";
+  position:absolute;
+  inset:-40% -20% auto -20%;
+  height: 80%;
+  transform: rotate(12deg);
+  background: linear-gradient(to right, transparent, rgba(255,255,255,.28), transparent);
+  opacity: .45;
+  pointer-events:none;
+}
+
+/* 4) 아이콘 자체도 CTA처럼 "그라데이션" 입히기 (폰트아이콘이라 text-clip 가능) */
+.sys-icon-box i{
+  font-size: 22px;
+  line-height: 1;
+
+  background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,255,255,.70));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 은은한 발광 */
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.35));
+}
+
+/* 5) STEP / 타이틀: 경쟁업체 톤(작고 또렷) */
+.sys-step{
+  display:block;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: rgba(148,163,184,.95);
+  margin-bottom: 2px;
+}
+
+.sys-title{
+  display:block;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* 6) 화살표(> 느낌)도 톤 맞추기 (이미 너 CSS에 있다면 이건 덮어쓰기 역할) */
+.system-item:not(:last-child)::after{
+  content: '›';
+  position: absolute;
+  top: 16px;
+  right: -6px;
+  color: rgba(148,163,184,.6);
+  font-size: 14px;
+  opacity: .8;
+}
+
+
+/* =========================
+   이용가이드(system-grid) 강제 덮어쓰기 FIX
+   ========================= */
+
+/* CTA 컬러 변수 fallback (변수 없으면 이 색으로라도 무조건 그라데이션 뜸) */
+:root{
+  --secondary: var(--secondary, #F43F5E);
+  --accent:    var(--accent,    #8B5CF6);
+  --cta-grad: linear-gradient(135deg, var(--secondary), var(--accent));
+}
+
+/* 레이아웃 */
+.system-grid{
+  display:grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+  align-items: center !important;
+}
+
+/* 아이템 박스(지금 스샷처럼 “큰 캡슐” 컨테이너 안에 카드들이 있을 때도 대응) */
+.system-item{
+  position: relative !important;
+  text-align:center !important;
+}
+
+/* 아이콘 박스: 내부색을 CTA처럼 강제 */
+.sys-icon-box{
+  width: 54px !important;
+  height: 54px !important;
+  margin: 0 auto 8px !important;
+  border-radius: 18px !important;
+
+  background: var(--cta-grad) !important;          /* ← 핵심 */
+  border: 1px solid rgba(255,255,255,.18) !important;
+  box-shadow: 0 14px 30px rgba(244,63,94,.18), 0 16px 36px rgba(139,92,246,.16),
+              inset 0 0 0 1px rgba(0,0,0,.25) !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  overflow:hidden !important;
+}
+
+/* 유리 하이라이트 */
+.sys-icon-box::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-40% -25% auto -25% !important;
+  height: 80% !important;
+  transform: rotate(12deg) !important;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,.30), transparent) !important;
+  opacity: .45 !important;
+  pointer-events:none !important;
+}
+
+/* 아이콘: 그라데이션 텍스트(버튼 느낌) + 글로우 */
+.sys-icon-box i{
+  font-size: 22px !important;
+  background: var(--cta-grad) !important;          /* ← 핵심 */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,.35)) !important;
+}
+
+/* STEP/텍스트 */
+.sys-step{
+  display:block !important;
+  font-size: 10px !important;
+  letter-spacing: 1.2px !important;
+  color: rgba(148,163,184,.95) !important;
+  margin-bottom: 2px !important;
+}
+.sys-title{
+  display:block !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+}
+
+/* =========================================================
+   HOME: 이용가이드(경쟁업체 스타일) - place-more 버튼 컬러와 동일 적용
+========================================================= */
+
+/* place-more(더 알아보기)랑 동일한 그라데이션을 sys-icon-box에 그대로 사용 */
+.page-home{
+  --cta-grad: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+}
+
+/* 큰 캡슐 컨테이너 */
+.page-home .guide-capsule{
+  padding: 14px 12px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+}
+
+/* 시스템 그리드(4칸) */
+.page-home .system-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+/* 아이템 */
+.page-home .system-item{
+  position: relative;
+  text-align: center;
+}
+
+/* 화살표(>) */
+.page-home .system-item:not(:last-child)::after{
+  content: ">";
+  position: absolute;
+  top: 18px;
+  right: -8px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 900;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* 아이콘 박스: 내부색=CTA 그라데이션(더 알아보기 버튼과 동일) */
+.page-home .sys-icon-box{
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 8px;
+  border-radius: 18px;
+  background: var(--cta-grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 14px 30px rgba(40,80,255,0.18), inset 0 0 0 1px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 유리 하이라이트 */
+.page-home .sys-icon-box::before{
+  content:"";
+  position:absolute;
+  inset:-40% -20% auto -20%;
+  height: 80%;
+  transform: rotate(12deg);
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.28), transparent);
+  opacity: .55;
+  pointer-events:none;
+}
+
+/* 아이콘(폰트아이콘이니까 흰색 + 살짝 발광) */
+.page-home .sys-icon-box i{
+  font-size: 22px;
+  line-height: 1;
+  color: rgba(255,255,255,0.95);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+}
+
+/* STEP / 타이틀 */
+.page-home .sys-step{
+  display:block;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: rgba(148,163,184,0.95);
+  margin-bottom: 2px;
+}
+.page-home .sys-title{
+  display:block;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
 }
 
 
 
 
+/* =========================================================
+   HOME: A1 이용가이드 (system-grid 버전)
+   목표: "배경은 그대로" + 아이콘(흰색 기본)을 '더 알아보기' 버튼과 같은 컬러로
+   적용 대상: .guide-capsule / .system-grid / .sys-icon-box / .sys-step / .sys-title
+========================================================= */
+
+.page-home{
+  /* 더 알아보기 버튼과 동일한 그라데이션 소스 */
+  --cta-grad: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+}
+
+/* 캡슐 컨테이너(기존 guide-steps 느낌 유지) */
+.page-home .guide-capsule{
+  padding: 14px 12px !important;
+  border-radius: var(--r-lg) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  box-shadow: var(--shadow2) !important;
+}
+
+/* 4칸 그리드 */
+.page-home .system-grid{
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 10px !important;
+  align-items: start !important;
+}
+
+/* 각 아이템 */
+.page-home .system-item{
+  position: relative !important;
+  text-align: center !important;
+}
+
+/* 화살표(>) */
+.page-home .system-item:not(:last-child)::after{
+  content: ">" !important;
+  position: absolute !important;
+  right: -10px !important;
+  top: 26px !important;
+  transform: translateY(-50%) !important;
+  color: rgba(255,255,255,0.55) !important;
+  font-weight: 900 !important;
+  font-size: 14px !important;
+  pointer-events: none !important;
+}
+
+/* 아이콘 박스: 배경은 기존(다크 글래스) 유지 */
+.page-home .sys-icon-box{
+  width: 56px !important;
+  height: 56px !important;
+  margin: 0 auto 8px !important;
+  border-radius: 18px !important;
+
+  /* 배경을 컬러로 바꾸지 않음 (요청사항) */
+  background: linear-gradient(180deg, rgba(10,35,90,0.35), rgba(5,10,26,0.28)) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-shadow:
+    0 14px 32px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.06) !important;
+
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* 유리 하이라이트(은은하게) */
+.page-home .sys-icon-box::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-40% -25% auto -25% !important;
+  height: 80% !important;
+  transform: rotate(12deg) !important;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.18), transparent) !important;
+  opacity: .55 !important;
+  pointer-events:none !important;
+}
+
+/* ✅ 아이콘(흰색 기본)을 CTA 컬러로: "아이콘 내부(그림)"만 색 변경 */
+.page-home .sys-icon-box i{
+  font-size: 22px !important;
+  line-height: 1 !important;
+
+  /* 폴백(클립이 안 먹는 환경) */
+  color: var(--accent-a) !important;
+
+  /* 그라데이션 텍스트 클립(아이콘 내부만 컬러) */
+  background: var(--cta-grad) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+
+  /* 살짝 살아있는 광 */
+  filter:
+    drop-shadow(0 2px 8px rgba(0,0,0,0.45))
+    drop-shadow(0 0 10px rgba(47,91,255,0.35)) !important;
+}
+
+/* STEP / 타이틀 */
+.page-home .sys-step{
+  display:block !important;
+  font-size: 10px !important;
+  letter-spacing: 1.2px !important;
+  color: rgba(255,255,255,0.55) !important;
+  margin-bottom: 2px !important;
+}
+
+.page-home .sys-title{
+  display:block !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: rgba(255,255,255,0.92) !important;
+}
+
+/* 모바일에서 4칸이 너무 답답하면 자동 줄바꿈 */
+@media (max-width: 360px){
+  .page-home .system-grid{ grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+  .page-home .system-item:not(:last-child)::after{ display:none !important; }
+}
+
+.page-home .sys-icon-box i{
+  font-size: 30px !important; /* ← 기존 22px보다 확 커짐 */
+}
+
+.page-home .sys-icon-box i{
+  font-size: 30px !important;
+
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 🔥 컬러 글로우 강화 */
+  filter:
+    drop-shadow(0 0 6px rgba(120,160,255,.8))
+    drop-shadow(0 0 14px rgba(120,160,255,.45))
+    drop-shadow(0 4px 10px rgba(0,0,0,.45)) !important;
+}
+
+.page-home .sys-icon-box{
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.12),
+    0 10px 30px rgba(0,0,0,.45) !important;
+}
+
+/* =========================
+   HEADER 하단 띠 → 섹션1 색상으로 통일
+   ========================= */
+
+/* 헤더 하단 그라데이션 제거 */
+.page-home .header::after{
+  content: none !important;
+}
+
+/* 만약 ::before를 쓰고 있다면 이것도 */
+.page-home .header::before{
+  content: none !important;
+}
+
+/* 헤더 아래 띠(빈공간) 제거: 첫 섹션을 헤더에 딱 붙임 */
+.page-home .sec:first-of-type{
+  margin-top: 0 !important;
+}
+
+
+/* =========================
+   PHONE 상단 배경 강제 블랙
+   (헤더~섹션1 사이 띠 해결)
+   ========================= */
+
+.page-home .phone{
+  background: #000 !important;
+}
+
+/* 혹시 phone 안에 그라데이션 레이어가 따로 있으면 */
+.page-home .phone::before,
+.page-home .phone::after{
+  content: none !important;
+}
+
+/* =========================
+   이용가이드: 왼쪽→오른쪽 '띄용' 순차 등장
+   ========================= */
+
+/* 애니메이션 정의: 살짝 아래에서 올라오며 팡! 느낌 */
+@keyframes boingIn {
+  0%   { opacity: 0; transform: translateY(16px) scale(.80); filter: blur(2px); }
+  60%  { opacity: 1; transform: translateY(-6px) scale(1.08); filter: blur(0); }
+  80%  { transform: translateY(2px) scale(.98); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* 기본: 아직 등장 전 상태 */
+.page-home .system-grid .system-item{
+  opacity: 0;
+  transform: translateY(16px) scale(.8);
+  animation: boingIn 700ms cubic-bezier(.2, .9, .2, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* 1→4 순서대로 딜레이 */
+.page-home .system-grid .system-item:nth-child(1){ animation-delay: .10s; }
+.page-home .system-grid .system-item:nth-child(2){ animation-delay: .28s; }
+.page-home .system-grid .system-item:nth-child(3){ animation-delay: .46s; }
+.page-home .system-grid .system-item:nth-child(4){ animation-delay: .64s; }
+
+/* 아이콘도 살짝 같이 살아 움직이게 (옵션) */
+@keyframes iconPop {
+  0%   { transform: scale(.85); }
+  60%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+.page-home .system-grid .system-item .sys-icon-box{
+  animation: iconPop 650ms cubic-bezier(.2, .9, .2, 1) forwards;
+  animation-delay: inherit; /* item 딜레이 따라가게 */
+}
+
+/* =========================
+   이용가이드 아이콘 1→4 '띄용' 무한 반복
+   (중요: item을 숨기지 않음!)
+   ========================= */
+
+/* 혹시 이전에 item을 opacity:0으로 만든 규칙이 있으면 강제로 되돌리기 */
+.page-home .system-grid .system-item{
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* 띄용 애니메이션 */
+@keyframes boingLoop {
+  0%   { transform: translateY(0) scale(1); filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+  10%  { transform: translateY(-8px) scale(1.12); }
+  18%  { transform: translateY(2px)  scale(.98); }
+  26%  { transform: translateY(-3px) scale(1.03); }
+  34%  { transform: translateY(0) scale(1); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* 아이콘 박스(또는 i에 걸어도 됨)만 반복 */
+.page-home .system-grid .system-item .sys-icon-box{
+  animation: boingLoop 2.8s cubic-bezier(.2,.9,.2,1) infinite;
+  will-change: transform;
+}
+
+/* 1→4 순서 딜레이 */
+.page-home .system-grid .system-item:nth-child(1) .sys-icon-box{ animation-delay: 0s; }
+.page-home .system-grid .system-item:nth-child(2) .sys-icon-box{ animation-delay: .7s; }
+.page-home .system-grid .system-item:nth-child(3) .sys-icon-box{ animation-delay: 1.4s; }
+.page-home .system-grid .system-item:nth-child(4) .sys-icon-box{ animation-delay: 2.1s; }
+
+/* (선택) 색 글로우도 같이 살아있게 */
+.page-home .system-grid .system-item .sys-icon-box i{
+  filter:
+    drop-shadow(0 0 6px rgba(120,160,255,.60))
+    drop-shadow(0 0 14px rgba(120,160,255,.25));
+}
+
+
+/* =========================
+   HERO2 텍스트 크기 업
+   ========================= */
+
+/* 상단 빨간 문구(제주도 최대 노래 유흥가이드) */
+.page-home .hero2 .hero-kicker{
+  font-size: 15px !important;   /* 기본보다 업 */
+  font-weight: 900 !important;
+  letter-spacing: -0.2px;
+}
+
+/* 메인 타이틀(제주도/유흥가이드) */
+.page-home .hero2 .hero-title__top,
+.page-home .hero2 .hero-title__bottom{
+  font-size: 46px !important;   /* ← 여기로 크게 */
+  line-height: 1.02 !important;
+}
+
+/* 모바일에서 더 크게 하고 싶으면 */
+@media (max-width: 420px){
+  .page-home .hero2 .hero-title__top,
+  .page-home .hero2 .hero-title__bottom{
+    font-size: 50px !important;
+  }
+}
+
+/* =========================
+   HERO 타이틀: 다이아몬드 샤인(글씨 내부 반짝임)
+   ========================= */
+
+.page-home .hero2 .hero-diamond{
+  position: relative;
+  display: inline-block;
+
+  /* 기본 그라데이션 텍스트 */
+  background: linear-gradient(180deg, #ffffff, rgba(255,255,255,0.70));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 10px 28px rgba(0,0,0,.45);
+}
+
+/* 글씨 내부로만 지나가는 ‘다이아몬드 하이라이트’ */
+.page-home .hero2 .hero-diamond::after{
+  content: "";
+  position: absolute;
+  inset: -12% -20%;
+  pointer-events: none;
+
+  /* 하이라이트(대각선으로 지나가며 반짝) */
+  background:
+    linear-gradient(115deg,
+      transparent 0%,
+      rgba(255,255,255,0.00) 35%,
+      rgba(255,255,255,0.55) 45%,
+      rgba(180,220,255,0.65) 50%,
+      rgba(255,255,255,0.55) 55%,
+      rgba(255,255,255,0.00) 65%,
+      transparent 100%);
+
+  /* 글씨 안쪽으로만 보이게 */
+  -webkit-mask-image: linear-gradient(#000,#000);
+  -webkit-mask-clip: text;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  mix-blend-mode: screen;
+  opacity: .85;
+
+  transform: translateX(-60%) skewX(-18deg);
+  animation: diamondSweep 2.8s ease-in-out infinite;
+}
+
+/* 반짝이는 움직임 */
+@keyframes diamondSweep{
+  0%   { transform: translateX(-70%) skewX(-18deg); opacity: .0; }
+  15%  { opacity: .85; }
+  50%  { opacity: .95; }
+  85%  { opacity: .75; }
+  100% { transform: translateX(70%)  skewX(-18deg); opacity: 0; }
+}
+
+
+/* =========================
+   HERO 타이틀: 2줄 고정 + 블루 + 다이아 샤인(내부+윤곽)
+   ========================= */
+
+/* 2줄 고정: 각 줄 span을 블록으로 */
+.page-home .hero2 .hero-title{
+  margin: 10px 0 10px;
+  text-align: center;
+}
+
+.page-home .hero2 .hero-title__top,
+.page-home .hero2 .hero-title__bottom{
+  display: block !important;            /* 무조건 줄바꿈 */
+  white-space: nowrap !important;       /* 각 줄은 안 꺾이게 */
+  line-height: 1.05 !important;
+  letter-spacing: -0.8px !important;
+
+  /* 폰 프레임에서 안 틀어지게: 화면에 맞춰 자동 스케일 */
+  font-size: clamp(38px, 8.8vw, 54px) !important;
+}
+
+/* 블루 계열 그라데이션 텍스트(기본 내부색) */
+.page-home .hero2 .hero-diamond{
+  position: relative;
+  display: inline-block;
+
+  background: linear-gradient(180deg,
+    #cfe9ff 0%,
+    #7dd3ff 28%,
+    #3aa7ff 55%,
+    #1b67ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 윤곽/깊이: 글테 따라 살아나는 느낌 */
+  text-shadow:
+    0 2px 0 rgba(0,0,0,.35),
+    0 10px 28px rgba(0,0,0,.55);
+}
+
+/* 글 테두리 느낌(윤곽을 따라 반짝이게 보이도록) */
+.page-home .hero2 .hero-diamond::before{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* 얇은 외곽선(브라우저 지원 좋은 편) */
+  -webkit-text-stroke: 1.1px rgba(185, 225, 255, 0.55);
+  color: transparent;
+
+  /* 외곽선 글로우 */
+  filter:
+    drop-shadow(0 0 8px rgba(80, 180, 255, .28))
+    drop-shadow(0 0 18px rgba(60, 120, 255, .18));
+  opacity: .95;
+}
+
+/* 내부 다이아 샤인: 글씨 "안쪽"에서만 지나감 */
+.page-home .hero2 .hero-diamond::after{
+  content: "";
+  position: absolute;
+  inset: -18% -25%;
+  pointer-events: none;
+
+  background:
+    linear-gradient(115deg,
+      transparent 0%,
+      rgba(255,255,255,0) 35%,
+      rgba(255,255,255,.55) 45%,
+      rgba(180,235,255,.85) 50%,
+      rgba(255,255,255,.55) 55%,
+      rgba(255,255,255,0) 65%,
+      transparent 100%);
+
+  /* 글자 안쪽으로만 보이게(핵심) */
+  -webkit-mask-image: linear-gradient(#000,#000);
+  -webkit-mask-clip: text;
+  -webkit-mask-composite: source-in;
+
+  mix-blend-mode: screen;
+  opacity: .9;
+
+  transform: translateX(-65%) skewX(-18deg);
+  animation: diamondSweep 2.4s ease-in-out infinite;
+}
+
+@keyframes diamondSweep{
+  0%   { transform: translateX(-70%) skewX(-18deg); opacity: 0; }
+  18%  { opacity: .95; }
+  55%  { opacity: 1; }
+  100% { transform: translateX(70%)  skewX(-18deg); opacity: 0; }
+}
+
+
+/* 경쟁업체 primary 톤 (없으면 이걸로 고정) */
+:root{
+  --a1-primary: #06b6d4; /* competitor primary 느낌 */
+}
+
+/* 2줄 고정(이미 되어있겠지만 “무조건” 고정) */
+.page-home .hero-title__top,
+.page-home .hero-title__bottom{
+  display:block !important;
+  white-space:nowrap !important;
+  line-height:1.06 !important;
+  letter-spacing:-0.9px !important;
+}
+
+/* 기본 글씨(블루/시안 계열 그라데이션) */
+.page-home .hero-diamond{
+  position: relative;
+  display: inline-block;
+
+  background: linear-gradient(to bottom right, #ffffff 40%, var(--a1-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 깊이 */
+  text-shadow: 0 10px 30px rgba(0,0,0,0.60);
+}
+
+
+/* 경쟁업체 primary 톤 (없으면 이걸로 고정) */
+:root{
+  --a1-primary: #06b6d4; /* competitor primary 느낌 */
+}
+
+/* 2줄 고정(이미 되어있겠지만 “무조건” 고정) */
+.page-home .hero-title__top,
+.page-home .hero-title__bottom{
+  display:block !important;
+  white-space:nowrap !important;
+  line-height:1.06 !important;
+  letter-spacing:-0.9px !important;
+}
+
+/* 기본 글씨(블루/시안 계열 그라데이션) */
+.page-home .hero-diamond{
+  position: relative;
+  display: inline-block;
+
+  background: linear-gradient(to bottom right, #ffffff 40%, var(--a1-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 깊이 */
+  text-shadow: 0 10px 30px rgba(0,0,0,0.60);
+}
+
+
+/* =========================================================
+   HERO (섹션1) : "실물 다이아 햇빛 반짝" + 경쟁업체 톤
+   - HTML: .hero-title__top/.hero-title__bottom 에 .hero-diamond + data-text 필요
+   ========================================================= */
+
+:root{
+  --a1-primary: #06b6d4; /* 경쟁업체 느낌 시안 톤 */
+}
+
+/* 빨간 문구(둥글둥글) */
+.page-home .hero2 .hero-kicker{
+  font-family: "Jua", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  letter-spacing: 0.2px !important;
+  color: #ff3b3b !important;
+  margin: 0 0 10px !important;
+}
+
+/* 타이틀 2줄 고정 + 크기(프레임에서 안 틀어지게) */
+.page-home .hero2 .hero-title__top,
+.page-home .hero2 .hero-title__bottom{
+  display: block !important;
+  white-space: nowrap !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.9px !important;
+  font-size: clamp(40px, 9.2vw, 56px) !important;
+}
+
+/* 기본 텍스트 컬러: 경쟁업체처럼 화이트→시안 그라데이션 */
+.page-home .hero2 .hero-diamond{
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom right, #ffffff 40%, var(--a1-primary)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+
+  /* 얇은 외곽선 + 깊이 */
+  -webkit-text-stroke: 1.05px rgba(180, 245, 255, 0.22);
+  text-shadow: 0 10px 30px rgba(0,0,0,0.60);
+}
+
+/* 1) 미세 스파클(점) : 글씨 안쪽에서 랜덤처럼 "톡톡" */
+.page-home .hero2 .hero-diamond::before{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  background-image:
+    radial-gradient(circle at 14% 28%, rgba(255,255,255,.95) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 28% 62%, rgba(170,240,255,.95) 0 1.1px, transparent 2.3px),
+    radial-gradient(circle at 46% 22%, rgba(255,255,255,.85) 0 1.0px, transparent 2.2px),
+    radial-gradient(circle at 58% 70%, rgba(190,250,255,.95) 0 1.2px, transparent 2.5px),
+    radial-gradient(circle at 74% 36%, rgba(255,255,255,.90) 0 1.1px, transparent 2.3px),
+    radial-gradient(circle at 88% 58%, rgba(160,230,255,.92) 0 1.0px, transparent 2.2px);
+
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 0 6px rgba(180,240,255,.25))
+    drop-shadow(0 0 16px rgba(80,180,255,.18));
+
+  opacity: 0;
+  animation: heroDiamondTwinkle 1.18s steps(2,end) infinite;
+}
+
+/* 2) 강한 햇빛 반사선(스펙큘러) : "번쩍" 하고 지나감 */
+.page-home .hero2 .hero-diamond::after{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  background-image:
+    linear-gradient(120deg,
+      transparent 0%,
+      rgba(255,255,255,0.0) 38%,
+      rgba(255,255,255,0.98) 50%,
+      rgba(180,245,255,0.98) 54%,
+      rgba(255,255,255,0.0) 62%,
+      transparent 100%);
+
+  background-size: 240% 240%;
+  background-position: -160% 0;
+
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 0 12px rgba(200,250,255,.22))
+    drop-shadow(0 0 30px rgba(80,180,255,.14));
+
+  opacity: 0;
+  animation: heroDiamondSweep 2.75s ease-in-out infinite;
+}
+
+@keyframes heroDiamondTwinkle{
+  0%   { opacity: 0.0; }
+  20%  { opacity: 0.70; }
+  40%  { opacity: 0.15; }
+  60%  { opacity: 0.82; }
+  80%  { opacity: 0.22; }
+  100% { opacity: 0.0; }
+}
+
+@keyframes heroDiamondSweep{
+  0%   { background-position: -170% 0; opacity: 0; }
+  18%  { opacity: 0; }
+  35%  { opacity: .98; }
+  55%  { opacity: 1; }
+  75%  { opacity: .55; }
+  100% { background-position: 170% 0; opacity: 0; }
+}
+
+/* 성능/가독성: 사용자가 모션 줄임 설정이면 애니메이션 off */
+@media (prefers-reduced-motion: reduce){
+  .page-home .hero2 .hero-diamond::before,
+  .page-home .hero2 .hero-diamond::after{
+    animation: none !important;
+    opacity: .35 !important;
+  }
+}
