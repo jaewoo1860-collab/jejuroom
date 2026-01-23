@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 
 <html lang="ko">
@@ -8,11 +9,11 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "고객후기 - 제주 유흥가이드",
+  "name": "고객후기 - 제주도 유흥가이드",
   "url": "__SITE_URL__/pages/reviews.html",
   "mainEntity": {
     "@type": "ItemList",
-    "name": "제주 유흥가이드 고객후기",
+    "name": "제주도 유흥가이드 고객후기",
     "itemListElement": []
   }
 }
@@ -21,8 +22,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>고객후기 | 제주 유흥가이드</title>
-<meta content="제주 유흥가이드 고객후기 게시판입니다. 정보 제공 목적이며 예약·중개·알선 서비스는 제공하지 않습니다." name="description"/>
+<title>고객후기 | 제주도 유흥가이드</title>
+<meta content="제주도 유흥가이드 고객후기 게시판입니다. 정보 제공 목적이며 예약·중개·알선 서비스는 제공하지 않습니다." name="description"/>
 <meta content="index,follow" name="robots"/>
 <link href="/pages/reviews.html" rel="canonical"/>
 <link href="../css/base.css" rel="stylesheet"/>
@@ -147,7 +148,7 @@
 <main class="content">
 <section class="page-title">
 <h1>고객후기</h1>
-<p class="sub">게시판 형태로 제공되며, 작성 기능은 제공되지 않습니다.</p>
+<p class="sub">후기 작성은 인증된 제주똑똑이 회원만 가능합니다. (문의: 텔레그램)</p>
 </section>
 <!-- 후기 게시판 -->
 <section class="board" id="reviewBoard">
@@ -174,7 +175,7 @@
 </thead>
 <tbody id="boardBody">
 <!-- AUTO_REVIEWS_START -->
-<tr class="board__row" data-auto="1" data-auto-date="2026-01-11" data-content="제주 술 + 제주 가라오케 조합으로 좋았고, 제주 노래방 분위기도 가볍게 즐기기 좋았어요." data-id="auto-20260111-1768057670191-550">
+<tr class="board__row" data-auto="1" data-auto-date="2026-01-11" data-content="제주도 술 + 제주 가라오케 조합으로 좋았고, 제주 노래방 분위기도 가볍게 즐기기 좋았어요." data-id="auto-20260111-1768057670191-550">
 <td class="cell-title">
 <button class="linkTitle" data-open="auto-20260111-1768057670191-550" type="button">제주 술 + 제주 가라오케 조합으…</button>
 <div class="preview">제주 술 + 제주 가라오케 조합으로 좋았고, 제주 노래방 분위기도 가볍게 즐기기 좋았어요.</div>
@@ -376,7 +377,16 @@
   if (nextBtn) nextBtn.addEventListener("click", () => { page = Math.min(totalPages(), page + 1); renderPage(); });
 
   // 가짜 버튼 안내
-  if (fakeWriteBtn) fakeWriteBtn.addEventListener("click", () => alert("작성 기능은 제공되지 않습니다. (정보 제공 목적)"));
+  if (fakeWriteBtn) fakeWriteBtn.addEventListener("click", () => (() => {
+  const msg =
+    "후기 작성은 ‘인증된 제주똑똑이 회원’만 가능합니다.\n\n"
+    + "텔레그램으로 문의하시면 안내 후 제주똑똑이 회원으로 등록될 수 있습니다.\n"
+    + "지금 텔레그램으로 이동할까요?";
+
+  if (confirm(msg)) {
+    window.open("https://t.me/kkkkjso", "_blank", "noopener");
+  }
+})());
   if (fakeEditBtn) fakeEditBtn.addEventListener("click", () => alert("수정 기능은 제공되지 않습니다. (정보 제공 목적)"));
 
   // 초기 렌더

@@ -1456,7 +1456,8 @@ a:focus-visible{
    - "고객후기 전체보기" (a.btnLatestAll)
 ========================= */
 
-.page-home .phone .content :is(a.place-more, a.btnLatestAll):not(.btn-plain){
+.page-home .phone .content :is(a.place-more, a.btnLatestAll),
+.page-contact .phone .content a.place-more:not(.btn-plain){
   position: relative;
   isolation: isolate;          /* let glow stay behind */
   overflow: hidden;
@@ -5767,4 +5768,176 @@ a:focus-visible{
 /* 화면폭 기준(일부 브라우저 hover 판별이 애매할 때도 안전망) */
 @media (max-width: 768px){
   .hero-confetti{ display:none !important; }
+}
+
+/* =========================================================
+   CONTACT – TELEGRAM CTA (index 버튼과 동일한 느낌)
+   - contact.html에서 텔레그램 문의 버튼용
+========================================================= */
+.page-contact .telegram-box{
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+  text-align: center;
+}
+
+.page-contact .telegram-text{
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.88);
+}
+
+/* 메인(index)의 버튼(.page-home .place-more)과 같은 톤 */
+.page-contact .telegram-btn{
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px 0;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .1px;
+
+  color: #fff;
+  text-decoration: none;
+
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  box-shadow: 0 6px 18px rgba(40,80,255,0.45);
+
+  transform: translateZ(0);
+  transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+}
+
+.page-contact .telegram-btn:hover{
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(40,80,255,0.55);
+}
+
+.page-contact .telegram-btn:active{
+  transform: translateY(0) scale(0.99);
+  filter: brightness(0.98);
+}
+
+/* 키보드 접근성 */
+.page-contact .telegram-btn:focus-visible{
+  outline: 2px solid rgba(255,255,255,0.55);
+  outline-offset: 3px;
+}
+
+/* =========================
+   TELEGRAM BUTTON (SIMPLE)
+========================= */
+.tg-btn{
+  display: inline-block;
+  margin-top: 14px;
+  padding: 14px 22px;
+  background: #2AABEE;           /* 텔레그램 대표 색상 */
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 10px;           /* 네모 버튼 */
+  text-decoration: none !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.tg-btn:hover{
+  filter: brightness(1.05);
+}
+
+.tg-btn:active{
+  transform: translateY(1px);
+}
+
+/* ===== TELEGRAM PURE CSS BUTTON ===== */
+.tg-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 20px;
+  background: #2AABEE;          /* 텔레그램 메인 컬러 */
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+
+  border-radius: 10px;
+  text-decoration: none !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+
+/* 비행기 아이콘 (CSS로 그림) */
+.tg-icon{
+  width: 22px;
+  height: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+/* 종이비행기 몸체 */
+.tg-icon::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  clip-path: polygon(
+    0% 50%,
+    100% 0%,
+    70% 50%,
+    100% 100%
+  );
+}
+
+/* 종이비행기 꼬리 */
+.tg-icon::after{
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  background: #2AABEE;
+  left: 6px;
+  top: 9px;
+  transform: skewX(-20deg);
+}
+
+.tg-btn:hover{
+  filter: brightness(1.05);
+}
+
+.tg-btn:active{
+  transform: translateY(1px);
+}
+
+
+/* 텔레그램 문의 박스 */
+.telegram-box {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+/* 안내 텍스트 */
+.telegram-text {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 텔레그램 버튼 */
+.telegram-btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2aabee, #229ed9);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
 }

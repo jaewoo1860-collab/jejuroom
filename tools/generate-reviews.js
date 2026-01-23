@@ -23,7 +23,7 @@ const ALLOWED_HOURS_KST = [0, 2, 5, 7, 10, 12, 15, 17, 20, 22];
 const SLOT_BASE_MINUTES = [5, 20, 35, 50];
 const JITTER_MINUTES = 7;
 const SCHEMA_MAX_REVIEWS = 20;
-const SITE_URL = "__SITE_URL__"; // 도메인 연결 후 변경
+const SITE_URL = "https://www.jejutoktokyi.com"; // 도메인 반영
 
 /* =========================
    시간 유틸 (KST)
@@ -91,11 +91,11 @@ function slotMinute(day, h) {
    ========================= */
 const KEYWORDS = [
   // 제주
-  "제주 유흥",
-  "제주 노래방",
-  "제주 가라오케",
-  "제주 술",
-  "제주 파티",
+  "제주도 유흥",
+  "제주도 노래방",
+  "제주도 가라오케",
+  "제주도 술",
+  "제주도 파티",
 
   // 서귀포
   "서귀포 유흥",
