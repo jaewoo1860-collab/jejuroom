@@ -5744,3 +5744,27 @@ a:focus-visible{
     line-height: 1.88;
   }
 }
+
+
+/* =========================================================
+   MOBILE PERFORMANCE OVERRIDE
+   - 모바일에서는 '내리는 컨페티'를 완전 비활성화(렉/배터리 방지)
+   - 반짝이는 느낌은 hero-fireflies는 남기되, 무거운 이동 애니메이션은 제거
+   ========================================================= */
+
+/* 터치 디바이스(대부분 모바일) 기준 */
+@media (hover: none) and (pointer: coarse){
+  /* 1) 내리는 컨페티 OFF */
+  .hero-confetti{ display:none !important; }
+
+  /* 2) 반딧불은 '반짝임'만 남기고 이동/위글 제거(가벼움) */
+  .hero-fireflies span{
+    animation: fireflyTwinkle 3.6s ease-in-out infinite !important;
+    will-change: opacity, transform;
+  }
+}
+
+/* 화면폭 기준(일부 브라우저 hover 판별이 애매할 때도 안전망) */
+@media (max-width: 768px){
+  .hero-confetti{ display:none !important; }
+}
