@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# 불필요한 내부 경로 차단
+Disallow: /tools/
+Disallow: /백업/
+Disallow: /그냥 자료들/
+Disallow: /경쟁업체 참고/
+Disallow: /photo/
+Disallow: /*.zip$
+
+# 사이트맵 위치
+Sitemap: https://www.jejutoktokyi.com/sitemap.xml
