@@ -21,8 +21,34 @@
 </script>
 <!-- AUTO_SCHEMA_END -->
 <head>
-  <meta name="google-site-verification" content="8ubVoCm9jZ8ySRmd7AWVuZWUTN1Y__7UmKM-k8d6dJQ" />
 <meta charset="utf-8"/>
+<meta name="google-site-verification" content="8ubVoCm9jZ8ySRmd7AWVuZWUTN1Y__7UmKM-k8d6dJQ" />
+  <!-- GA4 (JEJU GUIDE) - load only after age-gate confirm -->
+<script>
+  window.__GA4_ID__ = "G-5861XGW6LD";
+  window.__ga4Loaded__ = false;
+
+  window.loadGA4 = function () {
+    if (window.__ga4Loaded__) return;
+    window.__ga4Loaded__ = true;
+
+    // 1) Load gtag.js
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.__GA4_ID__;
+    document.head.appendChild(s);
+
+    // 2) Init dataLayer + config
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+    gtag("config", window.__GA4_ID__, {
+      anonymize_ip: true
+    });
+  };
+</script>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>고객후기 | 제주도 유흥가이드</title>
 <meta content="제주도 유흥가이드 고객후기 게시판입니다. 정보 제공 목적이며 예약·중개·알선 서비스는 제공하지 않습니다." name="description"/>
