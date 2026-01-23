@@ -34,6 +34,11 @@ function kstDate() {
 function pad(n) {
   return String(n).padStart(2, "0");
 }
+
+function normalizeJeju(text) {
+  // '제주' 단독 키워드는 관광객 검색 기준 '제주도'로 치환 (제주시는 유지)
+  return String(text).replace(/\b제주(?!시)\b/g, "제주도");
+}
 function ymd() {
   const d = kstDate();
   return `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}`;
@@ -60,6 +65,16 @@ function escapeHtml(s) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+
+function decodeHtml(s) {
+  return String(s)
+    .replaceAll("&quot;", \'"\')
+    .replaceAll("&#39;", "\'")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&amp;", "&");
+}
+
 function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -91,11 +106,11 @@ function slotMinute(day, h) {
    ========================= */
 const KEYWORDS = [
   // 제주
-  "제주도 유흥",
-  "제주도 노래방",
-  "제주도 가라오케",
-  "제주도 술",
-  "제주도 파티",
+  "제주 유흥",
+  "제주 노래방",
+  "제주 가라오케",
+  "제주 술",
+  "제주 파티",
 
   // 서귀포
   "서귀포 유흥",
@@ -143,26 +158,44 @@ function parseExisting(block) {
   const bodies = new Set();
   const pairs = new Set();
 
-  const trs = block.match(/<tr[^>]*data-id="auto-[^"]+"[\s\S]*?<\/tr>/g) || [];
-  trs.forEach(tr => {
+  // 신규 포맷: board__row
+  const trsNew = block.match(/<tr[^>]*class="board__row"[\s\S]*?data-id="auto-[^"]+"[\s\S]*?<\/tr>/g) || [];
+  trsNew.forEach(tr => {
+    const t = (tr.match(/class="linkTitle"[\s\S]*?>([^<]+)<\/button>/) || [])[1];
+    const b = (tr.match(/data-content="([^"]*)"/) || [])[1];
+    const title = t ? decodeHtml(t).trim() : "";
+    const body = b ? decodeHtml(b).trim() : "";
+    if (title) titles.add(title);
+    if (body) bodies.add(body);
+    if (title && body) pairs.add(`${title}||${body}`);
+  });
+
+  // 레거시 포맷(col-*)도 같이 읽어 중복 방지
+  const trsOld = block.match(/<tr[^>]*data-id="auto-[^"]+"[\s\S]*?<\/tr>/g) || [];
+  trsOld.forEach(tr => {
     const t = (tr.match(/class="col-title">([^<]+)/) || [])[1];
     const b = (tr.match(/class="col-preview">([^<]+)/) || [])[1];
-    if (t) titles.add(t);
-    if (b) bodies.add(b);
-    if (t && b) pairs.add(`${t}||${b}`);
+    const title = t ? decodeHtml(t).trim() : "";
+    const body = b ? decodeHtml(b).trim() : "";
+    if (title) titles.add(title);
+    if (body) bodies.add(body);
+    if (title && body) pairs.add(`${title}||${body}`);
   });
+
   return { titles, bodies, pairs };
 }
+
+
 
 /* =========================
    리뷰 1개 생성
    ========================= */
 function makeReview(existing) {
   for (let i = 0; i < 300; i++) {
-    const title = pick(TITLES);
+    let title = normalizeJeju(pick(TITLES));
     const kws = shuffle(KEYWORDS).slice(0, 2 + Math.floor(Math.random() * 2));
-    const body =
-      clamp(`${pick(BODY_A)} ${pick(BODY_B)} (${kws.join(", ")} 참고)`, 100);
+    let body =
+      normalizeJeju(clamp(`${pick(BODY_A)} ${pick(BODY_B)} (${kws.join(", ")} 참고)`, 100));
 
     if (
       existing.titles.has(title) ||
@@ -208,14 +241,32 @@ function makeReview(existing) {
   if (!one) return;
 
   const id = `auto-${day}-${hhmm()}-${Math.random().toString(16).slice(2, 8)}`;
-  const dateText = `${day.slice(0,4)}-${day.slice(4,6)}-${day.slice(6,8)}`;
+  const dnow = kstDate();
+  const yyyy = String(dnow.getUTCFullYear());
+  const mm = pad(dnow.getUTCMonth() + 1);
+  const dd = pad(dnow.getUTCDate());
+  const HH = pad(dnow.getUTCHours());
+  const MM = pad(dnow.getUTCMinutes());
+  const dateOnly = `${yyyy}-${mm}-${dd}`;
+  const dateTime = `${dateOnly} ${HH}:${MM}`;
 
+  const authors = ["김**", "이**", "박**", "최**", "정**", "윤**", "장**"];
+  const author = authors[Math.floor(Math.random() * authors.length)];
+
+  const starSets = ["★★★★★", "★★★★☆", "★★★★☆", "★★★★★", "★★★☆☆"];
+  const stars = starSets[Math.floor(Math.random() * starSets.length)];
+
+  // board__row 포맷으로 생성 (reviews.html UI/JS와 동일)
   const row = `
-<tr data-id="${id}">
-  <td class="col-rating"><span class="stars">★★★★★</span></td>
-  <td class="col-title">${escapeHtml(one.title)}</td>
-  <td class="col-preview">${escapeHtml(one.body)}</td>
-  <td class="col-date">${dateText}</td>
+<tr class="board__row" data-auto="1" data-auto-date="${dateOnly}" data-content="${escapeHtml(one.body)}" data-id="${id}">
+  <td class="cell-title">
+    <button class="linkTitle" data-open="${id}" type="button">${escapeHtml(one.title)}</button>
+    <div class="preview">${escapeHtml(one.body)}</div>
+  </td>
+  <td class="cell-author">${author}</td>
+  <td class="cell-time">${dateTime}</td>
+  <td class="cell-rate"><span aria-label="별점" class="stars">${stars}</span></td>
+  <td class="cell-pass"><button class="miniBtn" data-edit="${id}" type="button">비밀번호</button></td>
 </tr>`;
 
   html = html.slice(0, e) + row + "\n" + html.slice(e);

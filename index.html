@@ -11,10 +11,12 @@
 
 
 
+
 <!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
+  <meta name="google-site-verification" content="8ubVoCm9jZ8ySRmd7AWVuZWUTN1Y__7UmKM-k8d6dJQ" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>제주 똑똑이 | 제주도 최신시설 유흥 노래방 가이드</title>
   <meta name="description" content="제주 유흥가이드 - 제주도 및 서귀포 최신시설과 최고의 서비스 픽업가능한 유흥 노래방 가라오케 전문가이드는 제주똑똑이에서." />
@@ -528,7 +530,16 @@
   <!-- 19+ AGE GATE LOGIC -->
   <script>
   (function(){
-    const gate = document.getElementById('ageGate');
+    
+    /* ===============================
+       ✅ Google Search Console 인증 파일 예외 (HTML 파일 인증용)
+       이 파일은 '콘텐츠 페이지'가 아니라 소유권 확인용이므로
+       연령 확인/오버레이/리다이렉트가 걸리면 인증이 실패합니다.
+       =============================== */
+    if (location.pathname === "/google07546e3047e63bb0.html") {
+      // 인증 파일은 팝업/스크롤락 없이 그대로 노출
+      return;
+    }const gate = document.getElementById('ageGate');
     const wrap = document.querySelector('.site-wrap');
     if(!gate || !wrap) return;
 
