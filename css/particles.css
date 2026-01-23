@@ -206,3 +206,23 @@
   .particles::before,
   .particles .p{ animation: none !important; opacity: .25; }
 }
+
+
+/* 모바일 성능 최적화: 파티클/컨페티 줄이기 */
+@media (max-width: 768px) {
+  .particles,
+  .confetti,
+  .fireflies {
+    opacity: 0.35;
+    filter: none !important;
+  }
+
+  /* 너무 많으면 아예 숨김(렉 심할 때) */
+  /* .particles, .confetti, .fireflies { display: none !important; } */
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .particles, .confetti, .fireflies { display: none !important; }
+}
