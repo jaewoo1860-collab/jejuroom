@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>지역 선택 | 제주똑똑이</title>
+  <meta name="description" content="제주똑똑이 지역 선택 안내 페이지 (제주시/서귀포시) - 정보 제공 목적" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/particles.css" />
+  <link rel="stylesheet" href="../css/page.css" />
+
+  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
+</head>
+
+<body class="page-area">
+
+  <!-- 19+ AGE GATE -->
+  <div id="ageGate" role="dialog" aria-modal="true" aria-label="성인 인증" tabindex="-1">
+    <div class="agegate-card">
+      <div class="agegate-top">
+        <span class="agegate-badge">19+</span>
+        <span class="agegate-badge" style="opacity:.7">INFO ONLY</span>
+      </div>
+      <h2 class="agegate-title">만 19세 이상만 이용 가능합니다</h2>
+      <p class="agegate-desc">
+        본 사이트는 <b>정보 제공 목적</b>의 안내 페이지이며,<br>
+        <b>예약·중개·알선</b> 및 <b>성매매·성 관련 서비스</b>를 제공하지 않습니다.
+      </p>
+      <ul class="agegate-list">
+        <li>만 19세 미만은 이용할 수 없습니다.</li>
+        <li>불법 업소 제휴는 일절 받지 않습니다.</li>
+        <li>동의 후에도 페이지 이동 시에는 다시 노출되지 않습니다.</li>
+      </ul>
+      <div class="agegate-actions">
+        <button class="agegate-btn leave" type="button" data-age="leave">나가기</button>
+        <button class="agegate-btn enter" type="button" data-age="enter">입장하기</button>
+      </div>
+      <div class="agegate-fineprint">
+        ※ 새로고침(리로드)하면 다시 확인합니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="site-wrap locked">
+    <!-- PC 배경 -->
+    <div class="bg" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+
+    <!-- 파티클 -->
+    <div class="particles" aria-hidden="true">
+      <span class="p p1"></span><span class="p p2"></span><span class="p p3"></span><span class="p p4"></span>
+      <span class="p p5"></span><span class="p p6"></span><span class="p p7"></span><span class="p p8"></span>
+      <span class="p p9"></span><span class="p p10"></span><span class="p p11"></span><span class="p p12"></span>
+      <span class="p p13"></span><span class="p p14"></span><span class="p p15"></span><span class="p p16"></span>
+      <span class="p p17"></span><span class="p p18"></span><span class="p p19"></span><span class="p p20"></span>
+      <span class="p p21"></span><span class="p p22"></span><span class="p p23"></span><span class="p p24"></span>
+    </div>
+
+    <!-- 모바일 프레임 -->
+    <div class="stage">
+      <div class="phone" role="application" aria-label="모바일 프레임">
+        <div class="phone__notch" aria-hidden="true"></div>
+
+        <!-- 헤더 -->
+        <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+        <nav class="drawer" aria-label="메인 메뉴">
+          <a href="../index.html">메인</a>
+          <a href="./jejusi.html">제주시</a>
+          <a href="./seogwipo.html">서귀포시</a>
+          <a href="./reviews.html">고객후기</a>
+          <a href="./contact.html">문의</a>
+        </nav>
+        <label class="drawer-overlay" for="nav-toggle" aria-label="메뉴 닫기"></label>
+
+        <header class="header" role="banner">
+          <a class="logo logo-brand" href="../index.html" aria-label="제주똑똑이 메인">
+            <span class="logo__jeju">제주</span>
+            <span class="logo__tok" aria-hidden="true">
+              <span class="logo__tok--a">똑</span>
+              <span class="logo__tok--b">똑</span>
+            </span>
+            <span class="logo__i">이</span>
+          </a>
+
+          <label class="hamburger" for="nav-toggle" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </label>
+        </header>
+
+        <!-- 폰 내부 스크롤 -->
+        <main class="content">
+
+          <section class="sec areaHub" aria-label="지역 선택">
+            <h1 class="sec-title">지역 선택</h1>
+            <p class="sec-desc">원하시는 지역을 선택하면 해당 페이지로 이동합니다.</p>
+
+            <div class="area-actions">
+              <a class="place-more" href="./jejusi.html" aria-label="제주시 페이지로 이동">제주시</a>
+              <a class="place-more" href="./seogwipo.html" aria-label="서귀포시 페이지로 이동">서귀포시</a>
+            </div>
+
+            <div class="disclaimer" aria-label="안내 및 고지">
+              <b>안내 및 고지</b><br>
+              본 페이지는 제주 지역 유흥·여가 관련 <b>정보 제공 목적</b>의 안내 페이지입니다.<br>
+              본 사이트는 업체를 직접 운영하지 않으며, <b>예약·중개·알선(브로커/대행) 및 결제 대행 서비스</b>를 일절 제공하지 않습니다.<br><br>
+
+              업체명, 위치, 연락처 등은 이용자 편의를 위한 <b>참고 정보</b>이며,<br>
+              이용과 관련된 모든 의사결정 및 연락·방문·결제 등은 <b>이용자와 해당 업체 간에 직접</b> 이루어집니다.<br>
+              본 사이트는 그 과정에 개입하지 않으며, 어떠한 형태의 <b>보증/대리/대행</b>도 하지 않습니다.<br><br>
+
+              본 사이트는 <b>불법 성매매 업소 및 불법 유사 성행위 업소와의 제휴·연결을 금지</b>하며,<br>
+              성매매 또는 성 관련 서비스 제공·유도·알선과 <b>무관</b>합니다. 불법 행위를 조장하거나 묵인하지 않습니다.<br><br>
+
+              또한 <b>불법 스웨디시, 불법 출장 마사지, 불법 성인 업소</b> 관련 문의는 모두 거부됩니다.<br>
+              만약 안내된 정보 중 불법 또는 유사 성행위가 의심되는 사례가 확인될 경우,<br>
+              운영 기준에 따라 <b>즉시 정보 노출 중단</b> 등 필요한 조치를 진행합니다.<br><br>
+
+              의심 사례 제보는 운영진 신고 채널을 통해 접수할 수 있으며<br>
+              (신고용 연락 수단은 추후 별도 안내 예정입니다), 미성년자의 이용은 <b>엄격히 금지</b>됩니다.
+              <hr style="border:0;border-top:1px solid rgba(255,255,255,.12);margin:12px 0;">
+              서귀포 관련 정보를 찾을 때는 “서귀포 유흥”, “서귀포 노래방”, “서귀포 가라오케”, “서귀포 술”, “서귀포 파티” 같은 키워드로 접근하는 경우가 많습니다.<br>
+              다만 실제 선택 기준은 여행 일정, 숙소 위치, 이동 동선, 늦은 시간 이동 편의성 등 <b>개인 상황에 따라 달라질 수</b> 있습니다. 이 페이지는 서귀포 지역의 분위기와 이용 흐름을 <b>정보 제공 관점에서 정리</b>하여, 과장 없이 핵심을 빠르게 확인할 수 있도록 구성합니다.<br><br>
+
+              예를 들어 서귀포에서 노래방/가라오케 정보를 찾는 분들은 분위기, 접근성, 운영 시간 등 실용적인 요소를 중요하게 보는 경우가 많습니다. 본 안내는 이러한 포인트를 참고할 수 있도록 <b>서귀포 노래방/서귀포 가라오케</b> 관련 키워드를 자연스럽게 포함해 정리합니다. 또한 서귀포의 술자리 문화나 지역 분위기처럼 <b>지역 특성 정보</b>도 함께 담아 검색 결과에서 필요한 내용을 더 빠르게 찾을 수 있도록 돕습니다.<br><br>
+
+              다시 한 번 강조하지만, 본 사이트는 <b>예약·중개·알선 및 대행 서비스</b>를 제공하지 않으며, 업체와의 연락 및 이용 관련 절차는 <b>이용자와 업체 간 직접</b> 진행됩니다.
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- 19+ AGE GATE LOGIC -->
+  <script>
+  (function(){
+    const gate = document.getElementById('ageGate');
+    const wrap = document.querySelector('.site-wrap');
+    if(!gate || !wrap) return;
+
+    // navigation type: 'navigate' | 'reload' | 'back_forward' | 'prerender'
+    const navEntry = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    const navType = navEntry ? navEntry.type : (performance.navigation && performance.navigation.type === 1 ? 'reload' : 'navigate');
+
+    const ref = document.referrer || '';
+    let refOrigin = '';
+    try{ refOrigin = ref ? (new URL(ref)).origin : ''; }catch(e){ refOrigin = ''; }
+
+    const isInternal = refOrigin && refOrigin === location.origin;
+    const shouldShow = (navType === 'reload') || (!isInternal); // 새로고침이면 무조건, 외부/직접 진입이면 표시
+
+    function show(){
+      gate.classList.add('show');
+      document.body.classList.add('no-scroll');
+      wrap.classList.add('locked');
+      // 포커스
+      gate.focus({ preventScroll: true });
+    }
+    function hide(){
+      gate.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+      wrap.classList.remove('locked');
+      sessionStorage.setItem('jg_age_ok', '1');
+    }
+
+    // 버튼
+    gate.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-age]');
+      if(!btn) return;
+
+      const action = btn.getAttribute('data-age');
+      if(action === 'enter'){
+        hide();
+      }else{
+        // 나가기: 이전 페이지가 있으면 back, 없으면 빈 페이지로
+        if(ref){ history.back(); }
+        else { location.replace('about:blank'); }
+      }
+    });
+
+    // ESC 방지(필요하면 나중에 풀어도 됨)
+    document.addEventListener('keydown', (e) => {
+      if(!gate.classList.contains('show')) return;
+      if(e.key === 'Escape'){ e.preventDefault(); e.stopPropagation(); }
+    }, true);
+
+    // 표시/비표시 결정
+    if(shouldShow){
+      show();
+    }else{
+      // 내부 이동이면 바로 콘텐츠 노출
+      wrap.classList.remove('locked');
+    }
+  })();
+  </script>
+
+</body>
+</html>

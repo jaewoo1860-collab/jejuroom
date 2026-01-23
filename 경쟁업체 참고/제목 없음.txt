@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>제주도 가라오케 A1 | 제주유흥 제주도 노래방 1등 추천 와니이사</title>
+    <meta name="description" content="제주도 가라오케의 모든 것 A1. 제주유흥, 연동 핫플레이스, 픽업서비스 완비. 와니이사 강력 추천 코스와 정직한 가격으로 모십니다. 예약문의 010-3980-4584">
+    <meta name="keywords" content="제주도가라오케, 제주유흥, 제주A1, 연동가라오케, 제주도룸, 제주도접대, 와니이사">
+    <meta name="author" content="와니이사">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="제주도 A1 가라오케 - 와니이사">
+    <meta property="og:description" content="제주 연동 핫플레이스! 최신 시설과 최고의 서비스. 픽업 가능 / 단체 환영.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80">
+    <meta property="og:url" content="https://jeju-a1.com"> 
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* ===== Design System (Jeju Party Theme) ===== */
+        :root {
+            --app-max-width: 460px;
+            --bg-deep: #050507;
+            --primary: #06b6d4; /* Cyan */
+            --secondary: #f43f5e; /* Rose */
+            --accent: #8b5cf6; /* Violet */
+            --gold: #f59e0b;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --glass: rgba(20, 20, 30, 0.6);
+            --border: rgba(255, 255, 255, 0.08);
+            /* 모바일 하단 안전 영역 변수 */
+            --safe-bottom: env(safe-area-inset-bottom, 20px);
+        }
+
+        /* ===== Global Reset ===== */
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Pretendard', sans-serif;
+            background-color: #000;
+            color: var(--text-main);
+            height: 100vh;
+            /* 모바일 브라우저 주소창 대응 */
+            height: 100dvh; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        /* ===== PC Background Canvas (Confetti) ===== */
+        #bg-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; pointer-events: none;
+            background: radial-gradient(circle at 50% 10%, #111827 0%, #000000 90%);
+        }
+
+        /* ===== Mobile App Container ===== */
+        #app-frame {
+            width: 100%;
+            max-width: var(--app-max-width);
+            height: 92vh; 
+            max-height: 880px;
+            background: var(--bg-deep);
+            position: relative;
+            z-index: 10;
+            
+            border-radius: 40px;
+            box-shadow: 
+                0 0 0 1px #333, 
+                0 0 0 3px #111, 
+                0 20px 50px rgba(0,0,0,0.9), 
+                0 0 40px rgba(6, 182, 212, 0.15); /* Cyan Glow */
+            
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 500px) {
+            #app-frame {
+                height: 100vh;      /* Fallback */
+                height: 100dvh;     /* [수정됨] 모바일 하단 바 대응 */
+                max-height: none;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* ===== Header ===== */
+        .app-header {
+            position: sticky; top: 0; z-index: 50;
+            flex-shrink: 0;
+            height: 56px;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 20px;
+            background: rgba(5, 5, 7, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.5px; color: #fff; text-decoration: none; }
+        .logo span { color: var(--primary); } 
+        
+        .header-contact {
+            font-size: 13px; font-weight: 700; color: #fff;
+            display: flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 20px;
+        }
+        .header-contact i { color: var(--secondary); font-size: 14px; }
+
+        /* ===== Main Content Area ===== */
+        main {
+            flex-grow: 1;
+            overflow-y: auto;
+            position: relative;
+            scrollbar-width: none;
+            /* [수정됨] 하단 버튼에 가려지지 않도록 패딩 넉넉하게, 아이폰 하단 바 대응 */
+            padding-bottom: calc(80px + var(--safe-bottom)); 
+        }
+        main::-webkit-scrollbar { display: none; }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            height: 420px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 20px; overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: url('https://images.unsplash.com/photo-1542642548-2321a4f00889?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') no-repeat center/cover;
+            opacity: 0.6; z-index: -2;
+            animation: zoomBg 20s infinite alternate linear;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(6,182,212,0.2) 0%, var(--bg-deep) 90%);
+            z-index: -1;
+        }
+        @keyframes zoomBg { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+
+        .hero-title {
+            font-size: 40px; font-weight: 900; line-height: 1.1; margin-bottom: 12px;
+            background: linear-gradient(to bottom right, #fff 40%, var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            animation: fadeUp 0.8s ease-out;
+            margin-top: 0;
+        }
+        .hero-sub {
+            font-size: 16px; color: var(--secondary); font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
+            display: block; text-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+            animation: fadeUp 0.8s ease-out 0.2s backwards;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.08); 
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 18px; border-radius: 30px; 
+            font-size: 14px; color: #e2e8f0;
+            backdrop-filter: blur(8px);
+            animation: fadeUp 0.8s ease-out 0.4s backwards;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+        .hero-badge strong { color: #fff; font-weight: 700; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ===== Marquee Gallery ===== */
+        .marquee-container {
+            position: relative; width: 100%; overflow: hidden;
+            margin-top: -50px; z-index: 10; padding-bottom: 40px;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+        .marquee-track {
+            display: flex; gap: 14px; width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        .gallery-card {
+            width: 180px; height: 120px; flex-shrink: 0;
+            border-radius: 14px; overflow: hidden; position: relative;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 1px solid var(--border);
+        }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-card span {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 6px; background: rgba(0,0,0,0.7);
+            font-size: 11px; font-weight: 600; text-align: center;
+        }
+        @keyframes scroll { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(calc((-180px - 14px) * 6)); } 
+        }
+
+        /* ===== System Guide ===== */
+        .system-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 0 20px;
+            margin-bottom: 40px;
+        }
+        .system-item { text-align: center; position: relative; }
+        .sys-icon-box {
+            width: 48px; height: 48px; margin: 0 auto 8px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; color: var(--primary); border: 1px solid var(--border);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .sys-step { font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 2px; letter-spacing: 1px; }
+        .sys-title { font-size: 11px; font-weight: 700; color: #fff; }
+        .system-item:not(:last-child)::after {
+            content: '›'; position: absolute; top: 14px; right: -5px;
+            color: var(--text-muted); font-size: 14px; opacity: 0.5;
+        }
+
+        /* ===== Course Section ===== */
+        .section-header { padding: 0 20px 16px; margin-top: 10px; }
+        .section-title { font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 8px; color: #fff; margin: 0; }
+        .section-title i { color: var(--secondary); }
+        .course-list { display: flex; flex-direction: column; gap: 16px; padding: 0 20px; }
+        
+        .course-item {
+            display: flex; flex-direction: column;
+            background: #12121a; border-radius: 18px; overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: transform 0.2s;
+        }
+        .course-item:active { transform: scale(0.98); }
+        
+        .course-img-area {
+            height: 140px; width: 100%; position: relative;
+            background-size: cover; background-position: center;
+        }
+        .course-badge {
+            position: absolute; top: 10px; right: 10px;
+            background: var(--primary); color: #000;
+            font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px;
+        }
+        .course-content { padding: 16px; }
+        .course-name { font-size: 17px; font-weight: 700; margin: 0 0 6px; color: #fff; }
+        .course-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 12px; line-height: 1.5; word-break: keep-all; }
+        .course-price-row { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .price-tag { font-size: 15px; font-weight: 700; color: var(--secondary); }
+        .btn-inq { 
+            background: rgba(255,255,255,0.08); color: #fff; 
+            font-size: 12px; padding: 6px 14px; border-radius: 8px; 
+            text-decoration: none; border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Theme Variations */
+        .c-theme-b .course-name, .c-theme-b .price-tag { color: var(--primary); }
+        .c-theme-c { border-color: rgba(6, 182, 212, 0.4); background: linear-gradient(160deg, #0f172a, #000); }
+        .c-theme-c .course-name { 
+            background: linear-gradient(to right, var(--primary), #fff); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .c-theme-c .btn-inq { background: var(--primary); border: none; box-shadow: 0 2px 10px rgba(6, 182, 212, 0.4); color:#000; font-weight:700;}
+
+        /* ===== Reviews Section ===== */
+        .review-scroller {
+            display: flex; overflow-x: auto; gap: 12px; padding: 0 20px;
+            scrollbar-width: none; margin-bottom: 20px;
+        }
+        .review-scroller::-webkit-scrollbar { display: none; }
+        .review-card {
+            flex: 0 0 250px;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: 16px; padding: 16px;
+            backdrop-filter: blur(5px);
+        }
+        .review-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .stars { color: var(--gold); font-size: 11px; }
+        .reviewer { font-size: 12px; font-weight: 700; color: #fff; }
+        .review-text { font-size: 12px; color: #aaa; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* ===== FAQ Section ===== */
+        .faq-list { padding: 0 20px; display: flex; flex-direction: column; gap: 8px; }
+        .faq-item {
+            background: #111; border-radius: 12px; padding: 14px;
+            border: 1px solid var(--border);
+        }
+        .faq-q { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: #fff; display: flex; gap: 6px; }
+        .faq-q::before { content: 'Q.'; color: var(--primary); }
+        .faq-a { font-size: 12px; color: var(--text-muted); line-height: 1.4; margin-left: 18px; word-break: keep-all; }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            padding: 40px 20px 60px; text-align: center;
+            border-top: 1px solid var(--border); margin-top: 40px;
+            background: #020203;
+        }
+        .footer-logo { font-weight: 800; font-size: 16px; margin-bottom: 10px; display: block; color: #555; }
+        .footer-info { font-size: 11px; color: #444; line-height: 1.6; }
+
+        /* ===== Scroll Reveal ===== */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ===== Floating CTA (수정된 부분) ===== */
+        .float-bar {
+            position: absolute; 
+            bottom: 0; left: 0; width: 100%;
+            /* [수정됨] 모바일 하단바 및 아이폰 홈바 대응 패딩 */
+            padding: 20px 20px calc(20px + var(--safe-bottom)) 20px;
+            z-index: 100;
+            background: linear-gradient(to top, #050507 80%, transparent);
+            pointer-events: none;
+        }
+        .cta-btn {
+            pointer-events: auto;
+            width: 100%; height: 56px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            border-radius: 16px; 
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 17px; font-weight: 800; text-decoration: none;
+            box-shadow: 0 4px 20px rgba(244, 63, 94, 0.4);
+            animation: pulseRipple 2s infinite;
+            position: relative; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .cta-btn::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg); animation: shine 3s infinite;
+        }
+        @keyframes pulseRipple {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(244, 63, 94, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+        }
+        @keyframes shine { 0%, 50% { left: -100%; } 100% { left: 200%; } }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div id="app-frame">
+        <header class="app-header">
+            <a href="#" class="logo">JEJU<span> A1</span></a>
+            <div class="header-contact">
+                <i class="ph-fill ph-phone-call"></i> 010-3980-4584            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-bg"></div>
+                <div class="hero-overlay"></div>
+                <div class="reveal">
+                    <span class="hero-sub">제주 연동 핫플레이스</span>
+                    <h1 class="hero-title">제주도<br>A1<br>가라오케</h1>
+                    <a href="tel:010-3980-4584" class="hero-badge">
+                        <i class="ph-fill ph-crown-simple" style="color:var(--gold)"></i>
+                        <span>와니이사 <strong>010-3980-4584</strong></span>
+                    </a>
+                </div>
+            </section>
+
+            <div class="marquee-container reveal">
+                <div class="marquee-track">
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Neon Party">
+                            <span>Neon Party</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Jeju Lounge">
+                            <span>Jeju Lounge</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Party Room">
+                            <span>Party Room</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1574096079513-d82599602950?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Luxury">
+                            <span>Luxury</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Cocktails">
+                            <span>Cocktails</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 DJ & Sound">
+                            <span>DJ & Sound</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Neon Party">
+                            <span>Neon Party</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Jeju Lounge">
+                            <span>Jeju Lounge</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Party Room">
+                            <span>Party Room</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1574096079513-d82599602950?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Luxury">
+                            <span>Luxury</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 Cocktails">
+                            <span>Cocktails</span>
+                        </div>
+                                            <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80" alt="제주도 유흥 DJ & Sound">
+                            <span>DJ & Sound</span>
+                        </div>
+                                    </div>
+            </div>
+
+            <section class="reveal">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="ph-fill ph-info"></i> A1 이용 가이드</h2>
+                </div>
+                <div class="system-grid">
+                                        <div class="system-item">
+                        <div class="sys-icon-box"><i class="ph ph-phone-call"></i></div>
+                        <span class="sys-step">STEP 01</span>
+                        <span class="sys-title">전화예약</span>
+                    </div>
+                                        <div class="system-item">
+                        <div class="sys-icon-box"><i class="ph ph-car"></i></div>
+                        <span class="sys-step">STEP 02</span>
+                        <span class="sys-title">픽업/안내</span>
+                    </div>
+                                        <div class="system-item">
+                        <div class="sys-icon-box"><i class="ph ph-users-three"></i></div>
+                        <span class="sys-step">STEP 03</span>
+                        <span class="sys-title">초이스</span>
+                    </div>
+                                        <div class="system-item">
+                        <div class="sys-icon-box"><i class="ph ph-microphone-stage"></i></div>
+                        <span class="sys-step">STEP 04</span>
+                        <span class="sys-title">파티시작</span>
+                    </div>
+                                    </div>
+            </section>
+
+            <section class="course-section">
+                <div class="section-header reveal">
+                    <h2 class="section-title"><i class="ph-fill ph-crown"></i> 제주유흥 코스 안내</h2>
+                </div>
+                
+                <div class="course-list">
+                                        <div class="course-item  reveal">
+                        <div class="course-img-area" style="background-image: url('https://images.unsplash.com/photo-1582106245687-cbb4e360183e?auto=format&fit=crop&w=600&q=80');">
+                                                    </div>
+                        <div class="course-content">
+                            <h3 class="course-name">A. Basic Course</h3>
+                            <p class="course-desc">맥주/소주 세트 + 신선한 과일안주 + 기본 케어 서비스 (제주도 가라오케 실속형 1~2인 추천)</p>
+                            <div class="course-price-row">
+                                <span class="price-tag" style="color:#a5b4fc">
+                                    Standard                                </span>
+                                <a href="tel:010-3980-4584" class="btn-inq" style="">문의하기</a>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="course-item c-theme-b reveal">
+                        <div class="course-img-area" style="background-image: url('https://images.unsplash.com/photo-1569937756447-e1b6f0e21b06?auto=format&fit=crop&w=600&q=80');">
+                                                            <span class="course-badge" style="">BEST CHOICE</span>
+                                                    </div>
+                        <div class="course-content">
+                            <h3 class="course-name">B. Gold Course</h3>
+                            <p class="course-desc">프리미엄 양주 12년산 + 특선 안주 세트 + 파티룸 업그레이드 (제주유흥 단체/모임 추천)</p>
+                            <div class="course-price-row">
+                                <span class="price-tag" style="">
+                                    Premium                                </span>
+                                <a href="tel:010-3980-4584" class="btn-inq" style="border-color:var(--primary); color:var(--primary);">문의하기</a>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="course-item c-theme-c reveal">
+                        <div class="course-img-area" style="background-image: url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80');">
+                                                            <span class="course-badge" style="background:var(--secondary); color:#fff;">VVIP ONLY</span>
+                                                    </div>
+                        <div class="course-content">
+                            <h3 class="course-name">C. Jeju Royal</h3>
+                            <p class="course-desc">최고급 양주(17년산 이상) + 풀코스 요리 + 전담 매니저 케어 + 픽업 서비스 (VIP 접대용)</p>
+                            <div class="course-price-row">
+                                <span class="price-tag" style="color:var(--secondary)">
+                                    High-End                                </span>
+                                <a href="tel:010-3980-4584" class="btn-inq" style="">문의하기</a>
+                            </div>
+                        </div>
+                    </div>
+                                    </div>
+            </section>
+
+            <section class="reveal" style="margin-top:40px;">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="ph-fill ph-thumbs-up"></i> 와니이사 리얼 후기</h2>
+                </div>
+                <div class="review-scroller">
+                                        <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer">김** 사장님</span>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">제주도 출장와서 접대할 곳 찾다가 와니이사님께 연락드렸는데, 시설도 최고고 제주유흥 제대로 즐기고 갑니다.</p>
+                    </div>
+                                        <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer">이** 고객님</span>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">제주 연동 가라오케 중에서 제일 핫하네요. 파티룸 분위기 미쳤고 직원들 텐션도 좋아서 밤새 놀았습니다.</p>
+                    </div>
+                                        <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer">박** 고객님</span>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">제주도 가라오케 픽업도 해주시고 가격도 정직해서 좋았습니다. A1 와니이사님 강추해요!</p>
+                    </div>
+                                    </div>
+            </section>
+
+            <section class="reveal">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="ph-fill ph-question"></i> 자주 묻는 질문</h2>
+                </div>
+                <div class="faq-list">
+                                        <div class="faq-item">
+                        <div class="faq-q">제주도 A1 가라오케 위치가 어디인가요?</div>
+                        <div class="faq-a">제주 연동(누웨마루 거리 인근)에 위치해 있으며, 제주 공항에서 가깝습니다. 예약 시 상세 주소를 안내해드립니다.</div>
+                    </div>
+                                        <div class="faq-item">
+                        <div class="faq-q">와니이사 지명 혜택이 있나요?</div>
+                        <div class="faq-a">네, 와니이사 지명 예약 시 맥주 무제한 및 안주 서비스 등 제주유흥 특별 혜택을 드립니다.</div>
+                    </div>
+                                        <div class="faq-item">
+                        <div class="faq-q">픽업 가능한가요?</div>
+                        <div class="faq-a">제주 시내 및 공항 인근 무료 픽업 서비스 가능합니다. 편하게 술 한잔 하시고 안전 귀가하세요.</div>
+                    </div>
+                                    </div>
+            </section>
+
+            <footer class="site-footer">
+                <span class="footer-logo">JEJU A1 KARAOKE</span>
+                <p class="footer-info">
+                    상호명: 제주도 A1 가라오케 | 제주특별자치도 제주시 연동<br>
+                    대표: 와니이사 | 예약문의: 010-3980-4584<br>
+                    COPYRIGHT © 2026 JEJU A1. ALL RIGHTS RESERVED.
+                </p>
+            </footer>
+
+            <div style="height:20px;"></div>
+        </main>
+
+        <div class="float-bar">
+            <a href="tel:010-3980-4584" class="cta-btn">
+                <i class="ph-fill ph-phone-call" style="margin-right:8px; font-size:22px;"></i>
+                와니이사 전화걸기
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // 1. Scroll Reveal Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const mainEl = document.querySelector('main');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { root: mainEl, threshold: 0.1 });
+            
+            reveals.forEach(el => observer.observe(el));
+        });
+
+        // 2. PC Background Canvas Animation (Confetti Effect)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let confetti = [];
+        const colors = ['#06b6d4', '#f43f5e', '#8b5cf6', '#f59e0b', '#10b981']; // Jeju Party Colors
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        
+        class ConfettiPiece {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * height; // Start scattered
+            }
+            
+            reset() {
+                this.x = Math.random() * width;
+                this.y = -20;
+                this.size = (Math.random() * 0.5 + 0.5) * 10;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.speedY = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 2 - 1;
+            }
+            
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotationSpeed;
+
+                if (this.y > height) {
+                    this.reset();
+                }
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = 0.8;
+                ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+        
+        function initConfetti() {
+            confetti = [];
+            for (let i = 0; i < 120; i++) {
+                confetti.push(new ConfettiPiece());
+            }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw gradient background
+            const gradient = ctx.createRadialGradient(width/2, height/2, 0, width/2, height/2, width);
+            gradient.addColorStop(0, '#111827');
+            gradient.addColorStop(1, '#000000');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+            
+            confetti.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        window.addEventListener('resize', resize);
+        resize();
+        initConfetti();
+        animate();
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NightClub",
+      "name": "제주도 A1 가라오케",
+      "image": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67",
+      "description": "제주도 A1 가라오케 - 와니이사",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "연동",
+        "addressLocality": "제주시",
+        "addressRegion": "제주특별자치도",
+        "addressCountry": "KR"
+      },
+      "telephone": "010-3980-4584",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "18:00",
+        "closes": "06:00"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+</body>
+</html>

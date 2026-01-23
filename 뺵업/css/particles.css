@@ -1,0 +1,208 @@
+/* =========================
+   FESTIVAL FALL – CHAOTIC & DENSE (CSS ONLY)
+   - 예측불가(방향이 중간에 바뀌는) 낙하
+   - 빠른 속도감(눈처럼 느리지 않음)
+   - HTML 24개 그대로 → ::before/::after로 3배 조각
+   ========================= */
+
+.particles{
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 추가 밀도: 미세 스파클(점) 레이어 */
+.particles::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:-120vh;
+  width:2px; height:2px;
+  border-radius:999px;
+  opacity:.85;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.18));
+  box-shadow:
+    3vw  10vh rgba(255,216,77,.9),  8vw  35vh rgba(255,77,109,.85),  13vw 20vh rgba(77,220,255,.85),
+    18vw 55vh rgba(185,140,255,.85), 22vw 15vh rgba(124,255,178,.85), 27vw 42vh rgba(255,122,217,.85),
+    31vw 25vh rgba(255,216,77,.85), 36vw 70vh rgba(77,220,255,.82), 41vw 33vh rgba(255,77,109,.82),
+    46vw 18vh rgba(255,122,217,.82), 51vw 62vh rgba(124,255,178,.82), 56vw 28vh rgba(185,140,255,.82),
+    60vw 78vh rgba(255,216,77,.8),  64vw 44vh rgba(77,220,255,.8),  69vw 22vh rgba(255,77,109,.8),
+    73vw 58vh rgba(255,122,217,.8), 78vw 12vh rgba(124,255,178,.8), 82vw 40vh rgba(185,140,255,.8),
+    87vw 68vh rgba(255,216,77,.8),  92vw 24vh rgba(77,220,255,.8),  96vw 52vh rgba(255,77,109,.8),
+
+    6vw  90vh rgba(255,122,217,.7), 12vw 96vh rgba(124,255,178,.7), 20vw 88vh rgba(185,140,255,.7),
+    28vw 94vh rgba(255,216,77,.7),  34vw 86vh rgba(77,220,255,.7),  42vw 98vh rgba(255,77,109,.7),
+    50vw 92vh rgba(255,122,217,.7), 58vw 97vh rgba(124,255,178,.7), 66vw 85vh rgba(185,140,255,.7),
+    74vw 95vh rgba(255,216,77,.7),  84vw 89vh rgba(77,220,255,.7),  94vw 99vh rgba(255,77,109,.7);
+
+  animation: sparkFall 12s linear infinite, sparkJitter 2.4s ease-in-out infinite;
+}
+
+/* =========================
+   BIG CONFETTI (24개 * 3조각 = 체감 72개)
+   ========================= */
+
+.particles .p{
+  position:absolute;
+  top:-26vh;
+  left: var(--x, 50%);
+  width: var(--w, 10px);
+  height: var(--h, 18px);
+  background: currentColor;
+  opacity: 0;
+  border-radius: 2px;
+  filter: drop-shadow(0 0 10px currentColor);
+  will-change: transform, opacity;
+
+  animation-duration: var(--dur, 12s);
+  animation-delay: var(--delay, -8s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 3배 조각: 본체 + before + after */
+.particles .p::before,
+.particles .p::after{
+  content:"";
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  opacity: .75;
+  filter: drop-shadow(0 0 8px currentColor);
+  will-change: transform, opacity;
+}
+
+/* 동반 조각(좌/우로 흩어져 보이게) */
+.particles .p::before{ transform: translate(-18px, -10px) rotate(-18deg) scale(.9); border-radius: 999px; }
+.particles .p::after { transform: translate( 16px, -16px) rotate( 22deg) scale(.8); border-radius: 0; }
+
+/* 색상(파티) */
+.p:nth-child(6n+1){ color:#ffd84d; }
+.p:nth-child(6n+2){ color:#ff4d6d; }
+.p:nth-child(6n+3){ color:#ff7ad9; }
+.p:nth-child(6n+4){ color:#4ddcff; }
+.p:nth-child(6n+5){ color:#7cffb2; }
+.p:nth-child(6n){   color:#b98cff; }
+
+/* 모양 다양화 */
+.p:nth-child(5n+1){ border-radius:0; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); } /* 삼각 */
+.p:nth-child(5n+2){ border-radius:0; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); } /* 다이아 */
+.p:nth-child(5n+3){
+  border-radius:0;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  ); /* 별 */
+}
+.p:nth-child(5n+4){ border-radius:4px; } /* 리본 느낌 */
+
+/* 크기 다양화 */
+.p:nth-child(4n+1){ --w: 7px;  --h: 14px; }
+.p:nth-child(4n+2){ --w: 10px; --h: 18px; }
+.p:nth-child(4n+3){ --w: 14px; --h: 22px; }
+.p:nth-child(4n){   --w: 8px;  --h: 16px; }
+
+/* 화면 전체 분산 + 속도 제각각(빠른 페스티벌 낙하) */
+.p1  { --x: 2%;  --dur: 8.5s;  --delay:-6s;  }
+.p2  { --x: 6%;  --dur: 11s;   --delay:-10s; }
+.p3  { --x: 10%; --dur: 9.5s;  --delay:-12s; }
+.p4  { --x: 14%; --dur: 13s;   --delay:-8s;  }
+.p5  { --x: 18%; --dur: 8.8s;  --delay:-9s;  }
+.p6  { --x: 22%; --dur: 14s;   --delay:-13s; }
+.p7  { --x: 26%; --dur: 10s;   --delay:-7s;  }
+.p8  { --x: 30%; --dur: 12.5s; --delay:-11s; }
+.p9  { --x: 34%; --dur: 9.2s;  --delay:-10s; }
+.p10 { --x: 38%; --dur: 15s;   --delay:-14s; }
+.p11 { --x: 42%; --dur: 10.5s; --delay:-8s;  }
+.p12 { --x: 46%; --dur: 13.5s; --delay:-12s; }
+.p13 { --x: 50%; --dur: 9.8s;  --delay:-9s;  }
+.p14 { --x: 54%; --dur: 14.5s; --delay:-13s; }
+.p15 { --x: 58%; --dur: 11.5s; --delay:-11s; }
+.p16 { --x: 62%; --dur: 13s;   --delay:-7s;  }
+.p17 { --x: 66%; --dur: 8.9s;  --delay:-12s; }
+.p18 { --x: 70%; --dur: 12s;   --delay:-10s; }
+.p19 { --x: 74%; --dur: 9.6s;  --delay:-8s;  }
+.p20 { --x: 78%; --dur: 15.5s; --delay:-14s; }
+.p21 { --x: 82%; --dur: 10.2s; --delay:-9s;  }
+.p22 { --x: 86%; --dur: 13.8s; --delay:-12s; }
+.p23 { --x: 90%; --dur: 11.2s; --delay:-10s; }
+.p24 { --x: 94%; --dur: 14.8s; --delay:-13s; }
+
+/* =========================
+   “예측불가” 핵심: 그룹별 서로 다른 경로
+   ========================= */
+.p:nth-child(3n+1){ animation-name: fallA; }
+.p:nth-child(3n+2){ animation-name: fallB; }
+.p:nth-child(3n){   animation-name: fallC; }
+
+.p:nth-child(5n){
+  animation-name: fallC, shine;
+  animation-duration: inherit, 1.9s;
+  animation-delay: inherit, 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear, ease-in-out;
+}
+
+/* KEYFRAMES */
+@keyframes fallA{
+  0%   { transform: translate3d(0,-26vh,0) rotate(0deg);   opacity:0; }
+  7%   { opacity:.95; }
+  18%  { transform: translate3d(22px,  8vh,0) rotate(35deg); }
+  34%  { transform: translate3d(10px, 34vh,0) rotate(70deg); }
+  52%  { transform: translate3d(-16px,62vh,0) rotate(105deg); }
+  71%  { transform: translate3d( 8px, 92vh,0) rotate(140deg); }
+  100% { transform: translate3d(-6px,160vh,0) rotate(175deg); opacity:0; }
+}
+@keyframes fallB{
+  0%   { transform: translate3d(0,-26vh,0) rotate(0deg);   opacity:0; }
+  7%   { opacity:.95; }
+  20%  { transform: translate3d(-24px, 10vh,0) rotate(30deg); }
+  38%  { transform: translate3d(-8px,  40vh,0) rotate(68deg); }
+  56%  { transform: translate3d(18px,  70vh,0) rotate(110deg); }
+  76%  { transform: translate3d(-10px, 98vh,0) rotate(150deg); }
+  100% { transform: translate3d( 6px,160vh,0) rotate(190deg); opacity:0; }
+}
+@keyframes fallC{
+  0%   { transform: translate3d(0,-26vh,0) rotate(0deg);   opacity:0; }
+  6%   { opacity:.95; }
+  16%  { transform: translate3d( 26px,  6vh,0) rotate(25deg); }
+  28%  { transform: translate3d(-28px, 28vh,0) rotate(70deg); }
+  42%  { transform: translate3d( 18px, 54vh,0) rotate(115deg); }
+  58%  { transform: translate3d(-22px, 78vh,0) rotate(150deg); }
+  74%  { transform: translate3d( 12px,100vh,0) rotate(185deg); }
+  100% { transform: translate3d(-8px,160vh,0) rotate(230deg); opacity:0; }
+}
+@keyframes shine{
+  0%,100%{ filter: drop-shadow(0 0 10px currentColor); }
+  50%{ filter: drop-shadow(0 0 18px currentColor); }
+}
+
+@keyframes sparkFall{
+  0%   { transform: translate3d(0,0,0); opacity:0; }
+  6%   { opacity:.85; }
+  94%  { opacity:.85; }
+  100% { transform: translate3d(0,260vh,0); opacity:0; }
+}
+@keyframes sparkJitter{
+  0%,100% { transform: translate3d(0,0,0); }
+  25%     { transform: translate3d(14px,0,0); }
+  50%     { transform: translate3d(-10px,0,0); }
+  75%     { transform: translate3d(18px,0,0); }
+}
+
+/* 접근성 */
+@media (prefers-reduced-motion: reduce){
+  .particles::before,
+  .particles .p{ animation: none !important; opacity: .25; }
+}

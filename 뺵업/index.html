@@ -7,10 +7,6 @@
 
 
 
-
-
-
-
 <!doctype html>
 <html lang="ko">
 <head>
@@ -293,7 +289,22 @@
       <div class="phone__notch" aria-hidden="true"></div>
 
       <!-- 헤더 -->
-<input id="nav-toggle" class="nav-toggle" type="checkbox" />
+      <header class="header">
+        
+  <a href="/" class="logo logo-flash" aria-label="제주똑똑 홈">
+    <span class="logo-white">제주</span>
+    <span class="logo-tt">
+      <span class="tt t1">똑</span><span class="tt t2">똑</span>
+    </span>
+  </a>
+
+
+        <label class="hamburger" for="nav-toggle" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </label>
+      </header>
+
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" />
 
       <nav class="drawer" aria-label="메인 메뉴">
           <a href="./index.html" aria-current="page">메인</a>
@@ -305,26 +316,8 @@
 
       <label class="overlay" for="nav-toggle" aria-hidden="true"></label>
 
-      <!-- 폰 내부 스크롤 --><header class="header" role="banner">
-      <a class="logo logo-brand" href="index.html" aria-label="제주똑똑이 메인">
-        <span class="logo__jeju">제주</span>
-        <span class="logo__tok" aria-hidden="true">
-          <span class="logo__tok--a">똑</span>
-          <span class="logo__tok--b">똑</span>
-        </span>
-        <span class="logo__i">이</span>
-      </a>
-
-      <label class="hamburger" for="nav-toggle" aria-label="메뉴 열기">
-        <span></span><span></span><span></span>
-      </label>
-    </header>
-
-
+      <!-- 폰 내부 스크롤 -->
       <main class="content">
-
-
-
 
         <!-- 1. 메인 히어로 -->
         <section class="sec hero2 hero2--a1" aria-label="메인 소개">
@@ -413,11 +406,11 @@
           </div>
 
           <div class="partner-row" role="list">
-            <a class="partner-btn" href="pages/shops/ads1/ads1-01.html" role="listitem">협력업체 1</a>
-            <a class="partner-btn" href="pages/shops/ads1/ads1-02.html" role="listitem">협력업체 2</a>
-            <a class="partner-btn" href="pages/shops/ads1/ads1-03.html" role="listitem">협력업체 3</a>
-            <a class="partner-btn" href="pages/shops/ads1/ads1-04.html" role="listitem">협력업체 4</a>
-            <a class="partner-btn" href="pages/shops/ads1/ads1-05.html" role="listitem">협력업체 5</a>
+            <a class="partner-btn" href="#" role="listitem">협력업체 1</a>
+            <a class="partner-btn" href="#" role="listitem">협력업체 2</a>
+            <a class="partner-btn" href="#" role="listitem">협력업체 3</a>
+            <a class="partner-btn" href="#" role="listitem">협력업체 4</a>
+            <a class="partner-btn" href="#" role="listitem">협력업체 5</a>
           </div>
         </section>
 
@@ -474,7 +467,7 @@
             <a class="place-card" href="#">업체 6</a>
           </div>
 
-          <a class="place-more" href="./pages/area.html">더 알아보기</a>
+          <a class="place-more" href="#">더 알아보기</a>
         </section>
 
         <!-- 5. 최신 고객후기 (센터 포커스 캐러셀) -->

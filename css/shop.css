@@ -1,0 +1,16 @@
+/* shop.css
+   - pages/shops/* (업체 상세) 전용 보조 스타일
+   - 공통 헤더/드로어/로고는 base.css에서 처리
+*/
+.page-shop .sec.hero{
+  padding-top: 18px;
+}
+.page-shop .sec.hero h2{
+  margin: 0 0 8px;
+}
+.page-shop .sec.placeholder .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}

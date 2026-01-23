@@ -1,5 +1,7 @@
 
-<!doctype html>
+
+<!DOCTYPE html>
+
 <html lang="ko">
 <!-- AUTO_SCHEMA_START -->
 <script type="application/ld+json">
@@ -16,338 +18,377 @@
 }
 </script>
 <!-- AUTO_SCHEMA_END -->
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>고객후기 | 제주 유흥가이드</title>
-  <meta name="description" content="제주 유흥가이드 고객후기 게시판입니다. 정보 제공 목적이며 예약·중개·알선 서비스는 제공하지 않습니다." />
-  <meta name="robots" content="index,follow" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>고객후기 | 제주 유흥가이드</title>
+<meta content="제주 유흥가이드 고객후기 게시판입니다. 정보 제공 목적이며 예약·중개·알선 서비스는 제공하지 않습니다." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="/pages/reviews.html" rel="canonical"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/particles.css" rel="stylesheet"/>
+<link href="../css/page.css" rel="stylesheet"/>
+<style>
+/* === Reviews inline detail panel (compact) === */
+.page-reviews .inlineDetail{
+  margin: 12px auto 0;
+  width: min(386px, 100%);
+  max-height: 212px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+  overflow: hidden;
+}
+.page-reviews .inlineDetail[hidden]{ display:none !important; }
 
-  <link rel="canonical" href="/pages/reviews.html" />
+.page-reviews .inlineDetail__top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+.page-reviews .inlineDetail__title{
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1.25;
+  color: rgba(255,255,255,0.94);
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page-reviews .inlineDetail__close{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.92);
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.page-reviews .inlineDetail__meta{
+  padding: 10px 12px 0;
+  font-size: 11px;
+  color: rgba(255,255,255,0.72);
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+.page-reviews .inlineDetail__body{
+  padding: 10px 12px 12px;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.86);
+  max-height: calc(212px - 44px - 28px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  word-break: keep-all;
+}
+.page-reviews .inlineDetail__body::-webkit-scrollbar{ width: 10px; }
+.page-reviews .inlineDetail__body::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.14);
+  border-radius: 10px;
+  border: 2px solid rgba(0,0,0,0.0);
+  background-clip: padding-box;
+}
 
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/particles.css" />
-  <link rel="stylesheet" href="../css/page.css" />
-</head>
-
+.page-reviews tr.board__row.is-open td{
+  background: rgba(255,255,255,0.04);
+}
+</style></head>
 <body class="page-reviews">
-
-  <div class="bg" aria-hidden="true">
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    <div class="glow glow-3"></div>
-  </div>
-
-  <div class="particles" aria-hidden="true">
-    <span class="p p1"></span><span class="p p2"></span><span class="p p3"></span><span class="p p4"></span>
-    <span class="p p5"></span><span class="p p6"></span><span class="p p7"></span><span class="p p8"></span>
-    <span class="p p9"></span><span class="p p10"></span><span class="p p11"></span><span class="p p12"></span>
-    <span class="p p13"></span><span class="p p14"></span><span class="p p15"></span><span class="p p16"></span>
-    <span class="p p17"></span><span class="p p18"></span><span class="p p19"></span><span class="p p20"></span>
-    <span class="p p21"></span><span class="p p22"></span><span class="p p23"></span><span class="p p24"></span>
-  </div>
-
-  <div class="stage">
-    <div class="phone" role="application" aria-label="모바일 프레임">
-      <div class="phone__notch" aria-hidden="true"></div>
-
-      <header class="header">
-        <a class="logo" href="../index.html" aria-label="홈">LOGO</a>
-
-        <label class="hamburger" for="nav-toggle" aria-label="메뉴 열기">
-          <span></span><span></span><span></span>
-        </label>
-      </header>
-
-      <input id="nav-toggle" class="nav-toggle" type="checkbox" />
-
-      <nav class="drawer" aria-label="메인 메뉴">
-  <a href="../index.html">메인</a>
-  <a href="./jejusi.html">제주시</a>
-  <a href="./seogwipo.html">서귀포시</a>
-  <a href="./contact.html">입점문의</a>
-  <a href="./reviews.html">고객후기</a>
+<div aria-hidden="true" class="bg">
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div class="glow glow-3"></div>
+</div>
+<div aria-hidden="true" class="particles">
+<span class="p p1"></span><span class="p p2"></span><span class="p p3"></span><span class="p p4"></span>
+<span class="p p5"></span><span class="p p6"></span><span class="p p7"></span><span class="p p8"></span>
+<span class="p p9"></span><span class="p p10"></span><span class="p p11"></span><span class="p p12"></span>
+<span class="p p13"></span><span class="p p14"></span><span class="p p15"></span><span class="p p16"></span>
+<span class="p p17"></span><span class="p p18"></span><span class="p p19"></span><span class="p p20"></span>
+<span class="p p21"></span><span class="p p22"></span><span class="p p23"></span><span class="p p24"></span>
+</div>
+<div class="stage">
+<div aria-label="모바일 프레임" class="phone" role="application">
+<div aria-hidden="true" class="phone__notch"></div>
+<header class="header" role="banner">
+<a aria-label="제주똑똑이 메인" class="logo logo-brand" href="../index.html">
+<span class="logo__jeju">제주</span>
+<span aria-hidden="true" class="logo__tok">
+<span class="logo__tok--a">똑</span>
+<span class="logo__tok--b">똑</span>
+</span>
+<span class="logo__i">이</span>
+</a>
+<label aria-label="메뉴 열기" class="hamburger" for="nav-toggle">
+<span></span><span></span><span></span>
+</label>
+</header>
+<input class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<nav aria-label="메인 메뉴" class="drawer">
+<a href="../index.html">메인</a>
+<a href="./jejusi.html">제주시</a>
+<a href="./seogwipo.html">서귀포시</a>
+<a href="./contact.html">입점문의</a>
+<a href="./reviews.html">고객후기</a>
 </nav>
-
-
-      <label class="overlay" for="nav-toggle" aria-hidden="true"></label>
-
-      <main class="content">
-
-        <section class="page-title">
-          <h1>고객후기</h1>
-          <p class="sub">게시판 형태로 제공되며, 작성 기능은 제공되지 않습니다.</p>
-        </section>
-
-        <!-- 후기 게시판 -->
-        <section class="board" id="reviewBoard">
-          <div class="board__head">
-            <div>
-              <h2 class="board__title">후기 게시판</h2>
-              <p class="board__sub">현장 분위기 · 응대 · 만족도 중심 후기</p>
-            </div>
-            <button type="button" class="board__write" id="fakeWriteBtn">
-  <span class="btnIcon" aria-hidden="true">✍️</span>
+<label aria-hidden="true" class="overlay" for="nav-toggle"></label>
+<main class="content">
+<section class="page-title">
+<h1>고객후기</h1>
+<p class="sub">게시판 형태로 제공되며, 작성 기능은 제공되지 않습니다.</p>
+</section>
+<!-- 후기 게시판 -->
+<section class="board" id="reviewBoard">
+<div class="board__head">
+<div>
+<h2 class="board__title">후기 게시판</h2>
+<p class="board__sub">현장 분위기 · 응대 · 만족도 중심 후기</p>
+</div>
+<button class="board__write" id="fakeWriteBtn" type="button">
+<span aria-hidden="true" class="btnIcon">✍️</span>
   글작성하기
 </button>
-
-          </div>
-
-          <div class="board__tableWrap">
-            <table class="board__table" aria-label="후기 게시판">
-              <thead>
-                <tr>
-                  <th class="col-title">제목</th>
-                  <th class="col-author">작성자</th>
-                  <th class="col-time">작성시간</th>
-                  <th class="col-rate">평점</th>
-                  <th class="col-pass">수정</th>
-                </tr>
-              </thead>
-
-              <tbody id="boardBody">
-  <!-- AUTO_REVIEWS_START -->
-<tr class="board__row" data-id="auto-20260111-1768057670191-550" data-auto="1" data-auto-date="2026-01-11" data-content="제주 술 + 제주 가라오케 조합으로 좋았고, 제주 노래방 분위기도 가볍게 즐기기 좋았어요.">
-  <td class="cell-title">
-    <button type="button" class="linkTitle" data-open="auto-20260111-1768057670191-550">제주 술 + 제주 가라오케 조합으…</button>
-    <div class="preview">제주 술 + 제주 가라오케 조합으로 좋았고, 제주 노래방 분위기도 가볍게 즐기기 좋았어요.</div>
-  </td>
-  <td class="cell-author">김**</td>
-  <td class="cell-time">2026-01-11 00:07</td>
-  <td class="cell-rate"><span class="stars" aria-label="별점">★★★★☆</span></td>
-  <td class="cell-pass"><button type="button" class="miniBtn" data-edit="auto-20260111-1768057670191-550">비밀번호</button></td>
+</div>
+<div class="board__tableWrap">
+<table aria-label="후기 게시판" class="board__table">
+<thead>
+<tr>
+<th class="col-title">제목</th>
+<th class="col-author">작성자</th>
+<th class="col-time">작성시간</th>
+<th class="col-rate">평점</th>
+<th class="col-pass">수정</th>
 </tr>
-<tr class="board__row" data-id="auto-20260111-1768057670191-9121" data-auto="1" data-auto-date="2026-01-11" data-content="제주 노래방 느낌 과하지 않고 고급스러웠어요. 제주 유흥도 자연스럽게 즐겼습니다.">
-  <td class="cell-title">
-    <button type="button" class="linkTitle" data-open="auto-20260111-1768057670191-9121">제주 노래방 느낌 과하지 않고 고…</button>
-    <div class="preview">제주 노래방 느낌 과하지 않고 고급스러웠어요. 제주 유흥도 자연스럽게 즐겼습니다.</div>
-  </td>
-  <td class="cell-author">정**</td>
-  <td class="cell-time">2026-01-11 00:07</td>
-  <td class="cell-rate"><span class="stars" aria-label="별점">★★★★☆</span></td>
-  <td class="cell-pass"><button type="button" class="miniBtn" data-edit="auto-20260111-1768057670191-9121">비밀번호</button></td>
+</thead>
+<tbody id="boardBody">
+<!-- AUTO_REVIEWS_START -->
+<tr class="board__row" data-auto="1" data-auto-date="2026-01-11" data-content="제주 술 + 제주 가라오케 조합으로 좋았고, 제주 노래방 분위기도 가볍게 즐기기 좋았어요." data-id="auto-20260111-1768057670191-550">
+<td class="cell-title">
+<button class="linkTitle" data-open="auto-20260111-1768057670191-550" type="button">제주 술 + 제주 가라오케 조합으…</button>
+<div class="preview">제주 술 + 제주 가라오케 조합으로 좋았고, 제주 노래방 분위기도 가볍게 즐기기 좋았어요.</div>
+</td>
+<td class="cell-author">김**</td>
+<td class="cell-time">2026-01-11 00:07</td>
+<td class="cell-rate"><span aria-label="별점" class="stars">★★★★☆</span></td>
+<td class="cell-pass"><button class="miniBtn" data-edit="auto-20260111-1768057670191-550" type="button">비밀번호</button></td>
 </tr>
-
-
-  <!-- (기존 샘플 tr들이 여기 있으면 OK) -->
-
-  
+<tr class="board__row" data-auto="1" data-auto-date="2026-01-11" data-content="제주 노래방 느낌 과하지 않고 고급스러웠어요. 제주 유흥도 자연스럽게 즐겼습니다." data-id="auto-20260111-1768057670191-9121">
+<td class="cell-title">
+<button class="linkTitle" data-open="auto-20260111-1768057670191-9121" type="button">제주 노래방 느낌 과하지 않고 고…</button>
+<div class="preview">제주 노래방 느낌 과하지 않고 고급스러웠어요. 제주 유흥도 자연스럽게 즐겼습니다.</div>
+</td>
+<td class="cell-author">정**</td>
+<td class="cell-time">2026-01-11 00:07</td>
+<td class="cell-rate"><span aria-label="별점" class="stars">★★★★☆</span></td>
+<td class="cell-pass"><button class="miniBtn" data-edit="auto-20260111-1768057670191-9121" type="button">비밀번호</button></td>
+</tr>
+<!-- (기존 샘플 tr들이 여기 있으면 OK) -->
 <tr data-id="auto-20260112-0040-4f004c">
-  <td class="col-rating"><span class="stars">★★★★★</span></td>
-  <td class="col-title">정보가 깔끔해서 참고하기 좋음</td>
-  <td class="col-preview">정보가 과하지 않아서 부담 없이 참고하기 좋았습니다. (서귀포 유흥, 서귀포 가라오케, 제주 유흥 참고)</td>
-  <td class="col-date">2026-01-12</td>
+<td class="col-rating"><span class="stars">★★★★★</span></td>
+<td class="col-title">정보가 깔끔해서 참고하기 좋음</td>
+<td class="col-preview">정보가 과하지 않아서 부담 없이 참고하기 좋았습니다. (서귀포 유흥, 서귀포 가라오케, 제주 유흥 참고)</td>
+<td class="col-date">2026-01-12</td>
 </tr>
-
 <tr data-id="auto-20260115-0050-b7176b">
-  <td class="col-rating"><span class="stars">★★★★★</span></td>
-  <td class="col-title">처음인데도 부담 없었어요</td>
-  <td class="col-preview">정리 방식이 깔끔해서 전체적으로 무난했어요. (서귀포 유흥, 제주 술, 서귀포 파티 참고)</td>
-  <td class="col-date">2026-01-15</td>
+<td class="col-rating"><span class="stars">★★★★★</span></td>
+<td class="col-title">처음인데도 부담 없었어요</td>
+<td class="col-preview">정리 방식이 깔끔해서 전체적으로 무난했어요. (서귀포 유흥, 제주 술, 서귀포 파티 참고)</td>
+<td class="col-date">2026-01-15</td>
 </tr>
-
 <tr data-id="auto-20260120-0053-531985">
-  <td class="col-rating"><span class="stars">★★★★★</span></td>
-  <td class="col-title">응대가 차분해서 좋았어요</td>
-  <td class="col-preview">정보가 과하지 않아서 가볍게 보기 괜찮았습니다. (제주 술, 서귀포 유흥, 서귀포 파티 참고)</td>
-  <td class="col-date">2026-01-20</td>
+<td class="col-rating"><span class="stars">★★★★★</span></td>
+<td class="col-title">응대가 차분해서 좋았어요</td>
+<td class="col-preview">정보가 과하지 않아서 가볍게 보기 괜찮았습니다. (제주 술, 서귀포 유흥, 서귀포 파티 참고)</td>
+<td class="col-date">2026-01-20</td>
 </tr>
 <!-- AUTO_REVIEWS_END -->
 </tbody>
-
-                
-                <tr class="board__row" data-id="r-0001"
-                    data-content="처음엔 긴장했는데 분위기가 생각보다 고급스럽고 응대도 깔끔했어요. 진행이 자연스러워서 부담 없이 즐겼고 전반적으로 만족했습니다.">
-                  <td class="cell-title">
-  <button type="button" class="linkTitle" data-open="r-0001">분위기 좋고 응대 깔끔했어요</button>
-  <div class="preview">처음엔 긴장했는데 분위기가 생각보다 고급스럽고 응대도 깔끔했어요. 진행이 자연스러워서 부담 없이 즐겼고 전반적으로 만족했습니다.</div>
+<tr class="board__row" data-content="처음엔 긴장했는데 분위기가 생각보다 고급스럽고 응대도 깔끔했어요. 진행이 자연스러워서 부담 없이 즐겼고 전반적으로 만족했습니다." data-id="r-0001">
+<td class="cell-title">
+<button class="linkTitle" data-open="r-0001" type="button">분위기 좋고 응대 깔끔했어요</button>
+<div class="preview">처음엔 긴장했는데 분위기가 생각보다 고급스럽고 응대도 깔끔했어요. 진행이 자연스러워서 부담 없이 즐겼고 전반적으로 만족했습니다.</div>
 </td>
-
-
-                  <td class="cell-author">김**</td>
-                  <td class="cell-time">2026-01-10 15:30</td>
-                  <td class="cell-rate"><span class="stars" aria-label="별점 5점">★★★★★</span></td>
-                  <td class="cell-pass"><button type="button" class="miniBtn" data-edit="r-0001">비밀번호</button></td>
-                </tr>
-
-                <tr class="board__row" data-id="r-0002"
-                    data-content="여러 군데 비교하다가 선택했는데 만족합니다. 응대가 빠르고 진행이 매끄러워서 편했어요. 전체적으로 신뢰감이 들었습니다.">
-                  <td class="cell-title">
-  <button type="button" class="linkTitle" data-open="r-0001">분위기 좋고 응대 깔끔했어요</button>
-  <div class="preview">처음엔 긴장했는데 분위기가 생각보다 고급스럽고 응대도 깔끔했어요. 진행이 자연스러워서 부담 없이 즐겼고 전반적으로 만족했습니다.</div>
+<td class="cell-author">김**</td>
+<td class="cell-time">2026-01-10 15:30</td>
+<td class="cell-rate"><span aria-label="별점 5점" class="stars">★★★★★</span></td>
+<td class="cell-pass"><button class="miniBtn" data-edit="r-0001" type="button">비밀번호</button></td>
+</tr>
+<tr class="board__row" data-content="여러 군데 비교하다가 선택했는데 만족합니다. 응대가 빠르고 진행이 매끄러워서 편했어요. 전체적으로 신뢰감이 들었습니다." data-id="r-0002">
+<td class="cell-title">
+<button class="linkTitle" data-open="r-0001" type="button">분위기 좋고 응대 깔끔했어요</button>
+<div class="preview">처음엔 긴장했는데 분위기가 생각보다 고급스럽고 응대도 깔끔했어요. 진행이 자연스러워서 부담 없이 즐겼고 전반적으로 만족했습니다.</div>
 </td>
+<td class="cell-author">이**</td>
+<td class="cell-time">2026-01-10 18:05</td>
+<td class="cell-rate"><span aria-label="별점 4점" class="stars">★★★★☆</span></td>
+<td class="cell-pass"><button class="miniBtn" data-edit="r-0002" type="button">비밀번호</button></td>
+</tr>
 
-
-                  <td class="cell-author">이**</td>
-                  <td class="cell-time">2026-01-10 18:05</td>
-                  <td class="cell-rate"><span class="stars" aria-label="별점 4점">★★★★☆</span></td>
-                  <td class="cell-pass"><button type="button" class="miniBtn" data-edit="r-0002">비밀번호</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="board__pager">
-            <button type="button" class="pagerBtn" id="prev10">이전</button>
-            <span class="pagerInfo" id="pagerInfo">1 / 1</span>
-            <button type="button" class="pagerBtn" id="next10">다음</button>
-          </div>
-
-          <!-- 상세보기 모달 -->
-          <div class="modal" id="reviewModal" aria-hidden="true">
-            <div class="modal__backdrop" data-close="1"></div>
-            <div class="modal__panel" role="dialog" aria-modal="true" aria-label="후기 상세보기">
-              <div class="modal__top">
-                <div class="modal__title" id="modalTitle">제목</div>
-                <button type="button" class="modal__close" data-close="1" aria-label="닫기">×</button>
-              </div>
-
-              <div class="modal__meta" id="modalMeta"></div>
-              <div class="modal__body" id="modalBody"></div>
+</table>
 </div>
-          </div>
-        </section>
-
-        <section class="disclaimer" aria-label="고지">
-          본 페이지는 정보 제공 목적의 안내 페이지입니다.<br>
+<div class="board__pager">
+<button class="pagerBtn" id="prev10" type="button">이전</button>
+<span class="pagerInfo" id="pagerInfo">1 / 1</span>
+<button class="pagerBtn" id="next10" type="button">다음</button>
+</div>
+<!-- 상세보기 모달 -->
+<div aria-hidden="true" class="modal" hidden="hidden" id="reviewModal">
+<div class="modal__backdrop" data-close="1"></div>
+<div aria-label="후기 상세보기" aria-modal="true" class="modal__panel" role="dialog">
+<div class="modal__top">
+<div class="modal__title" id="modalTitle">제목</div>
+<button aria-label="닫기" class="modal__close" data-close="1" type="button">×</button>
+</div>
+<div class="modal__meta" id="modalMeta"></div>
+<div class="modal__body" id="modalBody"></div>
+</div>
+</div>
+</section>
+<section aria-label="고지" class="disclaimer">
+          본 페이지는 정보 제공 목적의 안내 페이지입니다.<br/>
           불법·성 관련 서비스 제공이 아니며 예약·중개·알선 서비스를 제공하지 않습니다.
         </section>
+<footer class="footer">
+<p>© 2026 INFO SITE</p>
+<p class="small">불법·성 관련 서비스(SEX) / 예약·중개(BOOKING/BROKER) 제공 없음</p>
+</footer>
+</main>
+</div>
+</div>
 
-        <footer class="footer">
-          <p>© 2026 INFO SITE</p>
-          <p class="small">불법·성 관련 서비스(SEX) / 예약·중개(BOOKING/BROKER) 제공 없음</p>
-        </footer>
+<script>
+(() => {
+  const PER_PAGE = 10;
 
-      </main>
-    </div>
-  </div>
+  const body = document.getElementById("boardBody");
+  const pagerInfo = document.getElementById("pagerInfo");
+  const prevBtn = document.getElementById("prev10");
+  const nextBtn = document.getElementById("next10");
 
-  <script>
-  (() => {
-    const PER_PAGE = 10;
+  const fakeWriteBtn = document.getElementById("fakeWriteBtn");
+  const fakeEditBtn = document.getElementById("fakeEditBtn");
 
-    const body = document.getElementById("boardBody");
-    const modal = document.getElementById("reviewModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalMeta = document.getElementById("modalMeta");
-    const modalBody = document.getElementById("modalBody");
+  const detail = document.getElementById("inlineDetail");
+  const detailTitle = document.getElementById("detailTitle");
+  const detailMeta = document.getElementById("detailMeta");
+  const detailBody = document.getElementById("detailBody");
+  const detailClose = document.getElementById("detailClose");
 
-    const pagerInfo = document.getElementById("pagerInfo");
-    const prevBtn = document.getElementById("prev10");
-    const nextBtn = document.getElementById("next10");
+  if (!body) return;
 
-    const fakeWriteBtn = document.getElementById("fakeWriteBtn");
-    const fakeEditBtn = document.getElementById("fakeEditBtn");
+  const allRows = Array.from(body.querySelectorAll("tr.board__row"));
+  let page = 1;
 
-    if (!body) return;
+  const totalPages = () => Math.max(1, Math.ceil(allRows.length / PER_PAGE));
 
-    const allRows = Array.from(body.querySelectorAll("tr.board__row"));
-    let page = 1;
+  const renderPage = () => {
+    const start = (page - 1) * PER_PAGE;
+    const end = start + PER_PAGE;
 
-    const totalPages = () => Math.max(1, Math.ceil(allRows.length / PER_PAGE));
+    allRows.forEach((row, i) => {
+      row.style.display = (i >= start && i < end) ? "" : "none";
+    });
 
-    function renderPage(){
-      const tp = totalPages();
-      page = Math.min(Math.max(1, page), tp);
+    if (pagerInfo) pagerInfo.textContent = `${page} / ${totalPages()}`;
+    if (prevBtn) prevBtn.disabled = (page <= 1);
+    if (nextBtn) nextBtn.disabled = (page >= totalPages());
+  };
 
-      const start = (page - 1) * PER_PAGE;
-      const end = start + PER_PAGE;
+  const openInline = (row) => {
+    if (!row) return;
 
-      allRows.forEach((tr, idx) => {
-        tr.style.display = (idx >= start && idx < end) ? "" : "none";
-      });
+    const id = row.getAttribute("data-id") || "";
+    const titleBtn = row.querySelector(".linkTitle");
+    const preview = row.querySelector(".preview");
+    const author = row.querySelector(".cell-author")?.textContent?.trim() || "";
+    const time = row.querySelector(".cell-time")?.textContent?.trim() || "";
+    const stars = row.querySelector(".stars")?.textContent?.trim() || "";
+    const content = row.getAttribute("data-content") || preview?.textContent?.trim() || "";
 
-      pagerInfo.textContent = `${page} / ${tp}`;
-      prevBtn.disabled = (page === 1);
-      nextBtn.disabled = (page === tp);
+    detailTitle.textContent = titleBtn ? titleBtn.textContent.trim() : "후기";
+    detailMeta.innerHTML = `
+      <span>${author}</span>
+      <span>${time}</span>
+      <span aria-label="별점">${stars}</span>
+    `;
+    detailBody.textContent = content;
+
+    detail.hidden = false;
+
+    // 선택 표시
+    allRows.forEach(r => r.classList.remove("is-open"));
+    row.classList.add("is-open");
+
+    // 해시로 딥링크
+    if (id) {
+      history.replaceState(null, "", `#${encodeURIComponent(id)}`);
     }
 
-    prevBtn.addEventListener("click", () => { page--; renderPage(); });
-    nextBtn.addEventListener("click", () => { page++; renderPage(); });
+    // 사용자 시야로 스크롤
+    detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
 
-    
-    body.addEventListener("click", (e) => {
-      // 수정/비밀번호 버튼 클릭은 기존 안내만
-      const editBtn = e.target.closest("[data-edit]");
-      if (editBtn){
-        alert("후기 수정은 작성자 인증 후 가능합니다.
-현재는 수정 기능이 제공되지 않습니다.");
-        return;
-      }
+  const closeInline = () => {
+    detail.hidden = true;
+    allRows.forEach(r => r.classList.remove("is-open"));
+    history.replaceState(null, "", location.pathname + location.search);
+  };
 
-      // 1) 제목 버튼 클릭, 2) 행(tr) 클릭 모두 상세보기로
-      const tr = e.target.closest("tr.board__row");
-      if (!tr) return;
-
-      const titleBtn = tr.querySelector(".linkTitle");
-      const title = ((titleBtn?.textContent) || "").trim();
-
-      const author = (tr.querySelector(".cell-author")?.textContent || "").trim();
-      const time = (tr.querySelector(".cell-time")?.textContent || "").trim();
-      const rate = (tr.querySelector(".cell-rate")?.textContent || "").trim();
-      const content = tr.getAttribute("data-content") || "상세 내용이 준비 중입니다.";
-
-      modalTitle.textContent = title || "후기 상세";
-      modalMeta.textContent = `${author} · ${time} · ${rate}`.trim();
-      modalBody.textContent = content;
-
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-    });
-if (!btn) return;
-
-      const id = btn.getAttribute("data-open");
-      const tr = body.querySelector(`tr.board__row[data-id="${id}"]`);
-      if (!tr) return;
-
-      const title = (btn.textContent || "").trim();
-      const author = (tr.querySelector(".cell-author")?.textContent || "").trim();
-      const time = (tr.querySelector(".cell-time")?.textContent || "").trim();
-      const rate = (tr.querySelector(".cell-rate")?.textContent || "").trim();
-      const content = tr.getAttribute("data-content") || "상세 내용이 준비 중입니다.";
-
-      modalTitle.textContent = title;
-      modalMeta.textContent = `${author} · ${time} · ${rate}`;
-      modalBody.textContent = content;
-
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-    });
-
-    modal.addEventListener("click", (e) => {
-
-      if (!e.target.closest("[data-close]")) return;
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-    });
-
-    fakeWriteBtn.addEventListener("click", () => {
-      alert("작성 기능은 인증된 이용자에게만 제공됩니다.\\n현재는 후기 열람만 가능합니다.");
-    });
-
-    body.addEventListener("click", (e) => {
-      const edit = e.target.closest("[data-edit]");
-      if (!edit) return;
-      alert("후기 수정은 작성자 인증 후 가능합니다.\\n현재는 수정 기능이 제공되지 않습니다.");
-    });
-    if (fakeEditBtn){
-      fakeEditBtn.addEventListener("click", () => {
-        alert("후기 수정은 작성자 인증 후 가능합니다.\n현재는 수정 기능이 제공되지 않습니다.");
-      });
+  // 클릭: 제목 버튼/행 클릭 모두 열기
+  body.addEventListener("click", (e) => {
+    const btn = e.target.closest(".linkTitle");
+    const row = e.target.closest("tr.board__row");
+    if (btn && row) {
+      e.preventDefault();
+      openInline(row);
+      return;
     }
-});
+    // 행 클릭(수정 버튼/비밀번호 제외)
+    if (row && !e.target.closest(".miniBtn")) {
+      openInline(row);
+      return;
+    }
+  });
 
-    renderPage();
-  })();
-  
-    window.addEventListener("keydown", (e) => {
-      if(e.key === "Escape"){
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-      }
-    });
+  if (detailClose) detailClose.addEventListener("click", closeInline);
+
+  // 페이징
+  if (prevBtn) prevBtn.addEventListener("click", () => { page = Math.max(1, page - 1); renderPage(); });
+  if (nextBtn) nextBtn.addEventListener("click", () => { page = Math.min(totalPages(), page + 1); renderPage(); });
+
+  // 가짜 버튼 안내
+  if (fakeWriteBtn) fakeWriteBtn.addEventListener("click", () => alert("작성 기능은 제공되지 않습니다. (정보 제공 목적)"));
+  if (fakeEditBtn) fakeEditBtn.addEventListener("click", () => alert("수정 기능은 제공되지 않습니다. (정보 제공 목적)"));
+
+  // 초기 렌더
+  renderPage();
+
+  // 해시로 들어온 경우 자동 오픈
+  const hash = decodeURIComponent((location.hash || "").replace("#", ""));
+  if (hash) {
+    const target = allRows.find(r => (r.getAttribute("data-id") || "") === hash);
+    if (target) {
+      // 해당 페이지로 이동
+      const idx = allRows.indexOf(target);
+      page = Math.floor(idx / PER_PAGE) + 1;
+      renderPage();
+      // 살짝 지연 후 오픈
+      setTimeout(() => openInline(target), 50);
+    }
+  }
+})();
 </script>
 
 </body>

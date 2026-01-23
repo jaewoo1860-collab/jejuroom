@@ -1,0 +1,40 @@
+name: Daily Reviews
+
+on:
+  schedule:
+    # 매 15분마다 실행 (00,15,30,45)
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate reviews (1 per allowed hour window, max 10 per KST day)
+        run: node tools/generate-reviews.js
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "jaewoo1860"
+          git config user.email "jaewoo1860@users.noreply.github.com"
+
+          git add pages/reviews.html
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore: add auto reviews"
+          git push

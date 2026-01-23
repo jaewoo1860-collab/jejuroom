@@ -1,0 +1,9 @@
+/* ads.css
+   - pages/shops/ads1/* (협력업체/광고) 전용 보조 스타일
+*/
+.page-ads .sec.hero{
+  padding-top: 18px;
+}
+.page-ads .sec.notice p{
+  margin: 10px 0;
+}
