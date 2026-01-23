@@ -12,6 +12,7 @@
 
 
 
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -592,6 +593,7 @@
       gate.classList.remove('show');
       document.body.classList.remove('no-scroll');
       wrap.classList.remove('locked');
+  if (typeof window.loadGA4 === 'function') window.loadGA4();
       sessionStorage.setItem('jg_age_ok', '1');
     }
 
@@ -622,6 +624,7 @@
     }else{
       // 내부 이동이면 바로 콘텐츠 노출
       wrap.classList.remove('locked');
+  if (typeof window.loadGA4 === 'function') window.loadGA4();
     }
   })();
   </script>
