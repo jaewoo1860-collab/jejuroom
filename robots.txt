@@ -1,4 +1,4 @@
-# BEGIN Cloudflare Managed content
+# BEGIN Cloudflare Managed Content
 User-agent: *
 Content-Signal: search=yes,ai-train=no
 Allow: /
