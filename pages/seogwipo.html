@@ -1,6 +1,7 @@
 
 
 
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -26,9 +27,14 @@
     function gtag(){ dataLayer.push(arguments); }
     window.gtag = gtag;
 
+    // ✅ debug_mode=true 파라미터 감지 (DebugView용)
+    const params = new URLSearchParams(location.search);
+    const isDebug = params.get("debug_mode") === "true";
+
     gtag("js", new Date());
     gtag("config", window.__GA4_ID__, {
-      anonymize_ip: true
+      anonymize_ip: true,
+      debug_mode: isDebug
     });
   };
 </script>
@@ -102,11 +108,11 @@
         <!-- 메인과 동일 크기의 배너 버튼 5개 (임시) -->
         <section aria-label="서귀포 배너">
           <div class="partner-row" role="list">
-            <a class="partner-btn" href="shops/seogwipo-01.html" role="listitem">배너 1 (임시)</a>
-            <a class="partner-btn" href="shops/seogwipo-02.html" role="listitem">배너 2 (임시)</a>
-            <a class="partner-btn" href="shops/seogwipo-03.html" role="listitem">배너 3 (임시)</a>
-            <a class="partner-btn" href="shops/seogwipo-04.html" role="listitem">배너 4 (임시)</a>
-            <a class="partner-btn" href="shops/seogwipo-05.html" role="listitem">배너 5 (임시)</a>
+            <a class="partner-btn" href="./shops/seogwipo-01.html" role="listitem">배너 1 (임시)</a>
+            <a class="partner-btn" href="./shops/seogwipo-02.html" role="listitem">배너 2 (임시)</a>
+            <a class="partner-btn" href="./shops/seogwipo-03.html" role="listitem">배너 3 (임시)</a>
+            <a class="partner-btn" href="./shops/seogwipo-04.html" role="listitem">배너 4 (임시)</a>
+            <a class="partner-btn" href="./shops/seogwipo-05.html" role="listitem">배너 5 (임시)</a>
           </div>
         </section>
 
