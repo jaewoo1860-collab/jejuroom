@@ -156,7 +156,7 @@
       </main>
     </div>
   </div>
-  <!-- ✅ GA4: 서귀포 업체 클릭 추적 -->
+  <!-- ✅ GA4: 지역 업체 클릭 추적 (경로 무관) -->
 <script>
 (function(){
   document.addEventListener('click', function(e){
@@ -166,19 +166,20 @@
     const href = a.getAttribute('href');
     if(!href) return;
 
-    // seogwipo 상세 페이지 추적
-    const m = href.match(/pages\/shops\/(seogwipo-\d{2})\.html$/);
+    // 경로 상관없이 파일명에서 jejusi/seogwipo-## 추출
+    const m = href.match(/(jejusi|seogwipo)-(\d{2})\.html/i);
     if(!m) return;
 
     if (typeof window.loadGA4 === 'function') window.loadGA4();
     if (typeof window.gtag !== 'function') return;
 
     window.gtag('event', 'shop_click', {
-      shop_id: m[1],
-      region: 'seogwipo',
+      shop_id: `${m[1]}-${m[2]}`,
+      region: m[1],
       page: location.pathname
     });
 
+    // 같은 탭 이동이면 잠깐 대기(이벤트 누락 방지)
     if(!a.target){
       e.preventDefault();
       const to = a.href;
@@ -187,6 +188,7 @@
   }, true);
 })();
 </script>
+
 
 </body>
 </html>
