@@ -156,5 +156,37 @@
       </main>
     </div>
   </div>
+  <!-- ✅ GA4: 서귀포 업체 클릭 추적 -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    const a = e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+
+    const href = a.getAttribute('href');
+    if(!href) return;
+
+    // seogwipo 상세 페이지 추적
+    const m = href.match(/pages\/shops\/(seogwipo-\d{2})\.html$/);
+    if(!m) return;
+
+    if (typeof window.loadGA4 === 'function') window.loadGA4();
+    if (typeof window.gtag !== 'function') return;
+
+    window.gtag('event', 'shop_click', {
+      shop_id: m[1],
+      region: 'seogwipo',
+      page: location.pathname
+    });
+
+    if(!a.target){
+      e.preventDefault();
+      const to = a.href;
+      setTimeout(() => location.href = to, 180);
+    }
+  }, true);
+})();
+</script>
+
 </body>
 </html>

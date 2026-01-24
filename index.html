@@ -619,12 +619,27 @@
       gate.focus({ preventScroll: true });
     }
     function hide(){
-      gate.classList.remove('show');
-      document.body.classList.remove('no-scroll');
-      wrap.classList.remove('locked');
+  gate.classList.remove('show');
+  document.body.classList.remove('no-scroll');
+  wrap.classList.remove('locked');
+
   if (typeof window.loadGA4 === 'function') window.loadGA4();
-      sessionStorage.setItem('jg_age_ok', '1');
+
+  // ✅ GA4: 성인 인증 통과 (세션 1회)
+  try{
+    if(!sessionStorage.getItem('jg_age_event_sent')){
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'age_gate_passed', {
+          page: location.pathname
+        });
+        sessionStorage.setItem('jg_age_event_sent','1');
+      }
     }
+  }catch(e){}
+
+  sessionStorage.setItem('jg_age_ok', '1');
+}
+
 
     // 버튼
     gate.addEventListener('click', (e) => {
@@ -844,5 +859,37 @@
       }
     })();
   </script>
+  <!-- ✅ GA4: 협력업체 클릭 추적 -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    const a = e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+
+    const href = a.getAttribute('href');
+    if(!href) return;
+
+    // ads1 협력업체만 추적
+    const m = href.match(/pages\/shops\/ads1\/(ads1-\d{2})\.html$/);
+    if(!m) return;
+
+    if (typeof window.loadGA4 === 'function') window.loadGA4();
+    if (typeof window.gtag !== 'function') return;
+
+    window.gtag('event', 'partner_click', {
+      partner_id: m[1],
+      page: location.pathname
+    });
+
+    // 같은 탭 이동이면 잠깐 대기
+    if(!a.target){
+      e.preventDefault();
+      const to = a.href;
+      setTimeout(() => location.href = to, 180);
+    }
+  }, true);
+})();
+</script>
+
 </body>
 </html>
