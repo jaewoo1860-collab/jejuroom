@@ -156,14 +156,14 @@
       </main>
     </div>
   </div>
-  <!-- ✅ GA4: 지역 업체 클릭 추적 (경로 무관) -->
+  <!-- ✅ GA4: 지역 업체 클릭 추적 (경로 무관 · 최종) -->
 <script>
 (function(){
   document.addEventListener('click', function(e){
     const a = e.target.closest && e.target.closest('a[href]');
     if(!a) return;
 
-    const href = a.getAttribute('href');
+    const href = a.href; // ✅ 절대경로로 통일
     if(!href) return;
 
     // 경로 상관없이 파일명에서 jejusi/seogwipo-## 추출
@@ -173,22 +173,29 @@
     if (typeof window.loadGA4 === 'function') window.loadGA4();
     if (typeof window.gtag !== 'function') return;
 
+    const go = () => {
+      location.href = a.href;
+    };
+
+    console.log('[GA4] shop_click fired:', `${m[1]}-${m[2]}`);
+
     window.gtag('event', 'shop_click', {
       shop_id: `${m[1]}-${m[2]}`,
       region: m[1],
-      page: location.pathname
+      page: location.pathname,
+      event_callback: go,
+      event_timeout: 2000
     });
 
-    // 같은 탭 이동이면 잠깐 대기(이벤트 누락 방지)
+    // 같은 탭 이동이면 이벤트 전송 끝날 때까지 대기
     if(!a.target){
       e.preventDefault();
-      const to = a.href;
-      setTimeout(() => location.href = to, 180);
+      setTimeout(go, 2200);
     }
+
   }, true);
 })();
 </script>
-
 
 </body>
 </html>
