@@ -842,33 +842,30 @@ body { overflow: hidden; }
 
 
 /* ===============================
-   Force Light Mode (All Devices)
-   Prevent OS / Browser Auto Dark Mode
+   Color Scheme Lock (All Devices)
+   - Prevent browser/OS auto dark-mode overrides
+   - Keep our designed colors (gradients/glow) consistent day/night
    =============================== */
-:root {
-  color-scheme: light;
+:root{
+  color-scheme: dark;
 }
 
-html, body {
-  background-color: #0b0f14; /* original dark background baseline */
+html, body{
+  background-color: #0b0f14; /* keep baseline */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: light;
-  }
-  html, body {
-    background-color: #0b0f14;
-  }
-}
-
-/* Prevent text hollow/outline effect caused by auto dark mode */
-* {
-  -webkit-text-fill-color: initial;
-  text-shadow: none;
-}
-
-/* Samsung Internet / Chromium auto dark prevention */
-html {
+/* Samsung Internet / Chromium: avoid auto-filtering */
+html{
   filter: none !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* If the OS requests dark, we still keep our own dark theme */
+@media (prefers-color-scheme: dark){
+  :root{ color-scheme: dark; }
+}
+
+/* High-contrast mode: keep our colors (optional but safe) */
+@media (forced-colors: active){
+  *{ forced-color-adjust: none; }
 }
