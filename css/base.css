@@ -838,3 +838,37 @@ body { overflow: hidden; }
     display: none !important;
   }
 }
+
+
+
+/* ===============================
+   Force Light Mode (All Devices)
+   Prevent OS / Browser Auto Dark Mode
+   =============================== */
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  background-color: #0b0f14; /* original dark background baseline */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+  html, body {
+    background-color: #0b0f14;
+  }
+}
+
+/* Prevent text hollow/outline effect caused by auto dark mode */
+* {
+  -webkit-text-fill-color: initial;
+  text-shadow: none;
+}
+
+/* Samsung Internet / Chromium auto dark prevention */
+html {
+  filter: none !important;
+}
