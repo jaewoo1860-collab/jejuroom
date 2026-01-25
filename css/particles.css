@@ -207,3 +207,49 @@
   .particles .p{ animation: none !important; opacity: .85; }
 }
 
+
+
+
+/* =====================================================
+   COLOR LOCK OVERRIDE (FOR ALL DEVICES / ALL MODES)
+   목적:
+   - OS 다크모드 / 삼성브라우저 자동 색보정 완전 차단
+   - 모바일/PC 동일 색감 유지
+   - 기존 코드 유지, 최하단에서만 덮어씀
+   ===================================================== */
+
+/* 1) 브라우저 자동 다크모드 차단 */
+:root {
+  color-scheme: dark !important;
+}
+
+/* Chromium / Samsung Internet auto dark 대응 */
+html {
+  forced-color-adjust: none !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 2) 모든 자동 필터/명도 보정 무효화 */
+* {
+  filter: none !important;
+}
+
+/* 3) hero 타이틀/버튼 색감 강제 고정 */
+.hero, .hero *,
+button, .btn, .cta {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* 4) prefers-reduced-motion 이라도 색감은 유지 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
+/* 5) 삼성브라우저 다크모드 텍스트 비어보임 방지 */
+.hero h1, .hero h2 {
+  -webkit-text-fill-color: currentColor !important;
+}
