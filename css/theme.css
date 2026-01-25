@@ -102,30 +102,24 @@
 
 
 /* ===============================
-   Color Scheme Lock (All Devices)
-   - Prevent browser/OS auto dark-mode overrides
-   - Keep our designed colors (gradients/glow) consistent day/night
+   /* ===============================
+   Color scheme lock (All Devices)
+   - We already use a dark UI palette.
+   - Declare it explicitly so mobile browsers DON'T auto-invert/dim colors.
    =============================== */
 :root{
-  color-scheme: dark;
+  color-scheme: dark; /* lock */
 }
 
 html, body{
-  background-color: #0b0f14; /* keep baseline */
+  background-color:#0b0f14;
 }
 
-/* Samsung Internet / Chromium: avoid auto-filtering */
-html{
-  filter: none !important;
-  -webkit-text-size-adjust: 100%;
+/* If a browser tries to apply "auto darken" via CSS filters, keep it off */
+html{ filter:none !important; }
+
+/* Fix rare 'hollow text' on some mobile browsers */
+.hero-title, .hero2, .hero2 *{
+  -webkit-text-fill-color: currentColor;
 }
 
-/* If the OS requests dark, we still keep our own dark theme */
-@media (prefers-color-scheme: dark){
-  :root{ color-scheme: dark; }
-}
-
-/* High-contrast mode: keep our colors (optional but safe) */
-@media (forced-colors: active){
-  *{ forced-color-adjust: none; }
-}

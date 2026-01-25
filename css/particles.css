@@ -204,6 +204,6 @@
 /* 접근성 */
 @media (prefers-reduced-motion: reduce){
   .particles::before,
-  .particles .p{ animation: none !important; opacity: .25; }
+  .particles .p{ animation: none !important; opacity: .85; }
 }
 
