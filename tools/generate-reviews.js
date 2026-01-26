@@ -8,19 +8,8 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const REVIEWS_HTML_CANDIDATES = [
-  path.join(ROOT, "reviews.html"),         // 현재 사용중 (루트)
-  path.join(ROOT, "pages", "reviews.html") // 예전 구조 (pages/)
-];
+const REVIEWS_HTML = path.join(ROOT, "pages", "reviews.html");
 
-const REVIEWS_HTML = REVIEWS_HTML_CANDIDATES.find((p) => fs.existsSync(p));
-if (!REVIEWS_HTML) {
-  throw new Error("reviews.html을 찾지 못했습니다. 루트(reviews.html) 또는 pages/reviews.html 위치를 확인하세요.");
-}
-
-const REVIEWS_PAGE_PATH = REVIEWS_HTML.endsWith(path.join("pages","reviews.html"))
-  ? "/pages/reviews.html"
-  : "/reviews.html";
 const START = "<!-- AUTO_REVIEWS_START -->";
 const END = "<!-- AUTO_REVIEWS_END -->";
 const SCHEMA_START = "<!-- AUTO_SCHEMA_START -->";
@@ -79,7 +68,7 @@ function escapeHtml(s) {
 
 function decodeHtml(s) {
   return String(s)
-    .replaceAll("&quot;", \'"\')
+    .replaceAll("&quot;", '"')
     .replaceAll("&#39;", "\'")
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">")
@@ -226,85 +215,7 @@ function makeReview(existing) {
 /* =========================
    메인 실행
    ========================= */
-(
-/* =========================
-   스키마(JSON-LD) 자동 갱신
-   ========================= */
-function starsToRating(stars) {
-  const s = String(stars || "");
-  // "★★★★★" "★★★★☆" "★★★☆☆" 등
-  const filled = (s.match(/★/g) || []).length;
-  // 최소 1 ~ 최대 5
-  return Math.max(1, Math.min(5, filled || 5));
-}
-
-function extractReviewsFromHtml(html) {
-  // tbody 안의 board__row에서 필요한 필드 추출
-  const rows = [];
-  const reRow = /<tr\s+class="board__row"[\s\S]*?<\/tr>/g;
-  const blocks = html.match(reRow) || [];
-  for (const blk of blocks) {
-    const title = (blk.match(/<button[^>]*class="linkTitle"[^>]*>([\s\S]*?)<\/button>/) || [])[1];
-    const author = (blk.match(/<td\s+class="cell-author">([\s\S]*?)<\/td>/) || [])[1];
-    const time = (blk.match(/<td\s+class="cell-time">([\s\S]*?)<\/td>/) || [])[1];
-    const stars = (blk.match(/<span[^>]*class="stars">([\s\S]*?)<\/span>/) || [])[1];
-    const body = (blk.match(/data-content="([\s\S]*?)"/) || [])[1];
-
-    const t = title ? decodeHtml(title.trim()) : "";
-    const a = author ? decodeHtml(author.trim()) : "";
-    const tm = time ? decodeHtml(time.trim()) : "";
-    const b = body ? decodeHtml(body.trim()) : "";
-
-    // 날짜만 YYYY-MM-DD 추출
-    const dateOnly = (tm.match(/\d{4}-\d{2}-\d{2}/) || [])[0] || "";
-    rows.push({ title: t, author: a, time: tm, dateOnly, starsText: (stars || "").trim(), body: b });
-  }
-  return rows;
-}
-
-function buildSchemaBlock(reviews) {
-  const items = reviews.slice(0, SCHEMA_MAX_REVIEWS).map((r, i) => {
-    const rating = starsToRating(r.starsText);
-    return {
-      "@type": "ListItem",
-      "position": i + 1,
-      "item": {
-        "@type": "Review",
-        "name": r.title || "제주도 유흥 후기",
-        "reviewBody": r.body || "",
-        "author": { "@type": "Person", "name": r.author || "익명" },
-        ...(r.dateOnly ? { "datePublished": r.dateOnly } : {}),
-        "reviewRating": { "@type": "Rating", "ratingValue": rating, "bestRating": 5, "worstRating": 1 }
-      }
-    };
-  });
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "고객후기 - 제주도 유흥가이드",
-    "url": SITE_URL + REVIEWS_PAGE_PATH,
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "제주도 유흥가이드 고객후기",
-      "itemListElement": items
-    }
-  };
-
-  const jsonLd = JSON.stringify(schema, null, 2);
-  return `${SCHEMA_START}\n<script type="application/ld+json">\n${jsonLd}\n</script>\n${SCHEMA_END}`;
-}
-
-function updateSchemaInHtml(html) {
-  const s = html.indexOf(SCHEMA_START);
-  const e = html.indexOf(SCHEMA_END);
-  if (s === -1 || e === -1 || e <= s) return html; // 스키마 블록이 없으면 건너뜀
-
-  const reviews = extractReviewsFromHtml(html);
-  const block = buildSchemaBlock(reviews);
-  return html.slice(0, s) + block + html.slice(e + SCHEMA_END.length);
-}
-function run() {
+(function run() {
   if (!fs.existsSync(REVIEWS_HTML)) return;
 
   let html = fs.readFileSync(REVIEWS_HTML, "utf8");
@@ -359,9 +270,5 @@ function run() {
 </tr>`;
 
   html = html.slice(0, e) + row + "\n" + html.slice(e);
-
-  // 스키마 갱신
-  html = updateSchemaInHtml(html);
-
   fs.writeFileSync(REVIEWS_HTML, html, "utf8");
 })();
