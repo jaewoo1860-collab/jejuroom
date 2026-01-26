@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -23,12 +25,13 @@ jobs:
       - name: Generate reviews
         run: node tools/generate-reviews.js
 
-      - name: Commit and push
+      - name: Commit and push (safe)
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
 
-          git add reviews.html tools/generate-reviews.js || true
+          # ✅ 실제 수정 대상
+          git add pages/reviews.html tools/generate-reviews.js || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
