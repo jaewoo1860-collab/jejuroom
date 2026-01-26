@@ -1,9 +1,9 @@
 name: Daily Reviews
 
 on:
+  # 하루 1회 실행 (충돌 방지용)
   schedule:
-    # 매 15분마다 실행 (00,15,30,45)
-    - cron: "*/15 * * * *"
+    - cron: "0 18 * * *"   # KST 새벽 3시 (UTC 18:00)
   workflow_dispatch: {}
 
 permissions:
@@ -21,16 +21,16 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Generate reviews (1 per allowed hour window, max 10 per KST day)
+      - name: Generate reviews
         run: node tools/generate-reviews.js
 
-      - name: Commit changes (if any)
+      - name: Commit and push changes (safe)
         run: |
           git config user.name "jaewoo1860"
           git config user.email "jaewoo1860@users.noreply.github.com"
 
-          git add reviews.html || true
-          git add pages/reviews.html || true
+          # 실제 존재하는 경로만 add
+          git add pages/reviews.html pages/reviews-post/ css/reviews.css || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
@@ -38,4 +38,7 @@ jobs:
           fi
 
           git commit -m "chore: add auto reviews"
-          git push
+
+          # 원격 최신 커밋 먼저 반영 후 push (충돌 방지)
+          git pull --rebase origin main
+          git push origin main
