@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const REVIEWS_HTML = path.join(ROOT, "pages", "reviews.html");
+const REVIEWS_HTML = "pages/reviews.html";
 
 const START = "<!-- AUTO_REVIEWS_START -->";
 const END = "<!-- AUTO_REVIEWS_END -->";
@@ -18,7 +18,7 @@ const SCHEMA_END = "<!-- AUTO_SCHEMA_END -->";
 /* =========================
    설정
    ========================= */
-const MAX_PER_DAY = 10;
+const MAX_PER_DAY = 1; // 하루 1개만 생성
 const ALLOWED_HOURS_KST = [0, 2, 5, 7, 10, 12, 15, 17, 20, 22];
 const SLOT_BASE_MINUTES = [5, 20, 35, 50];
 const JITTER_MINUTES = 7;
@@ -224,18 +224,12 @@ function makeReview(existing) {
   if (s < 0 || e < 0) return;
 
   const day = ymd();
-  const h = hour();
-  const m = minute();
 
-  if (!ALLOWED_HOURS_KST.includes(h)) return;
+// ✅ 하루 1개만 생성: 오늘(YYYYMMDD) 생성된 auto 리뷰가 이미 있으면 종료
+if (new RegExp(`auto-${day}-`, "g").test(html)) return;
 
-  if (new RegExp(`auto-${day}-${pad(h)}`).test(html)) return;
-  if ((html.match(new RegExp(`auto-${day}-`, "g")) || []).length >= MAX_PER_DAY) return;
+const block = html.slice(s + START.length, e);
 
-  const center = slotMinute(day, h);
-  if (m < center - JITTER_MINUTES || m > center + JITTER_MINUTES) return;
-
-  const block = html.slice(s + START.length, e);
   const existing = parseExisting(block);
   const one = makeReview(existing);
   if (!one) return;

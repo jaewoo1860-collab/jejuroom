@@ -29,8 +29,7 @@ jobs:
           git config user.name "jaewoo1860"
           git config user.email "jaewoo1860@users.noreply.github.com"
 
-          # 실제 존재하는 경로만 add
-          git add pages/reviews.html pages/reviews-post/ css/reviews.css || true
+          git add tools/generate-reviews.js pages/reviews.html css/page.css css/base.css css/theme.css css/particles.css || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
@@ -39,6 +38,5 @@ jobs:
 
           git commit -m "chore: add auto reviews"
 
-          # 원격 최신 커밋 먼저 반영 후 push (충돌 방지)
           git pull --rebase origin main
           git push origin main
