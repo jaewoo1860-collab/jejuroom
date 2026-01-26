@@ -1,9 +1,8 @@
 name: Daily Reviews
 
 on:
-  # 하루 1회 실행 (충돌 방지용)
   schedule:
-    - cron: "0 18 * * *"   # KST 새벽 3시 (UTC 18:00)
+    - cron: "0 18 * * *" # UTC 18:00 = KST 새벽 3시
   workflow_dispatch: {}
 
 permissions:
@@ -24,19 +23,18 @@ jobs:
       - name: Generate reviews
         run: node tools/generate-reviews.js
 
-      - name: Commit and push changes (safe)
+      - name: Commit and push
         run: |
-          git config user.name "jaewoo1860"
-          git config user.email "jaewoo1860@users.noreply.github.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
 
-          git add tools/generate-reviews.js pages/reviews.html css/page.css css/base.css css/theme.css css/particles.css || true
+          git add reviews.html tools/generate-reviews.js || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "chore: add auto reviews"
-
+          git commit -m "chore: add auto review"
           git pull --rebase origin main
           git push origin main
