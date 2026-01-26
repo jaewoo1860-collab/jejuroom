@@ -1,0 +1,24 @@
+G-5861XGW6LD
+
+
+JEJU GUIDE
+스트림 URL
+https://www.jejutoktokyi.com
+스트림 ID
+13354943108
+측정 ID
+G-5861XGW6LD
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5861XGW6LD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5861XGW6LD');
+</script>
+
+
