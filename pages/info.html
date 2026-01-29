@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>정보안내 | 제주똑똑이</title>
+</head>
+<body>
+  <p id="msg">블로그로 이동 중입니다…</p>
+  <p><a id="link" href="#">이동 링크</a></p>
+
+  <script>
+    // ✅ 로컬(file://)로 열었을 때와 사이트(https://)에서 열었을 때 경로가 다르기 때문에 분기
+    // - file://  : 같은 폴더(/pages) 기준으로 상대경로로 이동해야 함
+    // - https://  : 사이트 루트 기준 절대경로로 이동 가능
+    (function () {
+      var isFile = location.protocol === "file:";
+      var target = isFile ? "../blog/index.html" : "/pages/blog/index.html";
+      document.getElementById("link").href = target;
+
+      // 즉시 이동
+      try {
+        location.replace(target);
+      } catch (e) {
+        location.href = target;
+      }
+    })();
+  </script>
+</body>
+</html>
