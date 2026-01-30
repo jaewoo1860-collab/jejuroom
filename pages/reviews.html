@@ -212,16 +212,14 @@
 <p class="sub">후기 작성은 인증된 제주똑똑이 회원만 가능합니다. (문의: 텔레그램)</p>
 </section>
 <!-- 후기 게시판 -->
-<section class="board" id="reviewBoard">
+<section class="board board--reviews" id="reviewBoard">
 <div class="board__head">
 <div>
 <h2 class="board__title">후기 게시판</h2>
 <p class="board__sub">현장 분위기 · 응대 · 만족도 중심 후기</p>
+<p class="board__hint">리뷰 작성 시 아이디는 맨 뒤 글자(또는 2글자)만 표시됩니다.</p>
+<p class="board__hint">다음 이용 시 <b>“제주똑똑이”</b> 말씀해주시면 현장 할인 안내를 받으실 수 있어요.</p>
 </div>
-<button class="board__write" id="fakeWriteBtn" type="button">
-<span aria-hidden="true" class="btnIcon">✍️</span>
-  글작성하기
-</button>
 </div>
 <div class="board__tableWrap">
 <table aria-label="후기 게시판" class="board__table">
@@ -325,6 +323,10 @@
 <button class="pagerBtn" id="prev10" type="button">이전</button>
 <span class="pagerInfo" id="pagerInfo">1 / 1</span>
 <button class="pagerBtn" id="next10" type="button">다음</button>
+<div class="reviewsWriteCta">
+  <button class="place-more reviewsWriteBtn" id="fakeWriteBtn" type="button">후기 작성하기</button>
+</div>
+
 </div>
 <!-- 상세보기 모달 -->
 <div aria-hidden="true" class="modal" hidden="hidden" id="reviewModal">

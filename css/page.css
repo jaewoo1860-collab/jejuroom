@@ -264,6 +264,65 @@ a:focus-visible{
 }
 
 /* =========================
+   CTA 버튼: 더 알아보기(살아있는 느낌)
+   - 홈의 .place-more 스타일을 다른 페이지에서도 재사용 가능하게 확장
+========================= */
+.place-more{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  box-shadow: 0 8px 22px rgba(40,80,255,0.42);
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+.place-more::before{
+  content:"";
+  position:absolute;
+  inset:-40% -60%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0) 55%);
+  opacity:.22;
+  animation: ctaPulse 2.4s ease-in-out infinite;
+  pointer-events:none;
+}
+.place-more::after{
+  content:"";
+  position:absolute;
+  top:0; left:-60%;
+  width:55%;
+  height:100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.35), rgba(255,255,255,0));
+  transform: skewX(-18deg);
+  animation: ctaShine 3.2s ease-in-out infinite;
+  pointer-events:none;
+  opacity:.55;
+}
+.place-more:active{
+  transform: translateY(1px) scale(0.99);
+}
+@keyframes ctaPulse{
+  0%,100%{ opacity:.16; transform: scale(1); }
+  50%{ opacity:.30; transform: scale(1.06); }
+}
+@keyframes ctaShine{
+  0%{ left:-70%; opacity:0; }
+  15%{ opacity:.55; }
+  40%{ left:120%; opacity:0; }
+  100%{ left:120%; opacity:0; }
+}
+
+/* =========================
    6) 면책/고지 박스
 ========================= */
 .page-home .disclaimer{

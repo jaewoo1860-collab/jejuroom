@@ -44,10 +44,50 @@ function randHex(len = 3) {
     .padStart(len, "0");
 }
 
-function makeMaskedName() {
-  const family = ["김", "이", "박", "정", "최", "강", "조", "윤", "장", "임"];
-  return `${pick(family)}**`;
+function makeAnonIdRaw() {
+  // 실제 계정이 아닌 '익명 닉네임(자동)' 형태
+  const koPool = [
+    "알라마쓰","감귤러버","밤바다","새벽바람","돌하르방","제주산책","바람결",
+    "한라산뷰","제주여행러","파도소리","오름러","제주초보","제주단골","귤향가득"
+  ];
+  const enSyll = ["jeju","mango","blue","night","wave","stone","hallasan","toktok","guide","room"];
+  const enTail = ["01","02","07","09","11","18","23","77","88"];
+  const r = Math.random();
+  if (r < 0.55) {
+    // 영문/숫자 아이디
+    const a = pick(enSyll);
+    const b = pick(enSyll.filter(x => x !== a));
+    const sep = pick(["","_","-"]);
+    const num = Math.random() < 0.6 ? pick(enTail) : "";
+    return (a + sep + b + num).toLowerCase();
+  } else if (r < 0.85) {
+    // 한글 닉네임 + 숫자 옵션
+    const base = pick(koPool);
+    const num = Math.random() < 0.4 ? pick(enTail) : "";
+    return base + num;
+  }
+  // 짧은 랜덤 영문
+  const chars = "abcdefghijklmnopqrstuvwxyz";
+  const len = 6 + Math.floor(Math.random()*3);
+  let out = "";
+  for(let i=0;i<len;i++) out += chars[Math.floor(Math.random()*chars.length)];
+  return out + (Math.random()<0.5 ? pick(enTail) : "");
 }
+
+function maskAnonId(raw) {
+  const s = String(raw || "").trim();
+  if (!s) return "익명";
+  // 한글이면 마지막 1글자만 노출: **지
+  if (/[가-힣]/.test(s)) {
+    const last = s.slice(-1);
+    return `**${last}`;
+  }
+  // 그 외(영문/숫자)는 마지막 2글자 노출: **ft
+  const last2 = s.slice(-2);
+  return `**${last2}`;
+}
+
+
 
 function makeStars() {
   // 가중치: 4점이 더 자주
@@ -67,15 +107,24 @@ function makeTitle(area, kw1, kw2) {
 
 function makeContent(area, kw1, kw2, kw3) {
   const templates = [
-    `${area} ${kw1} + ${area} ${kw2} 조합으로 좋았고, ${area} ${kw3} 분위기도 가볍게 즐기기 좋았어요.`,
-    `${area}에서 ${kw1} 쪽으로 찾다가 방문했는데 응대가 깔끔하고 분위기가 과하지 않아 편했습니다.`,
-    `${area} ${kw2} 느낌이 생각보다 고급스럽고 진행도 자연스러워서 부담 없이 즐겼습니다.`,
-    `${area}에서 일정 중 잠깐 들렀는데 분위기/응대가 무난했고 전체적으로 만족했어요.`,
+    // 상황형
+    `일정 끝나고 ${area}에서 ${kw1} 쪽으로 찾다가 들렀어요. 응대가 깔끔했고 분위기도 과하지 않아 편하게 즐겼습니다.`,
+    // 포인트형
+    `${area} ${kw2} 분위기 좋았던 포인트 3개: ① 응대가 자연스러움 ② 진행이 빠르고 깔끔 ③ 전체 분위기가 정돈되어 있음. 다음에도 비슷한 코스로 이용해볼 듯해요.`,
+    // 감성형
+    `${area}에서 ${kw3} 느낌으로 가볍게 즐기려고 방문했는데, 분위기가 차분해서 대화하기 좋았습니다. 전체적으로 만족도가 높았어요.`,
+    // 간단 총평형
+    `${area} ${kw1} 코스로 이용했는데 진행이 자연스러워서 부담 없이 즐겼습니다. ${kw2} 쪽 찾는 분들께도 무난하게 추천할 만해요.`,
+    // 키워드 조합형
+    `${area} ${kw1} + ${area} ${kw2} 조합으로 갔고, ${kw3} 분위기도 가볍게 즐기기 좋았습니다. 전반적으로 만족했습니다.`,
+    // 300자 이내 길게
+    `${area}에서 일정 중 잠깐 들렀는데 생각보다 응대가 빠르고 깔끔해서 좋았어요. 대기 없이 진행된 편이라 흐름이 끊기지 않았고, 분위기도 과하지 않아 편안했습니다. ${kw1}/${kw2} 쪽으로 찾는 분들이라면 무난하게 이용하기 좋은 코스라고 느꼈습니다.`
   ];
   return pick(templates);
 }
 
-function buildRow({ id, autoDate, title, content, author, timeText, stars }) {
+
+function buildRow({ id, autoDate, title, content, author, authorRaw, timeText, stars }) {
   // pages/reviews.html 구조에 맞춘 row
   // - class="board__row"
   // - data-auto="1", data-auto-date="YYYY-MM-DD"
@@ -87,7 +136,7 @@ function buildRow({ id, autoDate, title, content, author, timeText, stars }) {
   const safePreview = content.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
   return `
-<tr class="board__row" data-auto="1" data-auto-date="${autoDate}" data-content="${safeContent}" data-id="${id}">
+<tr class="board__row" data-auto="1" data-auto-date="${autoDate}" data-content="${safeContent}" data-id="${id}" data-author-raw="${authorRaw.replaceAll('"', "&quot;")}">
   <td class="cell-title">
     <button class="linkTitle" data-open="${id}" type="button">${safeTitle}</button>
     <div class="preview">${safePreview}</div>
@@ -133,7 +182,8 @@ function run() {
   const content = makeContent(area, kw1, kw2, kw3);
 
   const id = `auto-${ymdCompact}-${Date.now()}-${randHex(3)}`;
-  const author = makeMaskedName();
+  const authorRaw = makeAnonIdRaw();
+  const author = maskAnonId(authorRaw);
   const stars = makeStars();
   const timeText = `${ymd} ${hm}`; // "YYYY-MM-DD HH:mm"
 
@@ -143,6 +193,7 @@ function run() {
     title,
     content,
     author,
+    authorRaw,
     timeText,
     stars,
   });
