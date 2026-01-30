@@ -1,6 +1,5 @@
 # BEGIN Cloudflare Managed Content
 User-agent: *
-Content-Signal: search=yes,ai-train=no
 Allow: /
 
 # 불필요한 내부 경로 차단
@@ -8,7 +7,6 @@ Disallow: /tools/
 Disallow: /백업/
 Disallow: /그냥 자료들/
 Disallow: /경쟁업체 참고/
-Disallow: /photo/
 Disallow: /*.zip$
 
 User-agent: Amazonbot

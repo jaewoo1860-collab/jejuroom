@@ -915,3 +915,12 @@ button, .btn, .cta {
 .hero h1, .hero h2 {
   -webkit-text-fill-color: currentColor !important;
 }
+
+/* ✅ SEO footer (visible text at bottom) */
+.seo-footer{padding:16px 14px;margin:18px auto 0;max-width:900px}
+.seo-footer__inner{opacity:.9}
+.seo-footer__text{font-size:13px;line-height:1.55;letter-spacing:-0.2px}
+@media (max-width:480px){
+  .seo-footer{padding:14px 12px}
+  .seo-footer__text{font-size:12px;line-height:1.6}
+}
