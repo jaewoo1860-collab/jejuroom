@@ -1,66 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- 메인 -->
-  <url>
-    <loc>https://www.jejutoktokyi.com/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- 허브 페이지 -->
-  <url>
-    <loc>https://www.jejutoktokyi.com/pages/area.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.jejutoktokyi.com/pages/jejusi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.jejutoktokyi.com/pages/seogwipo.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.jejutoktokyi.com/pages/reviews.html</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.jejutoktokyi.com/pages/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- 제주시 업체 -->
+  <url><loc>https://www.jejutoktokyi.com/</loc></url>
+  <url><loc>https://www.jejutoktokyi.com/pages/area.html</loc></url>
+  <url><loc>https://www.jejutoktokyi.com/pages/jejusi.html</loc></url>
+  <url><loc>https://www.jejutoktokyi.com/pages/seogwipo.html</loc></url>
+  <url><loc>https://www.jejutoktokyi.com/pages/reviews.html</loc></url>
+  <url><loc>https://www.jejutoktokyi.com/pages/contact.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/jejusi-01.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/jejusi-02.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/jejusi-03.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/jejusi-04.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/jejusi-05.html</loc></url>
-
-  <!-- 서귀포 업체 -->
   <url><loc>https://www.jejutoktokyi.com/pages/shops/seogwipo-01.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/seogwipo-02.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/seogwipo-03.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/seogwipo-04.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/seogwipo-05.html</loc></url>
-
-  <!-- 광고 / 협력업체 ads1 -->
   <url><loc>https://www.jejutoktokyi.com/pages/shops/ads1/ads1-01.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/ads1/ads1-02.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/ads1/ads1-03.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/ads1/ads1-04.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/shops/ads1/ads1-05.html</loc></url>
-
-  <url><loc>https://www.jejutoktokyi.com/pages/blog/index.html</loc></url>
+  <url><loc>https://www.jejutoktokyi.com/pages/blog/</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/blog/posts/20260129-1818-제주도서귀포-유흥-노래방가라오케-선택-시-꼭-알아야-할.html</loc></url>
   <url><loc>https://www.jejutoktokyi.com/pages/blog/posts/20260129-1914-제주도-유흥-정보-어디까지가-합법일까-제주똑똑이가-정리.html</loc></url>
 </urlset>
