@@ -311,6 +311,13 @@ a:focus-visible{
 .place-more:active{
   transform: translateY(1px) scale(0.99);
 }
+
+/* CTA 버튼이 <button>일 때도 메인과 동일하게 보이도록(모바일 웹뷰 포함) */
+button.place-more{
+  -webkit-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+}
 @keyframes ctaPulse{
   0%,100%{ opacity:.16; transform: scale(1); }
   50%{ opacity:.30; transform: scale(1.06); }
