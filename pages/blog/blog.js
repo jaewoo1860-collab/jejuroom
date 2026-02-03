@@ -53,6 +53,35 @@
     return t.length>60 ? t.slice(0,60)+"…" : t;
   }
 
+  // CTA Button Generator
+  function createCTAButton(){
+    return `
+    <div class="post-cta-wrapper">
+      <a href="https://www.jejutoktokyi.com/" class="post-cta-button">
+        제주똑똑이 문의하기
+      </a>
+    </div>
+    `;
+  }
+
+  // Inject CTA into post content at render time
+  function injectCTAIntoContent(html){
+    const temp = document.createElement("div");
+    temp.innerHTML = html;
+
+    const paragraphs = temp.querySelectorAll("p");
+
+    // Insert CTA after 3rd paragraph (middle CTA)
+    if (paragraphs.length >= 4) {
+      paragraphs[2].insertAdjacentHTML("afterend", createCTAButton());
+    }
+
+    // Insert CTA at the end (bottom CTA)
+    temp.insertAdjacentHTML("beforeend", createCTAButton());
+
+    return temp.innerHTML;
+  }
+
   async function loadPosts(){
     try{
       const res = await fetch(POSTS_JSON_URL,{cache:"no-store"});
@@ -190,6 +219,43 @@
       </main>
     </div>
   </div>
+
+  <script>
+  // Auto-inject CTA buttons into blog post content
+  (function(){
+    function createCTAButton(){
+      return \`
+      <div class="post-cta-wrapper">
+        <a href="https://www.jejutoktokyi.com/" class="post-cta-button">
+          제주똑똑이 문의하기
+        </a>
+      </div>
+      \`;
+    }
+
+    function injectCTAs(){
+      const postBody = document.querySelector('.postBody');
+      if(!postBody) return;
+
+      const children = Array.from(postBody.children);
+      const brs = children.filter(el => el.tagName === 'BR');
+
+      // Insert middle CTA after 3rd <br> if exists
+      if(brs.length >= 4){
+        brs[2].insertAdjacentHTML('afterend', createCTAButton());
+      }
+
+      // Insert CTA at the end
+      postBody.insertAdjacentHTML('beforeend', createCTAButton());
+    }
+
+    if(document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', injectCTAs);
+    } else {
+      injectCTAs();
+    }
+  })();
+  </script>
 </body>
 </html>`;
   }
