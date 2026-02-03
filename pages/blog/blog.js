@@ -42,11 +42,17 @@
     const hh=pad2(d.getHours()), mi=pad2(d.getMinutes());
     return `${yyyy}${mm}${dd}-${hh}${mi}`;
   }
-  function slugifyKo(title){
-    const cleaned = safeText(title).trim()
-      .replace(/[^\p{Script=Hangul}\p{Letter}\p{Number}\s-]/gu, "")
-      .replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"");
-    return cleaned || "post";
+  function slugifyTitle(title){
+    const slug = safeText(title)
+      .toLowerCase()
+      .normalize("NFD")                  // normalize unicode
+      .replace(/[\u0300-\u036f]/g, "")   // remove accents
+      .replace(/[^a-z0-9\s-]/g, "")      // remove non-ascii
+      .trim()
+      .replace(/\s+/g, "-")              // spaces to hyphens
+      .replace(/-+/g, "-")               // collapse hyphens
+      .replace(/^-|-$/g, "");            // trim hyphens
+    return slug || "post";              // fallback to "post" if empty
   }
   function takeExcerpt(text){
     const t=safeText(text).trim().replace(/\s+/g," ");
@@ -304,7 +310,8 @@
 
     const now=new Date();
     const dateStr=formatDateKST(now);
-    const baseName = ymdhm(now) + "-" + slugifyKo(title).slice(0,30);
+    const slug = slugifyTitle(title);
+    const baseName = ymdhm(now) + "-" + slug;
     const htmlFileName = `${baseName}.html`;
 
     let imageWebPath="", imageDownloadName="";
