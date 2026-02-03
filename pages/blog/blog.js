@@ -237,15 +237,19 @@
       const postBody = document.querySelector('.postBody');
       if(!postBody) return;
 
+      // Prevent duplicate injection
+      if(document.querySelector('.post-cta-wrapper')) return;
+
       const children = Array.from(postBody.children);
       const brs = children.filter(el => el.tagName === 'BR');
 
-      // Insert middle CTA after 3rd <br> if exists
-      if(brs.length >= 4){
-        brs[2].insertAdjacentHTML('afterend', createCTAButton());
+      // Strategy 1: Try inserting after a BR in the middle
+      if(brs.length >= 10){
+        const middleIndex = Math.floor(brs.length / 2);
+        brs[middleIndex].insertAdjacentHTML('afterend', createCTAButton());
       }
 
-      // Insert CTA at the end
+      // Strategy 2: Always insert at the end
       postBody.insertAdjacentHTML('beforeend', createCTAButton());
     }
 
