@@ -6007,3 +6007,42 @@ a:focus-visible{
   font-weight: 700;
   font-size: 15px;
 }
+
+/* ===== Global SEO Footer ===== */
+
+.site-footer {
+  margin-top: 60px;
+  padding: 40px 20px;
+  font-size: 14px;
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.site-footer__group {
+  margin-bottom: 20px;
+}
+
+.site-footer__group strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.site-footer a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-footer__copy {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+}
