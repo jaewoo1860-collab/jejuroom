@@ -1,0 +1,363 @@
+/* =========================================================
+	 page-layout.css
+	 - Layout / hero-specific styles extracted from page.css
+	 - Keep page.css for .page-* scoped rules only
+========================================================= */
+
+
+/* =========================
+	 HERO (home) keyframes
+========================= */
+
+@keyframes shine{
+	0%{ transform: translateX(-120%); }
+	100%{ transform: translateX(120%); }
+}
+
+
+/* =========================
+	 REGION HERO (제주시 / 서귀포시)
+========================= */
+
+.region-hero{
+	padding: 18px 16px 6px;
+}
+
+.region-hero h1{
+	margin: 0 0 6px;
+	font-size: 22px;
+	font-weight: 900;
+}
+
+.region-hero .sub{
+	font-size: 13px;
+	color: rgba(255,255,255,0.75);
+}
+
+
+/* =========================
+	 HERO 1 – 구조 전용
+	 ========================= */
+
+.hero2--layout{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 360px; /* 지금 비율 유지 */
+	padding: 24px 18px;
+}
+
+.hero2__inner{
+	width: 100%;
+	max-width: 420px;
+	margin: 0 auto;
+	text-align: center;
+
+	/* 🔒 나중에 배경/유리효과 여기서 */
+}
+
+.hero2__title{
+	margin: 14px 0 10px;
+	line-height: 1.1;
+}
+
+.hero2__cta{
+	margin-top: 14px;
+	display: flex;
+	justify-content: center;
+}
+
+/* =========================
+	 HERO 1 전용 배경 그라데이션
+	 ========================= */
+
+.hero2{
+	position: relative;
+	background: linear-gradient(
+		to bottom,
+		#05272E 0%,
+		#0B1F24 45%,
+		#040709 100%
+	);
+}
+
+/* =========================
+	 HERO 1 배경 강제 적용
+	 ========================= */
+
+/* 섹션 1 전체 배경 */
+.sec.hero2{
+	background: linear-gradient(
+		to bottom,
+		#05272E 0%,
+		#040709 100%
+	) !important;
+}
+
+/* 글래스 모피즘 완전 제거 */
+.sec.hero2::before,
+.sec.hero2::after,
+.hero2__inner{
+	background: none !important;
+	backdrop-filter: none !important;
+	-webkit-backdrop-filter: none !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+
+/* =========================================================
+	 HERO CONFETTI (Birthday / Party style)
+	 - Only inside HERO section
+	 - Pure CSS
+========================================================= */
+
+.hero-confetti{
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.hero-confetti span{
+	position: absolute;
+	top: -10%;
+	width: 8px;
+	height: 14px;
+	opacity: 0.85;
+	border-radius: 2px;
+	animation: confettiFall linear infinite;
+}
+
+.hero-confetti span:nth-child(5n+1){ background:#ff4d6d; }
+.hero-confetti span:nth-child(5n+2){ background:#ffd166; }
+.hero-confetti span:nth-child(5n+3){ background:#4dabf7; }
+.hero-confetti span:nth-child(5n+4){ background:#b66cff; }
+.hero-confetti span:nth-child(5n){   background:#63e6be; }
+
+.hero-confetti span:nth-child(1){ left:5%;  animation-duration:7s; }
+.hero-confetti span:nth-child(2){ left:12%; animation-duration:6s; }
+.hero-confetti span:nth-child(3){ left:18%; animation-duration:8s; }
+.hero-confetti span:nth-child(4){ left:26%; animation-duration:6.5s; }
+.hero-confetti span:nth-child(5){ left:34%; animation-duration:7.5s; }
+.hero-confetti span:nth-child(6){ left:42%; animation-duration:6.2s; }
+.hero-confetti span:nth-child(7){ left:50%; animation-duration:8.5s; }
+.hero-confetti span:nth-child(8){ left:58%; animation-duration:7.2s; }
+.hero-confetti span:nth-child(9){ left:66%; animation-duration:6.8s; }
+.hero-confetti span:nth-child(10){left:74%; animation-duration:7.9s; }
+.hero-confetti span:nth-child(11){left:82%; animation-duration:6.4s; }
+.hero-confetti span:nth-child(12){left:90%; animation-duration:8.1s; }
+
+@keyframes confettiFall{
+	0%{
+		transform: translateY(0) rotate(0deg);
+	}
+	100%{
+		transform: translateY(120vh) rotate(360deg);
+	}
+}
+
+
+/* =========================================================
+	 HERO FIREFLIES (반딧불 글로우)
+	 - Only inside HERO section
+========================================================= */
+
+.hero-fireflies{
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;     /* 컨페티랑 같은 레이어 */
+	overflow: hidden;
+}
+
+.hero-fireflies span{
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 999px;
+	background: rgba(255,255,255,0.9);
+	box-shadow:
+		0 0 10px rgba(140,255,230,0.9),
+		0 0 22px rgba(140,255,230,0.55),
+		0 0 45px rgba(140,255,230,0.25);
+	opacity: 0.0;
+	animation: fireflyTwinkle 3.8s ease-in-out infinite,
+						 fireflyDrift 10s ease-in-out infinite;
+}
+
+/* 위치/속도 랜덤 느낌 (8개 기준) */
+.hero-fireflies span:nth-child(1){ left:12%; top:28%; animation-delay: .2s, 0s; }
+.hero-fireflies span:nth-child(2){ left:22%; top:52%; animation-delay: 1.3s, 0s; }
+.hero-fireflies span:nth-child(3){ left:34%; top:18%; animation-delay: .8s, 0s; }
+.hero-fireflies span:nth-child(4){ left:48%; top:40%; animation-delay: 2.1s, 0s; }
+.hero-fireflies span:nth-child(5){ left:60%; top:26%; animation-delay: 1.7s, 0s; }
+.hero-fireflies span:nth-child(6){ left:72%; top:58%; animation-delay: .5s, 0s; }
+.hero-fireflies span:nth-child(7){ left:82%; top:34%; animation-delay: 2.6s, 0s; }
+.hero-fireflies span:nth-child(8){ left:90%; top:22%; animation-delay: 1.0s, 0s; }
+
+/* 반짝(점등/소등) */
+@keyframes fireflyTwinkle{
+	0%   { transform: scale(.7); opacity: 0; }
+	20%  { opacity: .85; }
+	50%  { transform: scale(1.35); opacity: 1; }
+	80%  { opacity: .55; }
+	100% { transform: scale(.7); opacity: 0; }
+}
+
+/* 살짝 떠다니는 이동 */
+@keyframes fireflyDrift{
+	0%   { translate: 0 0; filter: blur(0px); }
+	50%  { translate: -12px -10px; filter: blur(.2px); }
+	100% { translate: 0 0; filter: blur(0px); }
+}
+
+/* =========================================================
+	 HERO FIREFLIES – BOOST (더 살아있는 반딧불 느낌)
+========================================================= */
+
+.hero-fireflies span{
+	width: 7px !important;
+	height: 7px !important;
+
+	/* 코어(중심) */
+	background: radial-gradient(circle,
+		rgba(255,255,255,1.0) 0%,
+		rgba(210,255,240,0.95) 35%,
+		rgba(140,255,230,0.25) 70%,
+		rgba(140,255,230,0.0) 100%
+	) !important;
+
+	/* 글로우(빛 번짐) */
+	box-shadow:
+		0 0 14px rgba(140,255,230,1.0),
+		0 0 34px rgba(140,255,230,0.85),
+		0 0 70px rgba(140,255,230,0.55),
+		0 0 110px rgba(140,255,230,0.22) !important;
+
+	opacity: 0.0 !important;
+
+	/* “살아있는” 느낌: 밝기 펄스 + 떠다님 + 미세 흔들림 */
+	animation:
+		fireflyPulse 2.2s ease-in-out infinite,
+		fireflyFloat 7.5s ease-in-out infinite,
+		fireflyWiggle 1.8s ease-in-out infinite !important;
+
+	/* 빛이 화면에서 더 또렷하게 보이게 */
+	filter: saturate(1.25) brightness(1.18) !important;
+}
+
+/* 밝기/크기 펄스(반딧불 핵심) */
+@keyframes fireflyPulse{
+	0%   { transform: scale(.55); opacity: .08; }
+	15%  { opacity: .35; }
+	40%  { transform: scale(1.35); opacity: 1; }
+	60%  { transform: scale(.95); opacity: .55; }
+	100% { transform: scale(.55); opacity: .10; }
+}
+
+/* 큰 이동(둥실둥실) */
+@keyframes fireflyFloat{
+	0%   { translate: 0 0; }
+	35%  { translate: -14px -10px; }
+	70%  { translate: 12px -6px; }
+	100% { translate: 0 0; }
+}
+
+/* 미세 흔들림(살아있는 느낌 강화) */
+@keyframes fireflyWiggle{
+	0%   { rotate: -6deg; }
+	50%  { rotate: 6deg; }
+	100% { rotate: -6deg; }
+}
+
+.hero-fireflies span:nth-child(odd){
+	animation-duration: 2.0s, 8.4s, 1.6s !important;
+}
+.hero-fireflies span:nth-child(even){
+	animation-duration: 2.6s, 6.8s, 2.1s !important;
+}
+
+.hero-fireflies{ z-index: 1; opacity: 1; }
+
+
+/* =========================================================
+	 MOBILE PERFORMANCE OVERRIDE
+	 - 모바일에서는 '내리는 컨페티'를 완전 비활성화(렉/배터리 방지)
+	 - 반짝이는 느낌은 hero-fireflies는 남기되, 무거운 이동 애니메이션은 제거
+	 ========================================================= */
+
+/* 터치 디바이스(대부분 모바일) 기준 */
+@media (hover: none) and (pointer: coarse){
+	/* 1) 내리는 컨페티 OFF */
+	.hero-confetti{ display:none !important; }
+
+	/* 2) 반딧불은 '반짝임'만 남기고 이동/위글 제거(가벼움) */
+	.hero-fireflies span{
+		animation: fireflyTwinkle 3.6s ease-in-out infinite !important;
+		will-change: opacity, transform;
+	}
+}
+
+/* 화면폭 기준(일부 브라우저 hover 판별이 애매할 때도 안전망) */
+@media (max-width: 768px){
+	.hero-confetti{ display:none !important; }
+}
+
+
+/* =========================
+	 HERO animations (moved from page.css)
+========================= */
+
+@keyframes heroShine{
+	0%{ background-position: -160% 0; }
+	100%{ background-position: 160% 0; }
+}
+
+@keyframes heroMarquee{
+	from{ transform: translateX(0); }
+	to{ transform: translateX(-50%); }
+}
+
+@keyframes heroDiamondTwinkle{
+	0%   { opacity: 0.0; }
+	20%  { opacity: 0.70; }
+	40%  { opacity: 0.15; }
+	60%  { opacity: 0.82; }
+	80%  { opacity: 0.22; }
+	100% { opacity: 0.0; }
+}
+
+@keyframes heroDiamondSweep{
+	0%   { background-position: -170% 0; opacity: 0; }
+	18%  { opacity: 0; }
+	35%  { opacity: .98; }
+	55%  { opacity: 1; }
+	75%  { opacity: .55; }
+	100% { background-position: 170% 0; opacity: 0; }
+}
+
+/* 밝기/크기 펄스(반딧불 핵심) */
+@keyframes fireflyPulse{
+	0%   { transform: scale(.45); opacity: .10; }
+	18%  { opacity: .55; }
+	45%  { transform: scale(1.55); opacity: 1; }
+	65%  { transform: scale(.95); opacity: .60; }
+	100% { transform: scale(.45); opacity: .12; }
+}
+
+/* 큰 이동(둥실둥실) */
+@keyframes fireflyFloat{
+	0%   { translate: 0 0; }
+	35%  { translate: -16px -12px; }
+	70%  { translate: 14px -8px; }
+	100% { translate: 0 0; }
+}
+
+/* 미세 흔들림(살아있는 느낌 강화) */
+@keyframes fireflyWiggle{
+	0%   { rotate: -6deg; }
+	50%  { rotate: 6deg; }
+	100% { rotate: -6deg; }
+}

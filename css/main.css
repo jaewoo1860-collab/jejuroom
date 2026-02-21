@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+@import url('./00-base/reset.css');
+@import url('./00-base/variables.css');
+@import url('./00-base/colors.css');
+@import url('./00-base/typography.css');
+@import url('./00-base/spacing.css');
+
+@import url('./base.css');
+@import url('./theme.css');
+
+@import url('./01-layout/container.css');
+@import url('./01-layout/grid.css');
+@import url('./01-layout/header.css');
+@import url('./01-layout/footer.css');
+@import url('./01-layout/section.css');
+
+@import url('./02-components/buttons.css');
+@import url('./02-components/cards.css');
+@import url('./02-components/badges.css');
+@import url('./02-components/tags.css');
+@import url('./02-components/navbar.css');
+@import url('./02-components/forms.css');
+@import url('./02-components/modal.css');
+@import url('./02-components/animations.css');
+
+@import url('./03-pages/blog-layout.css');
+@import url('./03-pages/blog-post.css');
+@import url('./03-pages/page-layout.css');
+
+@import url('./page.css');
+
+@import url('./region.css');
+@import url('./shop.css');
+@import url('./ads.css');
+@import url('./blog.css');
+
+@import url('./04-responsive/mobile.css');
+@import url('./04-responsive/tablet.css');
+@import url('./04-responsive/desktop.css');
+
+@import url('./03-pages/home-latest.css');

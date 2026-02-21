@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- ✅ SEO core -->
+<title>정보안내 | 제주똑똑이</title>
+<meta name="description" content="제주똑똑이 운영 정책 및 정보 제공 목적 안내 페이지입니다. 제주도 지역에 있는 제주시 및 서귀포시 지역 합법 업소 정보 안내 페이지입니다. (정보 제공 목적)" />
+<link rel="canonical" href="https://www.jejutoktokyi.com/pages/info.html" />
+
+<!-- ✅ Minimal OG for snippet stability -->
+<meta name="application-name" content="제주똑똑이" />
+<meta property="og:site_name" content="제주똑똑이" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="정보안내 | 제주똑똑이" />
+<meta property="og:description" content="제주똑똑이 운영 정책 및 정보 제공 목적 안내 페이지입니다. 제주도 지역에 있는 제주시 및 서귀포시 지역 합법 업소 정보 안내 페이지입니다. (정보 제공 목적)" />
+<meta property="og:url" content="https://www.jejutoktokyi.com/pages/info.html" />
+<meta property="og:type" content="website" />
+
+<!-- ✅ Structured data for Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "정보안내 | 제주똑똑이",
+  "url": "https://www.jejutoktokyi.com/pages/info.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "제주똑똑이",
+    "url": "https://www.jejutoktokyi.com/"
+  }
+}
+</script>
+
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/particles.css" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="robots" content="index,follow" />
+</head>
+<body>
+  <div class="site-wrap">
+  <p id="msg">블로그로 이동 중입니다…</p>
+  <p><a id="link" href="#">이동 링크</a></p>
+
+  <script>
+    // ✅ 로컬(file://)로 열었을 때와 사이트(https://)에서 열었을 때 경로가 다르기 때문에 분기
+    // - file://  : 같은 폴더(/pages) 기준으로 상대경로로 이동해야 함
+    // - https://  : 사이트 루트 기준 절대경로로 이동 가능
+    (function () {
+      var isFile = location.protocol === "file:";
+      var target = isFile ? "../blog/index.html" : "/pages/blog/index.html";
+      document.getElementById("link").href = target;
+
+      // 즉시 이동
+      try {
+        location.replace(target);
+      } catch (e) {
+        location.href = target;
+      }
+    })();
+  </script>
+<footer class="seo-footer" aria-label="제주똑똑이 정보 안내">
+  <div class="seo-footer__inner">
+    <p class="seo-footer__text">
+      제주똑똑이는 제주도 지역의 제주시 및 서귀포시 합법 업소(유흥·유흥주점·노래방·가라오케) 정보를
+      <strong>정보 제공 목적</strong>으로 안내합니다. 예약·중개·알선 목적이 아니며, 불법 성매매 및 성 관련 서비스 제공을 하지 않습니다.
+    </p>
+  </div>
+</footer>
+  </div>
+<script src="/js/core/seo-injector.js" defer></script>
+<script src="/js/core/scroll-controller-pc.js" defer></script>
+</body>
+</html>

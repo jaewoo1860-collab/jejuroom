@@ -1,0 +1,43 @@
+name: Daily Reviews
+
+on:
+  schedule:
+    - cron: "0 18 * * *" # UTC 18:00 = KST 새벽 3시
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate reviews
+        run: node tools/generate-reviews.js
+
+      - name: Commit and push (safe)
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+
+          # ✅ 실제 수정 대상
+          git add pages/reviews.html tools/generate-reviews.js || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore: add auto review"
+          git pull --rebase origin main
+          git push origin main

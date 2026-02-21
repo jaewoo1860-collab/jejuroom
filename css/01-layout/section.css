@@ -1,0 +1,47 @@
+.reviewModal{
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 18px;
+}
+
+.reviewModal.is-open{ display: flex; }
+
+.reviewModal .modal__backdrop{
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0.55);
+	backdrop-filter: blur(6px);
+}
+
+.reviewModal .modal__panel{
+	position: relative;
+	width: min(520px, 100%);
+	max-height: 80vh;
+	overflow: hidden;
+	border-radius: 18px;
+	border: 1px solid rgba(255,255,255,0.12);
+	background: rgba(10,14,22,0.78);
+	box-shadow: 0 20px 70px rgba(0,0,0,0.55);
+}
+
+.reviewModal .modal__top{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 14px 14px 10px;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.reviewModal .modal__actions{
+	padding: 12px 14px 14px;
+	border-top: 1px solid rgba(255,255,255,0.1);
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+

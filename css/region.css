@@ -1,0 +1,9 @@
+/* region.css
+   - pages/jejusi.html / pages/seogwipo.html 전용 보조 스타일
+*/
+.page-region .regionTitle h1{
+  margin: 0 0 6px;
+}
+.page-region .regionTitle p{
+  margin: 0;
+}

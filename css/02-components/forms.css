@@ -1,0 +1,26 @@
+.field{ display:block; margin: 10px 0 0; }
+.field__label{
+	display:block;
+	font-size: 11px;
+	color: rgba(255,255,255,0.72);
+	margin-bottom: 6px;
+}
+.field__input, .field__textarea, .field__file{
+	width: 100%;
+	border-radius: 14px;
+	border: 1px solid rgba(255,255,255,0.14);
+	background: rgba(255,255,255,0.06);
+	color: rgba(255,255,255,0.92);
+	padding: 10px 12px;
+	outline: none;
+	font-size: 12.5px;
+}
+.field__textarea{ resize: vertical; min-height: 140px; }
+.field__hint{
+	display:block;
+	margin-top: 8px;
+	font-size: 11px;
+	color: rgba(255,255,255,0.68);
+	line-height: 1.5;
+}
+

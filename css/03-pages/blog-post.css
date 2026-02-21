@@ -1,0 +1,16 @@
+.postView{
+	margin: 12px auto 0;
+	width: min(386px, 100%);
+	border-radius: 18px;
+	border: 1px solid rgba(255,255,255,0.12);
+	background: rgba(0,0,0,0.42);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+	overflow: hidden;
+	padding: 12px 12px 14px;
+}
+.postHero img{ width: 100%; height: auto; display:block; border-radius: 14px; border: 1px solid rgba(255,255,255,0.10); }
+.postBody{ margin-top: 12px; font-size: 12.6px; line-height: 1.75; color: rgba(255,255,255,0.88); word-break: break-word; }
+.backRow{ margin: 12px auto 20px; width: min(386px, 100%); display:flex; justify-content:center; }
+

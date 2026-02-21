@@ -1,0 +1,32 @@
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif;
+  color: rgba(255,255,255,.92);
+  background:#05070d;
+  overflow-x:hidden;
+}
+
+@media (hover: hover) and (pointer: fine){
+  body{ overflow:hidden; }
+}
+
+body { overflow: hidden; }
+
+@media (max-width: 520px){
+  body{ overflow: hidden; background: #061018; }
+}
+
+html, body{
+  background-color: #0b0f14; /* keep baseline */
+}
+
+html{
+  filter: none !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  forced-color-adjust: none !important;
+  -webkit-text-size-adjust: 100%;
+}

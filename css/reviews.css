@@ -1,0 +1,37 @@
+body { background:#fff; }
+.board {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.board-table th,
+.board-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+.board-table th {
+  background: #f7f7f7;
+}
+.board-table td a {
+  color: #222;
+  text-decoration: none;
+}
+.board-table td a:hover {
+  text-decoration: underline;
+}
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+.pagination button {
+  margin: 0 4px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}

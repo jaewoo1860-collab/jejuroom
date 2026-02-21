@@ -1,0 +1,9 @@
+
+
+.phone{ container-type: inline-size; }
+
+.phone .content{
+	padding-left: var(--page-pad) !important;
+	padding-right: var(--page-pad) !important;
+}
+

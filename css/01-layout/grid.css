@@ -1,0 +1,22 @@
+.system-grid{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;                 /* 경쟁업체 느낌: 너무 넓지 않게 */
+}
+
+.system-item{
+	text-align: center;
+}
+
+.system-grid{
+	display:grid !important;
+	grid-template-columns: repeat(4, 1fr) !important;
+	gap: 12px !important;
+	align-items: center !important;
+}
+
+.system-item{
+	position: relative !important;
+	text-align:center !important;
+}
+
