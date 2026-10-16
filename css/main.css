@@ -7204,9 +7204,14 @@ button.place-more{
 .face-banner-copy strong { color:#f4eedf; font-size:23px; line-height:1.25; }
 .face-banner-copy > span { color:#c6cbd4; font-size:11px; font-weight:400; }
 .face-banner-arrow { margin-left:auto; z-index:1; font-size:22px; color:#f0d4a0; }
+.page-home .place-card.face-place-card { display:flex; flex-direction:column; justify-content:flex-end; isolation:isolate; box-sizing:border-box; width:100%; min-width:0; aspect-ratio:4/5; min-height:190px; padding:15px 12px; background:#101722; border-color:#d9bc7f55; }
 .page-home .place-card.face-place-card::before { display:none; }
-.face-place-card > img { display:block; width:100%; height:72px; object-fit:cover; object-position:center 60%; border-radius:12px; margin-bottom:10px; }
-.face-place-card > small { display:block; margin-top:4px; color:#aeb9c9; font-size:10px; line-height:1.4; font-weight:400; }
+.page-home .place-card.face-place-card::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(180deg,transparent 30%,rgba(5,9,15,.22) 48%,rgba(5,9,15,.88) 78%,#05090f 100%); }
+.page-home .face-place-card > img { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; object-position:65% center; border-radius:0; margin:0; z-index:-1; }
+.page-home .face-place-card > span { position:relative; z-index:1; color:#fff5df; font-size:20px; line-height:1.35; letter-spacing:0; }
+.page-home .face-place-card > span > em { font:500 10px/1.4 system-ui,sans-serif; letter-spacing:1px; font-style:normal; color:#ecd3a1; white-space:nowrap; }
+.page-home .face-place-card > small { position:relative; z-index:1; display:block; margin-top:6px; color:#e3e7ee; font-size:11px; line-height:1.5; font-weight:400; letter-spacing:0; }
+.page-home .face-place-card:focus-visible { outline:2px solid #efd29b; outline-offset:4px; }
 @media (hover:hover) { .face-photo-link:hover img { transform:scale(1.035); } .face-jump a:hover { color:#f1d39c; } }
 @media (prefers-reduced-motion:reduce) { .page-shop-face .content { scroll-behavior:auto; } .face-photo-link img { transition:none; } }
 
